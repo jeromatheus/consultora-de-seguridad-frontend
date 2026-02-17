@@ -16,7 +16,11 @@ function StartSection() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris.
           </p>
-          <Button size="lg">Agendar Consulta de Diagnóstico de Riesgos</Button>
+          <Button
+            size="lg"
+            className="btn-tactical">
+              Agendar Consulta de Diagnóstico de Riesgos
+            </Button>
         </div>
       </Container>
     </section>

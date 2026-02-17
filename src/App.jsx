@@ -1,8 +1,9 @@
 import Layout from './layout/Layout';
 import StartSection from './sections/StartSection';
-import DifferentialSection from './sections/DifferentialSection';
+import AboutUsSection from './sections/AboutUsSection';
 import ServicesSection from './sections/ServicesSection';
 import ContactSection from './sections/ContactSection';
+import DifferentialSection from './sections/DifferentialSection';
 
 function App() {
   return (
@@ -10,12 +11,15 @@ function App() {
       <section id="inicio">
         <StartSection />
       </section>
-      <section id="diferenciales">        
-        <DifferentialSection />
+      <section id="nosotros">        
+        <AboutUsSection />
       </section>
       <section id="servicios">
         <ServicesSection />
       </section>
+      <section id="diferencial">
+        <DifferentialSection />
+      </section>      
       <section id="contacto">
         <ContactSection />
       </section>

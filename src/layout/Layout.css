@@ -1,13 +1,27 @@
-.header-title {
-  max-width: 150px;      /* Fuerza el ancho máximo */
-  white-space: normal;   /* Permite que el texto baje de renglón */
-  line-height: 1.1;      /* Junta los renglones */
-  font-size: 14px;
-  font-weight: 700;      /* Equivalente a fw-bold */
-  text-transform: uppercase; /* Equivalente a text-uppercase */
-  display: block;
-}
-
 section {
   margin-bottom: 5rem; 
+}
+
+.bg-tactical {
+  background-color: #1b263b !important; 
+}
+
+.header-border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.footer-border {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+  color: #ffffff !important; 
+  font-weight: 500; 
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #bfc1e0 !important; 
+  font-weight: 500; 
+  text-decoration: none;
 }

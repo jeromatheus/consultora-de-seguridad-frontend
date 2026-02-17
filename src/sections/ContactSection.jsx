@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa6';
 
 const ContactSection = () => {
@@ -7,9 +7,11 @@ const ContactSection = () => {
   const whatsappMessage = "Hola, me gustaría recibir más información sobre sus servicios de seguridad.";
 
   return (
-      <Container>
-        <div className="text-center mb-4">
-          <h2>Contactanos</h2>
+      <>
+        <div className="text-center border-top border-bottom text-white my-5">
+          <h2 className="py-2">
+            Contactanos
+          </h2>
         </div>
 
         <Row className="justify-content-center g-4">
@@ -48,7 +50,7 @@ const ContactSection = () => {
           </Col>
 
         </Row>
-      </Container>
+      </>
   );
 }
 

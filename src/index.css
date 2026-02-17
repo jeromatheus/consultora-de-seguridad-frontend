@@ -10,3 +10,29 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   font-family: 'Saira Extra Condensed', sans-serif;
   letter-spacing: 1.5px; 
 }
+
+.btn-tactical {
+  background-color: #1f468f !important; 
+  border: 1px solid #476588 !important; 
+  color: #e0e1dd !important; 
+  border-radius: 2px !important; 
+  font-weight: 600 !important;
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+  transition: all 0.3s ease; 
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.250) !important;
+}
+
+.btn-tactical:hover {
+  background-color: #365375 !important; 
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.500) !important;
+}
+
+.btn-tactical:active {
+  background-color: #0d1b2a !important; 
+  border-color: #475970 !important;
+  transform: translateY(1px); 
+  box-shadow: none;
+}

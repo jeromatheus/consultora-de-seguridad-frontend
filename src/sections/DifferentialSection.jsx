@@ -1,37 +1,41 @@
-import { Row, Col, Container } from "react-bootstrap";
-import { FaUserShield, FaGlobeAmericas, FaCertificate, FaFileContract } from 'react-icons/fa';
+import { Row, Col } from "react-bootstrap";
+import { FaUserShield, FaCertificate, FaFileShield } from "react-icons/fa6";
 
 const DifferentialSection = () => {
-  const iconSize = 50;
+  const iconSize = 60;
   const iconClass = "mb-3 text-primary";
 
   return (
-    <Container>
-        <div className="text-center border-top border-bottom border-dark">
-            <h2 className="py-2">El Valor de la Experiencia Certificada</h2>
-            <div className="py-2 border-top border-dark">
-              <h3>"La seguridad no es un servicio, es una ciencia de precisión"</h3>
-            </div>
-        </div>    
-      <Row className="text-center mt-5">
-        <Col xs={6} md={3} className="mb-4 mb-md-0">
+    <>
+      <div className="text-center border-top border-bottom text-white my-5">
+        <h2 className="py-2">
+          Compromiso Legal y Ético
+        </h2>
+      </div>
+
+      <Row className="text-center justify-content-center">
+        <Col xs={4} className="mb-4 mb-md-0">
           <FaUserShield size={iconSize} className={iconClass} />
-          <h6 className="fw-bold px-3">Veteranos de Fuerzas Especiales</h6>
+          <h5 className="text-white fw-bold text-uppercase px-4">
+            Ex-Fuerzas Armadas / ONU
+          </h5>
         </Col>
-        <Col xs={6} md={3} className="mb-4 mb-md-0">
-          <FaGlobeAmericas size={iconSize} className={iconClass} />
-          <h6 className="fw-bold px-3">Misiones ONU en Zonas de Conflicto</h6>
-        </Col>
-        <Col xs={6} md={3} className="mb-4">
+
+        <Col xs={4} className="mb-4 mb-md-0">
           <FaCertificate size={iconSize} className={iconClass} />
-          <h6 className="fw-bold px-3">Certificaciones Internacionales</h6>
+          <h5 className="text-white fw-bold text-uppercase px-4">
+            Certificaciones de Servicio
+          </h5>
         </Col>
-        <Col xs={6} md={3} className="mb-4">
-          <FaFileContract size={iconSize} className={iconClass} />
-          <h6 className="fw-bold px-3">Ley 25.326 de Protección de Datos</h6>
+
+        <Col xs={4}>
+          <FaFileShield size={iconSize} className={iconClass} />
+          <h5 className="text-white fw-bold text-uppercase px-4">
+            Ley 25.326 de Seguridad de Datos
+          </h5>
         </Col>
       </Row>
-    </Container>
+    </>
   );
 };
 

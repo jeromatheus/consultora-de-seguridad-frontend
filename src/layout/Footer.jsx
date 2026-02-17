@@ -13,7 +13,7 @@ function Footer() {
   };
 
   return (
-    <footer className="py-3">
+    <footer className="py-3 footer-border bg-tactical">
       <Container fluid className="px-5">
         <Row>
           {/* COLUMNA 1: LOGO */}
@@ -30,33 +30,49 @@ function Footer() {
             <h5 className="mb-3">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               <li>
-                <a href="#inicio" onClick={(e) => handleNavClick(e, "inicio")}>
+                <a
+                  href="#inicio"
+                  className="nav-link"
+                  onClick={(e) => handleNavClick(e, "inicio")}
+                >
                   Inicio
                 </a>
               </li>
               <li>
                 <a
-                  href="#diferencial"
-                  onClick={(e) => handleNavClick(e, "diferencial")}
+                  href="#nosotros"
+                  className="nav-link"
+                  onClick={(e) => handleNavClick(e, "nosotros")}
                 >
-                  Diferencial
+                  Nosotros
                 </a>
               </li>
               <li>
                 <a
                   href="#servicios"
+                  className="nav-link"
                   onClick={(e) => handleNavClick(e, "servicios")}
                 >
                   Servicios
                 </a>
               </li>
               <li>
-                <a
-                  href="#contacto"
-                  onClick={(e) => handleNavClick(e, "contacto")}
-                >
-                  Contacto
-                </a>
+                <li>
+                  <a
+                    href="#diferencial"
+                    className="nav-link"
+                    onClick={(e) => handleNavClick(e, "diferencial")}
+                  >
+                    Diferencial
+                  </a>
+                  <a
+                    href="#contacto"
+                    className="nav-link"
+                    onClick={(e) => handleNavClick(e, "contacto")}
+                  >
+                    Contacto
+                  </a>
+                </li>
               </li>
             </ul>
           </Col>
