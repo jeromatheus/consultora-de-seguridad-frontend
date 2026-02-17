@@ -1,4 +1,4 @@
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import { FaUserShield, FaCertificate, FaFileShield } from "react-icons/fa6";
 
 const DifferentialSection = () => {
@@ -6,7 +6,7 @@ const DifferentialSection = () => {
   const iconClass = "mb-3 text-primary";
 
   return (
-    <>
+    <Container fluid className="px-5">
       <div className="text-center border-top border-bottom text-white my-5">
         <h2 className="py-2">
           Compromiso Legal y Ético
@@ -35,7 +35,7 @@ const DifferentialSection = () => {
           </h5>
         </Col>
       </Row>
-    </>
+    </Container>
   );
 };
 

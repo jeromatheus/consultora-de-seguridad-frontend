@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <div className="d-flex flex-column min-vh-100">
       <Header />
       <main className="flex-grow-1">
-        <Container fluid>
+        <Container fluid className="p-0">
           {children}
         </Container>
       </main>
