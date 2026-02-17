@@ -1,0 +1,13 @@
+.header-title {
+  max-width: 150px;      /* Fuerza el ancho máximo */
+  white-space: normal;   /* Permite que el texto baje de renglón */
+  line-height: 1.1;      /* Junta los renglones */
+  font-size: 14px;
+  font-weight: 700;      /* Equivalente a fw-bold */
+  text-transform: uppercase; /* Equivalente a text-uppercase */
+  display: block;
+}
+
+section {
+  margin-bottom: 5rem; 
+}
