@@ -36,3 +36,20 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   transform: translateY(1px); 
   box-shadow: none;
 }
+
+.section-container-header {
+  text-align: center;                 
+  border-top: 1px solid #dee2e6;      
+  border-bottom: 1px solid #dee2e6;  
+  color: #ffffff;                   
+  margin-top: 3rem;                  
+  margin-bottom: 3rem;               
+}
+
+.section-title {
+  padding-top: 0.5rem;    
+  padding-bottom: 0.5rem; 
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3em;
+}

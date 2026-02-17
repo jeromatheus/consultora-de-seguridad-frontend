@@ -1,4 +1,4 @@
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { FaUserShield, FaGlobeAmericas, FaCertificate } from 'react-icons/fa';
 
 const AboutUsSection = () => {
@@ -6,13 +6,18 @@ const AboutUsSection = () => {
   const iconClass = "me-3 text-primary flex-shrink-0"; 
 
   return (
-    <Container fluid className="px-5">
-        <div className="text-center border-top border-bottom text-white my-5">
-            <h2 className="py-2">El Valor de la Experiencia Certificada</h2>
-            <div className="py-2 border-top">
-              <h3>"La seguridad no es un servicio, es una ciencia de precisión"</h3>
-            </div>
-        </div>    
+    <div className="section-container">
+      {/* <div className="text-center border-top border-bottom text-white my-5">
+          <h2 className="py-2">El Valor de la Experiencia Certificada</h2>
+          <div className="py-2 border-top">
+            <h3>"La seguridad no es un servicio, es una ciencia de precisión"</h3>
+          </div>
+      </div>     */}
+      <div className="section-container-header">
+        <h2 className="section-title">
+          ¿Quiénes Somos?
+        </h2>
+      </div>         
       
       <Row className="mt-5">
         <Col xs={4} className="mb-4 mb-md-0">
@@ -42,7 +47,7 @@ const AboutUsSection = () => {
           </div>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

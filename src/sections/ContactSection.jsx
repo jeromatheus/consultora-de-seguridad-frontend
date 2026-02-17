@@ -1,4 +1,4 @@
-import { Row, Col, Button, Container } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa6';
 
 const ContactSection = () => {
@@ -7,9 +7,9 @@ const ContactSection = () => {
   const whatsappMessage = "Hola, me gustaría recibir más información sobre sus servicios de seguridad.";
 
   return (
-      <Container fluid className="px-5">
-        <div className="text-center border-top border-bottom text-white my-5">
-          <h2 className="py-2">
+      <div className="section-container">
+        <div className="section-container-header">
+          <h2 className="section-title">
             Contactanos
           </h2>
         </div>
@@ -50,7 +50,7 @@ const ContactSection = () => {
           </Col>
 
         </Row>
-      </Container>
+      </div>
   );
 }
 

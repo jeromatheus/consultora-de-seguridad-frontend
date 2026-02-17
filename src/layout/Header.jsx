@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button"; // <--- 1. Importar Button
+import Button from "react-bootstrap/Button"; 
 import { useScrollTo } from "../hooks/useScrollTo";
 import "./Layout.css";
 
@@ -9,7 +9,7 @@ function Header() {
   const scrollTo = useScrollTo(80);
 
   return (
-    <Navbar expand="lg" className="bg-tactical header-border" data-bs-theme="dark">
+    <Navbar expand="lg" className="bg-tactical header-border">
       <Container fluid className="px-5">
         <Navbar.Brand href="#home">
           <img

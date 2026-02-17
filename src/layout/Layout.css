@@ -1,9 +1,14 @@
 section {
-  margin-bottom: 5rem; 
+  margin-bottom: 5rem;
+  min-height: 25vh;
+}
+
+.section-container {
+  padding: 0rem 5rem;  
 }
 
 .bg-tactical {
-  background-color: #1b263b !important; 
+  background-color: #040c18 !important; 
 }
 
 .header-border {
