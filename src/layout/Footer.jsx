@@ -29,7 +29,7 @@ function Footer() {
 
           {/* COLUMNA 2: ENLACES RÁPIDOS */}
           <Col md={4} xs={6} className="mb-4 mb-md-0">
-            <h5 className="mb-3">Navegación</h5>
+            <h5 className="mb-3 text-uppercase fw-bold">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               {routes.map((route) => (
                 <li key={route.id}>
@@ -47,7 +47,7 @@ function Footer() {
 
           {/* COLUMNA 3: CONTACTO */}
           <Col md={4} xs={6}>
-            <h5 className="mb-3">Contacto</h5>
+            <h5 className="mb-3 text-uppercase fw-bold">Contacto</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               <li>Av. Corrientes 1234, CABA</li>
               <li>+54 9 11 1234-5678</li>

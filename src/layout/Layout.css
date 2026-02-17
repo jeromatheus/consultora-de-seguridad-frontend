@@ -27,6 +27,14 @@ section {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.navbar-toggler {
+  border: 2px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
 .nav-link {
   color: #ffffff !important; 
   font-weight: 500; 
