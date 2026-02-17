@@ -6,14 +6,8 @@ const AboutUsSection = () => {
   const iconClass = "me-3 text-primary flex-shrink-0"; 
 
   return (
-    <div className="section-container">
-      {/* <div className="text-center border-top border-bottom text-white my-5">
-          <h2 className="py-2">El Valor de la Experiencia Certificada</h2>
-          <div className="py-2 border-top">
-            <h3>"La seguridad no es un servicio, es una ciencia de precisión"</h3>
-          </div>
-      </div>     */}
-      <div className="section-container-header">
+    <>
+      <div className="section-header">
         <h2 className="section-title">
           ¿Quiénes Somos?
         </h2>
@@ -23,31 +17,37 @@ const AboutUsSection = () => {
         <Col xs={4} className="mb-4 mb-md-0">
           <div className="d-flex align-items-center justify-content-center">
             <FaUserShield size={iconSize} className={iconClass} />
-            <h6 className="mb-0 text-start text-white">
+            <h5>
               Veteranos de Fuerzas Especiales
-            </h6>
+            </h5>
           </div>
         </Col>
 
         <Col xs={4} className="mb-4 mb-md-0">
           <div className="d-flex align-items-center justify-content-center">
             <FaGlobeAmericas size={iconSize} className={iconClass} />
-            <h6 className="mb-0 text-start text-white">
+            <h5>
               Misiones ONU en Zonas de Conflicto
-            </h6>
+            </h5>
           </div>
         </Col>
 
         <Col xs={4} className="mb-4">
           <div className="d-flex align-items-center justify-content-center">
             <FaCertificate size={iconSize} className={iconClass} />
-            <h6 className="mb-0 text-start text-white">
+            <h6>
               Certificaciones Internacionales
             </h6>
           </div>
         </Col>
       </Row>
-    </div>
+      {/* <div className="text-center border-top border-bottom text-white my-5">
+          <h2 className="py-2">El Valor de la Experiencia Certificada</h2>
+          <div className="py-2 border-top">
+            <h3>"La seguridad no es un servicio, es una ciencia de precisión"</h3>
+          </div>
+      </div>     */}      
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button"; 
+import { routes } from "../constants/routes";
 import { useScrollTo } from "../hooks/useScrollTo";
 import "./Layout.css";
 
@@ -14,9 +15,9 @@ function Header() {
         <Navbar.Brand href="#home">
           <img
             alt="Logo"
-            src="https://placehold.co/30x30"
-            width="30"
-            height="30"
+            src="../logo.png"
+            width="60"
+            height="50"
             className="d-inline-block align-top me-2"
           />
         </Navbar.Brand>
@@ -24,13 +25,16 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* MENU CENTRAL */}
-          <Nav className="mx-auto text-center gap-3">
-            <Nav.Link className="nav-link" onClick={() => scrollTo("inicio")}>Inicio</Nav.Link>
-            <Nav.Link className="nav-link" onClick={() => scrollTo("nosotros")}>Nosotros</Nav.Link>
-            <Nav.Link className="nav-link" onClick={() => scrollTo("servicios")}>Servicios</Nav.Link>
-            <Nav.Link className="nav-link" onClick={() => scrollTo("diferencial")}>Diferencial</Nav.Link>
-            <Nav.Link className="nav-link" onClick={() => scrollTo("contacto")}>Contacto</Nav.Link>
+          <Nav className="mx-auto text-center gap-4">
+            {routes.map((route) => (
+              <Nav.Link
+                key={route.id}
+                className="nav-link"
+                onClick={() => scrollTo(route.id)}
+              >
+                {route.label}
+              </Nav.Link>
+            ))}
           </Nav>
 
           <div className="d-flex justify-content-center mt-3 mt-lg-0">

@@ -5,28 +5,28 @@ const ServicesSection = () => {
     {
       title: "PROTECCIÓN PERSONAL DE ALTO PERFIL",
       text: "Seguridad ejecutiva para líderes y personalidades.",
-      img: "https://placehold.co/600x400/1a1a1a/FFF?text=Protección+Personal",
+      img: "https://placehold.co/600x600/1a1a1a/FFF?text=Protección+Personal",
     },
     {
       title: "CUSTODIA Y LOGÍSTICA DE ACTIVOS CRÍTICOS",
       text: "Transporte seguro de valores empresariales.",
-      img: "https://placehold.co/600x400/1a1a1a/FFF?text=Custodia+Logística",
+      img: "https://placehold.co/600x600/1a1a1a/FFF?text=Custodia+Logística",
     },
     {
       title: "CAPACITACIÓN TÁCTICA ESPECIALIZADA",
       text: "Entrenamiento avanzado para fuerzas especiales.",
-      img: "https://placehold.co/600x400/1a1a1a/FFF?text=Capacitación+Táctica",
+      img: "https://placehold.co/600x600/1a1a1a/FFF?text=Capacitación+Táctica",
     },
     {
       title: "GESTIÓN DE INFORMACIÓN Y ANÁLISIS",
       text: "Inteligencia estratégica para decisiones clave.",
-      img: "https://placehold.co/600x400/1a1a1a/FFF?text=Gestión+Información",
+      img: "https://placehold.co/600x600/1a1a1a/FFF?text=Gestión+Información",
     },
   ];
 
   return (
-    <div>
-      <div className="section-container-header">
+    <>
+      <div className="section-header">
         <h2 className="section-title">SERVICIOS</h2>
       </div>
       <Row className="g-4">
@@ -48,7 +48,7 @@ const ServicesSection = () => {
           </Col>
         ))}
       </Row>
-    </div>
+    </>
   );
 };
 

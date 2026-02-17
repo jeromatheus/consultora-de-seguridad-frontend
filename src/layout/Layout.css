@@ -3,12 +3,20 @@ section {
   min-height: 25vh;
 }
 
-.section-container {
-  padding: 0rem 5rem;  
+.bg-tactical {
+  background: linear-gradient(
+    to bottom,
+    #040c18 0%,    
+    #0a1f3d 100%   
+  ) !important;
 }
 
-.bg-tactical {
-  background-color: #040c18 !important; 
+.bg-tactical-reverse {
+  background: linear-gradient(
+    to bottom,
+    #0d2a4d 0%,  
+    #040c18 50% 
+  ) !important;
 }
 
 .header-border {

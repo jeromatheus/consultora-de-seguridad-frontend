@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { routes } from "../constants/routes";
 import { useScrollTo } from "../hooks/useScrollTo";
 
 function Footer() {
@@ -13,67 +14,34 @@ function Footer() {
   };
 
   return (
-    <footer className="py-3 footer-border bg-tactical">
+    <footer className="py-3 footer-border bg-tactical-reverse">
       <Container fluid className="px-5">
         <Row>
           {/* COLUMNA 1: LOGO */}
-          <Col md={4} className="mb-4 mb-md-0">
-            <img
-              src="https://placehold.co/100x50"
-              alt="Logo Footer"
-              className="d-block mb-3"
-            />
+          <Col xs={12} md={4} className="mb-4 mb-md-0 h-100 d-flex">
+            {/* <div> */}
+              <img
+                src="../logo.png"
+                alt="Logo Footer"
+              />
+            {/* </div> */}
           </Col>
 
           {/* COLUMNA 2: ENLACES RÁPIDOS */}
           <Col md={4} xs={6} className="mb-4 mb-md-0">
             <h5 className="mb-3">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
-              <li>
-                <a
-                  href="#inicio"
-                  className="nav-link"
-                  onClick={(e) => handleNavClick(e, "inicio")}
-                >
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#nosotros"
-                  className="nav-link"
-                  onClick={(e) => handleNavClick(e, "nosotros")}
-                >
-                  Nosotros
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#servicios"
-                  className="nav-link"
-                  onClick={(e) => handleNavClick(e, "servicios")}
-                >
-                  Servicios
-                </a>
-              </li>
-              <li>
-                <li>
+              {routes.map((route) => (
+                <li key={route.id}>
                   <a
-                    href="#diferencial"
+                    href={`#${route.id}`}
                     className="nav-link"
-                    onClick={(e) => handleNavClick(e, "diferencial")}
+                    onClick={(e) => handleNavClick(e, route.id)}
                   >
-                    Diferencial
-                  </a>
-                  <a
-                    href="#contacto"
-                    className="nav-link"
-                    onClick={(e) => handleNavClick(e, "contacto")}
-                  >
-                    Contacto
+                    {route.label}
                   </a>
                 </li>
-              </li>
+              ))}
             </ul>
           </Col>
 
@@ -89,7 +57,7 @@ function Footer() {
           </Col>
         </Row>
 
-        {/* LEGAL */}
+        {/* SUBTÍTULO: LEGAL */}
         <hr className="my-3" />
         <Row>
           <Col className="text-center">
