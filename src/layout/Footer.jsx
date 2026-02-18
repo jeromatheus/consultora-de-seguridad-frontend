@@ -6,34 +6,38 @@ import { useScrollTo } from "../hooks/useScrollTo";
 import qrAfip from "../assets/mockup_qr.png";
 
 function Footer() {
+  const arcaLink = "https://www.arca.gob.ar";
   const scrollTo = useScrollTo(80);
 
   const handleNavClick = (e, id) => {
-    e.preventDefault(); 
-    scrollTo(id); 
+    e.preventDefault();
+    scrollTo(id);
   };
 
   return (
-    <footer className="py-3 footer-border bg-tactical-reverse">
+    <footer className="py-4 footer-border bg-tactical-reverse">
       <Container fluid className="px-5">
-        <Row>
+        <Row className="align-items-start">
+          
           {/* COLUMNA 1: LOGO */}
-          <Col md={2} xs={12} className="mb-4 mb-md-0 h-100 d-flex">
-              <img
-                src="./logo.png"
-                alt="Logo Footer"
-              />
+          <Col md={3} xs={6} className="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+            <img 
+              src="./logo.png" 
+              alt="Logo Footer" 
+              className="footer-img" 
+              onClick={(e) => handleNavClick(e, "inicio")}
+            />
           </Col>
 
-          {/* COLUMNA 2: ENLACES RÁPIDOS */}
-          <Col md={4} xs={4} className="mb-4 mb-md-0">
+          {/* COLUMNA 2: NAVEGACIÓN */}
+          <Col md={3} xs={6} className="mb-4 mb-md-0">
             <h5 className="mb-3 text-uppercase fw-bold">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               {routes.map((route) => (
                 <li key={route.id}>
                   <a
                     href={`#${route.id}`}
-                    className="nav-link"
+                    className="nav-link p-0"
                     onClick={(e) => handleNavClick(e, route.id)}
                   >
                     {route.label}
@@ -44,29 +48,39 @@ function Footer() {
           </Col>
 
           {/* COLUMNA 3: CONTACTO */}
-          <Col md={4} xs={4}>
+          <Col md={3} xs={6} className="mb-4 mb-md-0">
             <h5 className="mb-3 text-uppercase fw-bold">Contacto</h5>
-            <ul className="list-unstyled d-flex flex-column gap-2">
-              <li>Av. Corrientes 1234, CABA</li>
-              <li>+54 9 11 1234-5678</li>
-              <li>contacto@seguridadortiz.com</li>
+            <ul className="list-unstyled d-flex flex-column gap-2 contact-list">
+              <li>
+                <a href="tel:+5493816100000">+54 9 381 6 100-000</a>
+              </li>
+              <li>
+                <a href="mailto:contacto@seguridadortiz.com">contacto@seguridadortiz.com</a>
+              </li>
               <li>Lunes a Viernes 9hs a 18hs</li>
+              <li>Yerba Buena, Tucumán, Argentina.</li>
             </ul>
           </Col>
 
-        {/* COLUMNA 4: QR AFIP */}
-          <Col md={2} xs={4} className="mb-4 mb-md-0 h-100 d-flex">
-              <img
-                  src={qrAfip} 
+          {/* COLUMNA 4: QR AFIP */}
+          <Col md={3} xs={6} className="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+            <a 
+                href={arcaLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="d-block"
+              >
+                <img
+                  src={qrAfip}
                   alt="Data Fiscal ARCA"
-                  style={{ width: '60px', height: 'auto' }} // Control de tamaño vital para el footer
-              />
-          </Col>          
-
+                  className="footer-img"
+                />
+              </a>
+          </Col>
         </Row>
 
-        {/* SUBTÍTULO: LEGAL */}
-        <hr className="my-3" />
+        <hr className="my-3 opacity-25" />
+        
         <Row>
           <Col className="text-center">
             <p className="small text-secondary mb-0">

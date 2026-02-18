@@ -12,10 +12,7 @@ function Header() {
   return (
     <Navbar expand="lg" className="bg-tactical header-border">
       <Container fluid className="px-5">
-        <Navbar.Brand 
-          style={{ cursor: 'pointer' }} 
-          onClick={() => scrollTo("inicio")}
-        >
+        <Navbar.Brand onClick={() => scrollTo("inicio")}>
           <img
             alt="Logo"
             src="../logo.png"
