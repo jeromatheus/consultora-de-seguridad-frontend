@@ -10,9 +10,12 @@ function Header() {
   const scrollTo = useScrollTo(80);
 
   return (
-    <Navbar fixed="top" expand="lg" className="bg-tactical header-border">
+    <Navbar expand="lg" className="bg-tactical header-border">
       <Container fluid className="px-5">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand 
+          style={{ cursor: 'pointer' }} 
+          onClick={() => scrollTo("inicio")}
+        >
           <img
             alt="Logo"
             src="../logo.png"
@@ -39,7 +42,7 @@ function Header() {
 
           <div className="d-flex justify-content-center mt-3 mt-lg-0">
             <Button 
-              size="sm"              
+              size="sm"             
               className="btn-tactical px-3"
               onClick={() => scrollTo("contacto")}
             >

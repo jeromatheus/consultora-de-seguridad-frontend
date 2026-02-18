@@ -55,10 +55,9 @@ function StartSection() {
               <div className={styles.contentWrapper}>
                 <h1 className={styles.title}>{slide.title}</h1>
                 <p className={styles.subtitle}>{slide.subtitle}</p>
-
                 <Button
                   size="lg"
-                  className="btn-tactical mt-4"
+                  className="btn-tactical"
                   onClick={() => scrollTo("contacto")}
                 >
                   Agendar Consulta de Diagnóstico

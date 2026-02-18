@@ -1,6 +1,6 @@
 .heroCarousel {
   position: relative;
-  height: 80vh; 
+  height: 80vh;
   width: 100%;
   overflow: hidden;
   background-color: var(--bg-black);
@@ -8,7 +8,7 @@
 }
 
 .carouselItem {
-  height: 100%;
+  height: 80vh;
   width: 100%;
   position: relative;
 }
@@ -18,7 +18,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block; 
+  display: block;
 }
 
 .overlay {
@@ -41,36 +41,54 @@
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 0 20px; 
+  padding-bottom: 12vh;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .contentWrapper {
-  max-width: 800px;
+  width: 100%;
+  max-width: 900px;
   text-align: center;
   animation: fadeInUp 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .title {
+  margin: 0;
   font-weight: 700;
   line-height: 1.1;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.8rem, 6vw, 4.2rem);
   text-transform: uppercase;
   text-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 
 .subtitle {
+  margin: 0;
   font-weight: 300;
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  line-height: 1.4;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   color: var(--text-secondary);
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  max-width: 750px;
+}
+
+.contentWrapper :global(.btn-tactical) {
+  width: auto !important;
+  min-width: fit-content;
+  padding: 12px 35px;
+  display: inline-block;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
