@@ -3,17 +3,27 @@
   text-align: center;
   border-radius: 2px;
   transition: transform 0.3s ease;
+  background: linear-gradient(145deg, #111, #1c1c1c);
 }
 
 .serviceCard:hover {
-  transform: translateY(-10px);
+  transform: translateY(-6px) scale(1.02);
 }
 
 .cardBody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem;
+  padding: 1.6rem;
+  border-radius: 4px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03),
+    rgba(0,0,0,0.25)
+  );
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.04),
+    inset 0 -25px 45px -20px rgba(0, 0, 0, 0.7);
 }
 
 .cardImage {
@@ -24,17 +34,28 @@
 }
 
 .cardTitle {
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-weight: 600!important;
   margin-top: 1rem;
+  font-size: 1.4rem!important;
+  color: #fff !important;  
 }
 
 .separator {
-  border: 0;
-  width: 90%;
-  margin: 1rem auto;
+  border: none;
+  height: 1px;
+  width: 85%;
+  margin: 1.2rem auto;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 50px;
 }
+
 
 .cardText {
   font-size: 0.95rem;

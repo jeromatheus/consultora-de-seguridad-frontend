@@ -28,7 +28,7 @@
     rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0.05)
   );
-  border-radius: 10px;
+  border-radius: 2px;
   pointer-events: none;
 }
 
@@ -58,21 +58,15 @@
 .flipCardBack {
   position: absolute;
   inset: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 25px;
   text-align: center;
-
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
-
   backface-visibility: hidden;
-
-  /* Fondo oscuro premium */
   background: linear-gradient(145deg, #111, #1c1c1c);
   color: #d4d4d4;
 }
@@ -102,16 +96,4 @@
 
 .flipCard:hover .iconClass {
   transform: scale(1.1);
-}
-
-
-/* ===============================
-   TEXTO AUXILIAR
-================================= */
-
-.tapHint {
-  margin-top: 15px;
-  font-size: 0.8rem;
-  opacity: 0.6;
-  letter-spacing: 1px;
 }

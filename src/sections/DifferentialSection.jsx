@@ -1,5 +1,4 @@
 import { Row, Col } from "react-bootstrap";
-import { FaUserShield, FaCertificate, FaFileShield } from "react-icons/fa6";
 
 const DifferentialSection = () => {
   const iconSize = 60;
@@ -15,21 +14,21 @@ const DifferentialSection = () => {
       <Row className="text-center justify-content-center">
         
         <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
-          <FaUserShield size={iconSize} className={iconClass} />
+          {/* <FaUserShield size={iconSize} className={iconClass} /> */}
           <h5 className="silver-metallic text-center">
             Ex-Fuerzas Armadas / ONU
           </h5>
         </Col>
 
         <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
-          <FaCertificate size={iconSize} className={iconClass} />
+          {/* <FaCertificate size={iconSize} className={iconClass} /> */}
           <h5 className="silver-metallic text-center">
             Certificaciones de Servicio
           </h5>
         </Col>
 
         <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
-          <FaFileShield size={iconSize} className={iconClass} />
+          {/* <FaFileShield size={iconSize} className={iconClass} /> */}
           <h5 className="silver-metallic text-center">
             Ley 25.326 de Seguridad de Datos
           </h5>
