@@ -6,8 +6,7 @@
   justify-content: center;
   text-align: center;
   color: white;
-  min-height: 60vh; 
-  /* Imagen de fondo */
+  min-height: 85vh; 
   background-image: url('https://placehold.co/1920x1080?text=.');
   background-size: cover;
   background-position: center;

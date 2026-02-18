@@ -1,8 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import styles from "./StartSection.module.css";
+import { useScrollTo } from "../hooks/useScrollTo";
 
 function StartSection() {
+  const scrollTo = useScrollTo(80);
+
   return (
     <section className={styles.heroSection}>
       <div className={styles.overlay}></div>
@@ -12,12 +15,16 @@ function StartSection() {
             Capacidad Estratégica y Despliegue Táctico de Nivel Global
           </h1>
           <p className={styles.subtitle}>
-            Consultoría de alta especialización integrada por profesionales de 
-            las Fuerzas Armadas y Organismos Internacionales (ONU). Soluciones 
+            Consultoría de alta especialización integrada por profesionales de
+            las Fuerzas Armadas y Organismos Internacionales (ONU). Soluciones
             integrales en seguridad personal, logística de valores y análisis de
             información para la toma de decisiones.
           </p>
-          <Button size="lg" className="btn-tactical">
+          <Button
+            size="lg"
+            className="btn-tactical"
+            onClick={() => scrollTo("contacto")}
+          >
             Agendar Consulta de Diagnóstico de Riesgos
           </Button>
         </div>

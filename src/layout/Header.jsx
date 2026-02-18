@@ -41,6 +41,7 @@ function Header() {
             <Button 
               size="sm"              
               className="btn-tactical px-3"
+              onClick={() => scrollTo("contacto")}
             >
               Consulta de Riesgos
             </Button>

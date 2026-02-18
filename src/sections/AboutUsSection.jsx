@@ -1,27 +1,28 @@
 import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import { FaUserShield, FaGlobeAmericas, FaCertificate } from "react-icons/fa";
+import onuLogo from "../assets/onu_logo.png";
+import certificationLogo from "../assets/international_certification_logo.png";
+import special_forces_logo from "../assets/special_forces_logo.png";
 import styles from "./AboutUsSection.module.css";
 
 const AboutUsSection = () => {
   const [activeCards, setActiveCards] = useState([]);
-  const iconSize = 50;
 
   const cardsData = [
     {
-      icon: "FaUserShield",
+      image: special_forces_logo, 
       title: "Veteranos de Fuerzas Especiales",
       description:
         "Personal con experiencia real en operaciones especiales y gestión de seguridad estratégica.",
     },
     {
-      icon: FaGlobeAmericas,
+      image: onuLogo, 
       title: "Misiones ONU en Zonas de Conflicto",
       description:
         "Participación activa en operaciones internacionales de mantenimiento de paz y gestión de crisis.",
     },
     {
-      icon: FaCertificate,
+      image: certificationLogo, 
       title: "Certificaciones Internacionales",
       description:
         "Formación certificada bajo estándares internacionales en seguridad, defensa y análisis estratégico.",
@@ -44,7 +45,6 @@ const AboutUsSection = () => {
 
       <Row className="mt-5">
         {cardsData.map((card, index) => {
-          const IconComponent = card.icon;
           const isFlipped = activeCards.includes(index);
 
           return (
@@ -59,9 +59,10 @@ const AboutUsSection = () => {
                   
                   {/* FRONT */}
                   <div className={styles.flipCardFront}>
-                    <IconComponent
-                      size={iconSize}
-                      className={styles.iconClass}
+                    <img 
+                      src={card.image} 
+                      alt={card.title}
+                      className={`mb-3 ${styles.iconClass}`}
                     />
                     <h5 className="silver-metallic">{card.title}</h5>
                   </div>

@@ -95,6 +95,9 @@
   color: #c0c0c0;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
 }
 
 .flipCard:hover .iconClass {
