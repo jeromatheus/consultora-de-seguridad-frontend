@@ -3,34 +3,38 @@ import { FaUserShield, FaCertificate, FaFileShield } from "react-icons/fa6";
 
 const DifferentialSection = () => {
   const iconSize = 60;
-  const iconClass = "mb-3 text-primary";
+  const iconClass = "mb-3";
+  const link = "https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/texto";
 
   return (
     <>
-      {/* <div className="text-center border-top border-bottom text-white my-5">
-        <h2 className="py-2">
-          Compromiso Legal y Ético
-        </h2>
-      </div> */}
-      <div className="section-header">
-        <h2 className="section-title">Nuestro Diferencial</h2>
+      <div className="section-header text-center mb-5">
+        <h2 className="section-title text-white">Nuestro Diferencial</h2>
       </div>
 
       <Row className="text-center justify-content-center">
-        <Col xs={4} className="mb-4 mb-md-0">
+        
+        <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
           <FaUserShield size={iconSize} className={iconClass} />
-          <h5>Ex-Fuerzas Armadas / ONU</h5>
+          <h5 className="silver-metallic text-center">
+            Ex-Fuerzas Armadas / ONU
+          </h5>
         </Col>
 
-        <Col xs={4} className="mb-4 mb-md-0">
+        <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
           <FaCertificate size={iconSize} className={iconClass} />
-          <h5>Certificaciones de Servicio</h5>
+          <h5 className="silver-metallic text-center">
+            Certificaciones de Servicio
+          </h5>
         </Col>
 
-        <Col xs={4}>
+        <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
           <FaFileShield size={iconSize} className={iconClass} />
-          <h5>Ley 25.326 de Seguridad de Datos</h5>
+          <h5 className="silver-metallic text-center">
+            Ley 25.326 de Seguridad de Datos
+          </h5>
         </Col>
+
       </Row>
     </>
   );

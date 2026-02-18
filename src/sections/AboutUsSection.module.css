@@ -1,0 +1,114 @@
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================= */
+
+.flipCard {
+  position: relative;
+  perspective: 1200px;
+  height: 260px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.flipCard:hover {
+  transform: translateY(-6px);
+}
+
+/* Borde derecho con gradiente blanco */
+.flipCard::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 1px;
+  height: 80%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.05)
+  );
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+
+/* ===============================
+   CONTENEDOR INTERNO 3D
+================================= */
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flipped .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+
+/* ===============================
+   CARAS FRONT / BACK
+================================= */
+
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px;
+  text-align: center;
+
+  border-radius: 4px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+
+  backface-visibility: hidden;
+
+  /* Fondo oscuro premium */
+  background: linear-gradient(145deg, #111, #1c1c1c);
+  color: #d4d4d4;
+}
+
+.flipCardFront {
+  z-index: 2;
+}
+
+.flipCardBack {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, #1a1a1a, #000);
+}
+
+
+/* ===============================
+   ICONO
+================================= */
+
+.iconClass {
+  color: #c0c0c0;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.flipCard:hover .iconClass {
+  transform: scale(1.1);
+}
+
+
+/* ===============================
+   TEXTO AUXILIAR
+================================= */
+
+.tapHint {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  letter-spacing: 1px;
+}

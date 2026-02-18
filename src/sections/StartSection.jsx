@@ -12,9 +12,10 @@ function StartSection() {
             Capacidad Estratégica y Despliegue Táctico de Nivel Global
           </h1>
           <p className={styles.subtitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris.
+            Consultoría de alta especialización integrada por profesionales de 
+            las Fuerzas Armadas y Organismos Internacionales (ONU). Soluciones 
+            integrales en seguridad personal, logística de valores y análisis de
+            información para la toma de decisiones.
           </p>
           <Button size="lg" className="btn-tactical">
             Agendar Consulta de Diagnóstico de Riesgos

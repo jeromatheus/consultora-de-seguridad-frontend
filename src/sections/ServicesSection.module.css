@@ -1,0 +1,41 @@
+.serviceCard {
+  height: 100%;
+  text-align: center;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.cardImage {
+  object-fit: cover;
+  height: 400px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.cardTitle {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.separator {
+  border: 0;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.cardText {
+  font-size: 0.95rem;
+}

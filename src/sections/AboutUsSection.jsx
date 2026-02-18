@@ -1,52 +1,82 @@
+import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
-import { FaUserShield, FaGlobeAmericas, FaCertificate } from 'react-icons/fa';
+import { FaUserShield, FaGlobeAmericas, FaCertificate } from "react-icons/fa";
+import styles from "./AboutUsSection.module.css";
 
 const AboutUsSection = () => {
+  const [activeCards, setActiveCards] = useState([]);
   const iconSize = 50;
-  const iconClass = "me-3 text-primary flex-shrink-0"; 
+
+  const cardsData = [
+    {
+      icon: "FaUserShield",
+      title: "Veteranos de Fuerzas Especiales",
+      description:
+        "Personal con experiencia real en operaciones especiales y gestión de seguridad estratégica.",
+    },
+    {
+      icon: FaGlobeAmericas,
+      title: "Misiones ONU en Zonas de Conflicto",
+      description:
+        "Participación activa en operaciones internacionales de mantenimiento de paz y gestión de crisis.",
+    },
+    {
+      icon: FaCertificate,
+      title: "Certificaciones Internacionales",
+      description:
+        "Formación certificada bajo estándares internacionales en seguridad, defensa y análisis estratégico.",
+    },
+  ];
+
+  const handleFlip = (index) => {
+    setActiveCards((prev) =>
+      prev.includes(index)
+        ? prev.filter((i) => i !== index)
+        : [...prev, index] 
+    );
+  };
 
   return (
     <>
       <div className="section-header">
-        <h2 className="section-title">
-          ¿Quiénes Somos?
-        </h2>
-      </div>         
-      
+        <h2 className="section-title">¿Quiénes Somos?</h2>
+      </div>
+
       <Row className="mt-5">
-        <Col xs={4} className="mb-4 mb-md-0">
-          <div className="d-flex align-items-center justify-content-center">
-            <FaUserShield size={iconSize} className={iconClass} />
-            <h5>
-              Veteranos de Fuerzas Especiales
-            </h5>
-          </div>
-        </Col>
+        {cardsData.map((card, index) => {
+          const IconComponent = card.icon;
+          const isFlipped = activeCards.includes(index);
 
-        <Col xs={4} className="mb-4 mb-md-0">
-          <div className="d-flex align-items-center justify-content-center">
-            <FaGlobeAmericas size={iconSize} className={iconClass} />
-            <h5>
-              Misiones ONU en Zonas de Conflicto
-            </h5>
-          </div>
-        </Col>
+          return (
+            <Col key={index} xs={12} md={4} className="mb-4">
+              <div
+                className={`${styles.flipCard} ${
+                  isFlipped ? styles.flipped : ""
+                }`}
+                onClick={() => handleFlip(index)}
+              >
+                <div className={styles.flipCardInner}>
+                  
+                  {/* FRONT */}
+                  <div className={styles.flipCardFront}>
+                    <IconComponent
+                      size={iconSize}
+                      className={styles.iconClass}
+                    />
+                    <h5 className="silver-metallic">{card.title}</h5>
+                  </div>
 
-        <Col xs={4} className="mb-4">
-          <div className="d-flex align-items-center justify-content-center">
-            <FaCertificate size={iconSize} className={iconClass} />
-            <h6>
-              Certificaciones Internacionales
-            </h6>
-          </div>
-        </Col>
+                  {/* BACK */}
+                  <div className={styles.flipCardBack}>
+                    <p>{card.description}</p>
+                  </div>
+
+                </div>
+              </div>
+            </Col>
+          );
+        })}
       </Row>
-      {/* <div className="text-center border-top border-bottom text-white my-5">
-          <h2 className="py-2">El Valor de la Experiencia Certificada</h2>
-          <div className="py-2 border-top">
-            <h3>"La seguridad no es un servicio, es una ciencia de precisión"</h3>
-          </div>
-      </div>     */}      
     </>
   );
 };

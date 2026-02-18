@@ -1,4 +1,5 @@
 import { Row, Col, Card } from "react-bootstrap";
+import styles from './ServicesSection.module.css';
 
 const ServicesSection = () => {
   const services = [
@@ -29,20 +30,30 @@ const ServicesSection = () => {
       <div className="section-header">
         <h2 className="section-title">SERVICIOS</h2>
       </div>
+      
       <Row className="g-4">
         {services.map((service, index) => (
           <Col xs={12} md={6} lg={3} key={index}>
-            <Card className="h-100 text-center">
+            <Card className={styles.serviceCard}>             
               <Card.Img
                 variant="top"
                 src={service.img}
                 alt={service.title}
-                //   style={{ objectFit: 'cover', height: '200px', opacity: 0.8 }}
+                className={styles.cardImage} 
               />
-              <Card.Body className="d-flex flex-column justify-content-center">
-                <Card.Title className="fs-6">{service.title}</Card.Title>
-                <hr />
-                <Card.Text>{service.text}</Card.Text>
+              
+              <Card.Body className={styles.cardBody}>
+                <div>
+                  <Card.Title className={styles.cardTitle}>
+                    {service.title}
+                  </Card.Title>
+                  
+                  <hr className={styles.separator} />
+                  
+                  <Card.Text className={styles.cardText}>
+                    {service.text}
+                  </Card.Text>
+                </div>
               </Card.Body>
             </Card>
           </Col>
