@@ -1,0 +1,56 @@
+.contactContainer {
+  background: var(--bg-black);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.formCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; 
+}
+
+.contactInfo {
+  color: var(--text-muted); 
+  font-size: 0.75rem;
+  margin-left: 4px;
+}
+
+.btnWhatsapp {
+  background-color: #25d366 !important;
+  border: none !important;
+  font-weight: 600;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+}
+
+.btnWhatsapp:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.btnEmail {
+  background: var(--bg-main) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-weight: 600;
+  transition: all 0.3s ease !important;
+}
+
+.btnEmail:hover {
+  background: var(--bg-black) !important;
+  border-color: var(--text-muted) !important;
+}
