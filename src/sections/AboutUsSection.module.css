@@ -1,20 +1,19 @@
 /* ===============================
    CONTENEDOR PRINCIPAL
 ================================= */
-
 .flipCard {
   position: relative;
   perspective: 1200px;
   height: 260px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: var(--trans-std);
 }
 
 .flipCard:hover {
-  transform: translateY(-6px);
+  transform: var(--trans-hover);
 }
 
-/* Borde derecho con gradiente blanco */
+/* Borde derecho (Línea vertical) */
 .flipCard::after {
   content: "";
   position: absolute;
@@ -22,21 +21,14 @@
   right: 0;
   width: 1px;
   height: 80%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.05),
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: var(--grad-line-v); /* Variable Global */
   border-radius: 2px;
   pointer-events: none;
 }
 
-
 /* ===============================
    CONTENEDOR INTERNO 3D
 ================================= */
-
 .flipCardInner {
   position: relative;
   width: 100%;
@@ -49,11 +41,9 @@
   transform: rotateY(180deg);
 }
 
-
 /* ===============================
    CARAS FRONT / BACK
 ================================= */
-
 .flipCardFront,
 .flipCardBack {
   position: absolute;
@@ -65,30 +55,28 @@
   padding: 25px;
   text-align: center;
   border-radius: 2px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-depth); /* Variable Global */
   backface-visibility: hidden;
-  background: linear-gradient(145deg, #111, #1c1c1c);
-  color: #d4d4d4;
+  color: var(--text-secondary);
 }
 
 .flipCardFront {
   z-index: 2;
+  background: var(--grad-card-base); /* Variable Global */
 }
 
 .flipCardBack {
   transform: rotateY(180deg);
-  background: linear-gradient(145deg, #1a1a1a, #000);
+  background: var(--grad-card-rev); /* Variable Global */
 }
-
 
 /* ===============================
    ICONO
 ================================= */
-
 .iconClass {
-  color: #c0c0c0;
+  color: var(--text-muted);
   margin-bottom: 15px;
-  transition: transform 0.3s ease;
+  transition: var(--trans-std);
   height: 60px;
   width: 60px;
   object-fit: contain;

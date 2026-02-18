@@ -1,9 +1,30 @@
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Carousel } from "react-bootstrap";
+import data_protection_logo from "../assets/data_protection_logo.png";
+import styles from "./DifferentialSection.module.css";
 
 const DifferentialSection = () => {
-  const iconSize = 60;
-  const iconClass = "mb-3";
-  const link = "https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/texto";
+  const commonImage = data_protection_logo;
+  const commonLink = "https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/texto";
+
+  const items = [
+    { id: 1, title: "Ex-Fuerzas Armadas / ONU", isLink: false },
+    { id: 2, title: "Certificaciones de Servicio", isLink: false },
+    { id: 3, title: "Ley 25.326 de Seguridad de Datos", isLink: true }, 
+    { id: 4, title: "Protocolos de Ciberseguridad", isLink: true },     
+    { id: 5, title: "Análisis de Riesgo Corporativo", isLink: false },
+    { id: 6, title: "Logística de Valores", isLink: true }              
+  ];
+
+  // FUNCIÓN AUXILIAR: Agrupar los items en paquetes de 3
+  const chunkArray = (array, size) => {
+    const chunked = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunked.push(array.slice(i, i + size));
+    }
+    return chunked;
+  };
+
+  const slides = chunkArray(items, 3);
 
   return (
     <>
@@ -11,30 +32,52 @@ const DifferentialSection = () => {
         <h2 className="section-title text-white">Nuestro Diferencial</h2>
       </div>
 
-      <Row className="text-center justify-content-center">
-        
-        <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
-          {/* <FaUserShield size={iconSize} className={iconClass} /> */}
-          <h5 className="silver-metallic text-center">
-            Ex-Fuerzas Armadas / ONU
-          </h5>
-        </Col>
+      <div className={styles.sectionContainer}>
+        <Carousel 
+          indicators={true} 
+          interval={null}
+          controls={true} 
+          className="pb-5" 
+        >
+          {slides.map((group, slideIndex) => (
+            <Carousel.Item key={slideIndex}>
+              <Row className="justify-content-center">
+                {group.map((item) => {
+                  const Wrapper = item.isLink ? 'a' : 'div';
+                  const linkProps = item.isLink ? {
+                    href: commonLink,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    className: `${styles.itemWrapper} ${styles.interactiveItem}`
+                  } : {
+                    className: styles.itemWrapper
+                  };
 
-        <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
-          {/* <FaCertificate size={iconSize} className={iconClass} /> */}
-          <h5 className="silver-metallic text-center">
-            Certificaciones de Servicio
-          </h5>
-        </Col>
-
-        <Col xs={12} md={4} className="mb-4 d-flex flex-column align-items-center">
-          {/* <FaFileShield size={iconSize} className={iconClass} /> */}
-          <h5 className="silver-metallic text-center">
-            Ley 25.326 de Seguridad de Datos
-          </h5>
-        </Col>
-
-      </Row>
+                  return (
+                    <Col xs={12} md={4} key={item.id} className="mb-4">
+                      <Wrapper {...linkProps}>
+                        <img
+                          src={commonImage}
+                          alt={item.title}
+                          className={styles.iconImage}
+                        />
+                        <h5 className="silver-metallic text-center px-3">
+                          {item.title}
+                        </h5>
+                        {item.isLink && (
+                          <small className="text-muted mt-2" style={{fontSize: '0.7rem'}}>
+                            (Ver más)
+                          </small>
+                        )}
+                      </Wrapper>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
     </>
   );
 };

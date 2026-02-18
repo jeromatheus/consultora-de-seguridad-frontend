@@ -3,14 +3,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { routes } from "../constants/routes";
 import { useScrollTo } from "../hooks/useScrollTo";
+import qrAfip from "../assets/mockup_qr.png";
 
 function Footer() {
   const scrollTo = useScrollTo(80);
 
-  // Función auxiliar para mantener el código limpio en el JSX
   const handleNavClick = (e, id) => {
-    e.preventDefault(); // Evita que el navegador "salte" de golpe
-    scrollTo(id); // Ejecuta el scroll suave
+    e.preventDefault(); 
+    scrollTo(id); 
   };
 
   return (
@@ -18,17 +18,15 @@ function Footer() {
       <Container fluid className="px-5">
         <Row>
           {/* COLUMNA 1: LOGO */}
-          <Col xs={12} md={4} className="mb-4 mb-md-0 h-100 d-flex">
-            {/* <div> */}
+          <Col md={2} xs={12} className="mb-4 mb-md-0 h-100 d-flex">
               <img
-                src="../logo.png"
+                src="./logo.png"
                 alt="Logo Footer"
               />
-            {/* </div> */}
           </Col>
 
           {/* COLUMNA 2: ENLACES RÁPIDOS */}
-          <Col md={4} xs={6} className="mb-4 mb-md-0">
+          <Col md={4} xs={4} className="mb-4 mb-md-0">
             <h5 className="mb-3 text-uppercase fw-bold">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               {routes.map((route) => (
@@ -46,7 +44,7 @@ function Footer() {
           </Col>
 
           {/* COLUMNA 3: CONTACTO */}
-          <Col md={4} xs={6}>
+          <Col md={4} xs={4}>
             <h5 className="mb-3 text-uppercase fw-bold">Contacto</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               <li>Av. Corrientes 1234, CABA</li>
@@ -55,6 +53,16 @@ function Footer() {
               <li>Lunes a Viernes 9hs a 18hs</li>
             </ul>
           </Col>
+
+        {/* COLUMNA 4: QR AFIP */}
+          <Col md={2} xs={4} className="mb-4 mb-md-0 h-100 d-flex">
+              <img
+                  src={qrAfip} 
+                  alt="Data Fiscal ARCA"
+                  style={{ width: '60px', height: 'auto' }} // Control de tamaño vital para el footer
+              />
+          </Col>          
+
         </Row>
 
         {/* SUBTÍTULO: LEGAL */}

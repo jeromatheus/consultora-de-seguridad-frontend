@@ -1,4 +1,4 @@
-section {
+.page-section {
   margin-bottom: 5rem;
   min-height: 25vh;
 }
@@ -6,16 +6,16 @@ section {
 .bg-tactical {
   background: linear-gradient(
     to bottom,
-    #040c18 0%,    
-    #0a1f3d 100%   
+    var(--bg-black) 0%,    
+    var(--bg-main) 100%   
   ) !important;
 }
 
 .bg-tactical-reverse {
   background: linear-gradient(
     to bottom,
-    #0d2a4d 0%,  
-    #040c18 50% 
+    var(--bg-main) 0%,  
+    var(--bg-black) 50% 
   ) !important;
 }
 
@@ -36,14 +36,13 @@ section {
 }
 
 .nav-link {
-  color: #ffffff !important; 
+  color: var(--text-white) !important;
   font-weight: 500; 
   text-decoration: none;
-  font-size: 1.1rem!important;
+  font-size: 1.1rem !important;
+  transition: color 0.3s ease; 
 }
 
 .nav-link:hover {
-  color: #bfc1e0 !important; 
-  font-weight: 500; 
-  text-decoration: none;
+  color: var(--text-muted) !important; 
 }

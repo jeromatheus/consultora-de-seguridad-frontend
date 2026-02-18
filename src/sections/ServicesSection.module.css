@@ -2,12 +2,21 @@
   height: 100%;
   text-align: center;
   border-radius: 2px;
-  transition: transform 0.3s ease;
-  background: linear-gradient(145deg, #111, #1c1c1c);
+  transition: var(--trans-std);
+  background: var(--grad-card-base);
+  cursor: pointer;
 }
 
 .serviceCard:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: var(--trans-hover) scale(1.02);
+}
+
+.serviceCard:hover .overlay {
+  opacity: 1;
+}
+
+.serviceCard:hover .viewMoreText {
+  transform: translateY(0);
 }
 
 .cardBody {
@@ -16,14 +25,14 @@
   justify-content: space-between;
   padding: 1.6rem;
   border-radius: 4px;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.03),
-    rgba(0,0,0,0.25)
-  );
-  box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.04),
-    inset 0 -25px 45px -20px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.25));
+  box-shadow: var(--shadow-plastic);
+}
+
+.imgContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px 2px 0 0;
 }
 
 .cardImage {
@@ -33,11 +42,40 @@
   border-radius: 2px;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.viewMoreText {
+  color: #fff;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1.5rem;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
 .cardTitle {
-  font-weight: 600!important;
+  font-weight: 600 !important;
   margin-top: 1rem;
-  font-size: 1.4rem!important;
-  color: #fff !important;  
+  font-size: 1.4rem !important;
+  color: var(--text-white) !important;
 }
 
 .separator {
@@ -45,18 +83,11 @@
   height: 1px;
   width: 85%;
   margin: 1.2rem auto;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.02),
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.02)
-  );
+  background: var(--grad-line-h);
   border-radius: 50px;
 }
 
-
 .cardText {
   font-size: 0.95rem;
+  color: var(--text-secondary);
 }

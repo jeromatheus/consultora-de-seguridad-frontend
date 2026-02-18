@@ -35,12 +35,20 @@ const ServicesSection = () => {
         {services.map((service, index) => (
           <Col xs={12} md={6} lg={3} key={index}>
             <Card className={`${styles.serviceCard} h-100`}>
-              <Card.Img
-                variant="top"
-                src={service.img}
-                alt={service.title}
-                className={styles.cardImage}
-              />
+              
+              <div className={styles.imgContainer}>
+                <Card.Img
+                  variant="top"
+                  src={service.img}
+                  alt={service.title}
+                  className={styles.cardImage}
+                />
+                
+                <div className={styles.overlay}>
+                  <span className={styles.viewMoreText}>Ver más</span>
+                </div>
+              </div>
+
               <Card.Body className={styles.cardBody}>
                 <Card.Title className={styles.cardTitle}>
                   {service.title}

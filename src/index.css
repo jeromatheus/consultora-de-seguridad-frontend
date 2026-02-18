@@ -1,8 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap');
 
+:root {
+  /* --- PALETA DE COLORES --- */
+  --bg-main: #0d1b2a;
+  --bg-dark-1: #111;
+  --bg-dark-2: #1c1c1c;
+  --bg-dark-3: #1a1a1a;
+  --bg-black: #000;
+  
+  --text-white: #ffffff;
+  --text-primary: #f8f9fa;
+  --text-secondary: #d4d4d4;
+  --text-muted: #c0c0c0;
+
+  /* --- GRADIENTES --- */
+  /* Fondo base para tarjetas */
+  --grad-card-base: linear-gradient(145deg, var(--bg-dark-1), var(--bg-dark-2));
+  /* Fondo reverso (para el dorso de las tarjetas flip) */
+  --grad-card-rev: linear-gradient(145deg, var(--bg-dark-3), var(--bg-black));
+  /* Efecto Metal Plateado */
+  --grad-silver: linear-gradient(to bottom right, #7a7a7a 0%, #e8e8e8 40%, #999999 60%, #f0f0f0 100%);
+  
+  /* --- SEPARADORES DE LUZ --- */
+  /* Línea horizontal brillante */
+  --grad-line-h: linear-gradient(to right, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.4) 25%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0.02) 100%);
+  /* Línea vertical brillante */
+  --grad-line-v: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.9), rgba(255,255,255,0.05));
+
+  /* --- SOMBRAS Y EFECTOS --- */
+  /* Efecto "Plástico/Cóncavo" para containers internos */
+  --shadow-plastic: inset 0 2px 4px rgba(255, 255, 255, 0.04), inset 0 -25px 45px -20px rgba(0, 0, 0, 0.7);
+  /* Sombra de elevación fuerte */
+  --shadow-depth: 0 12px 30px rgba(0, 0, 0, 0.45);
+  
+  /* --- TRANSICIONES --- */
+  --trans-std: transform 0.3s ease;
+  --trans-hover: translateY(-6px);
+}
+
 body {
-  background-color: #0d1b2a; 
-  color: #f8f9fa; 
+  background-color: var(--bg-main); 
+  color: var(--text-primary); 
   font-family: 'Roboto', sans-serif;
 }
 
@@ -11,6 +49,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   letter-spacing: 1.5px; 
 }
 
+/* BOTÓN TÁCTICO GLOBAL */
 .btn-tactical {
   background-color: #1f468f !important; 
   border: 1px solid #476588 !important; 
@@ -20,7 +59,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   letter-spacing: 1px; 
   text-transform: uppercase;
   transition: all 0.3s ease;   
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.250) !important;  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.250) !important;
 }
 
 .btn-tactical:hover {
@@ -30,69 +69,45 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 .btn-tactical:active {
-  background-color: #0d1b2a !important; 
+  background-color: var(--bg-main) !important; 
   border-color: #475970 !important;
   transform: translateY(1px); 
   box-shadow: none;
 }
 
+/* HEADER DE SECCIÓN GLOBAL */
 .section-header {
   position: relative;
   text-align: center;
-  color: #ffffff;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  color: var(--text-white);
+  margin: 3rem 0;
   padding: 1rem 0;
 }
 
-/* Línea superior */
-.section-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.05) 0%,
-    rgba(255,255,255,0.8) 50%,
-    rgba(255,255,255,0.05) 100%
-  );
-}
-
-/* Línea inferior */
+.section-header::before,
 .section-header::after {
   content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(
-    to right,
-    rgba(255,255,255,0.05) 0%,
-    rgba(255,255,255,0.8) 50%,
-    rgba(255,255,255,0.05) 100%
-  );
+  /* Usamos la variable global optimizada */
+  background: var(--grad-line-h);
 }
+
+.section-header::before { top: 0; }
+.section-header::after { bottom: 0; }
 
 .section-title {
-  padding-top: 0.5rem;    
-  padding-bottom: 0.5rem; 
+  padding: 0.5rem 0; 
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 3em;
+  font-size: clamp(2rem, 5vw, 3em); /* Hice el título responsivo aquí también */
 }
 
+/* CLASE UTILITARIA TEXTO PLATA */
 .silver-metallic {
-  background: linear-gradient(
-    to bottom right, 
-    #7a7a7a 0%,   
-    #e8e8e8 40%,  
-    #999999 60%,  
-    #f0f0f0 100%  
-  );
+  background: var(--grad-silver);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

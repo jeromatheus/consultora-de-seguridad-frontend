@@ -10,7 +10,7 @@ function Header() {
   const scrollTo = useScrollTo(80);
 
   return (
-    <Navbar expand="lg" className="bg-tactical header-border">
+    <Navbar fixed="top" expand="lg" className="bg-tactical header-border">
       <Container fluid className="px-5">
         <Navbar.Brand href="#home">
           <img
