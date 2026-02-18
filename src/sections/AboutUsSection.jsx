@@ -10,37 +10,47 @@ const AboutUsSection = () => {
 
   const cardsData = [
     {
-      image: special_forces_logo, 
+      image: special_forces_logo,
       title: "Veteranos de Fuerzas Especiales",
-      description:
-        "Personal con experiencia real en operaciones especiales y gestión de seguridad estratégica.",
+      items: [
+        "Operaciones de Alta Complejidad",
+        "Especialistas en Contraterrorismo Urbano",
+        "Instrucción Avanzada en Tácticas de Defensa",
+        "Gestión de Seguridad en Entornos Hostiles"
+      ],
     },
     {
-      image: onuLogo, 
+      image: onuLogo,
       title: "Misiones ONU en Zonas de Conflicto",
-      description:
-        "Participación activa en operaciones internacionales de mantenimiento de paz y gestión de crisis.",
+      items: [
+        "Misión MINURSO, Sahara Occidental (1990)",
+        "Operaciones de Paz UNPROFOR, Balcanes (1992)",
+        "Misión de Estabilización MINUSTAH, Haití (2000)",
+        "Protocolos Internacionales de Protección Civil (2011)"
+      ],
     },
     {
-      image: certificationLogo, 
+      image: certificationLogo,
       title: "Certificaciones Internacionales",
-      description:
-        "Formación certificada bajo estándares internacionales en seguridad, defensa y análisis estratégico.",
+      items: [
+        "Certificación ISO 31000 Gestión de Riesgos",
+        "Estándares ANSI/ASIS en Seguridad Privada",
+        "Diplomado en Inteligencia Estratégica",
+        "Auditoría en Protección de Activos Críticos"
+      ],
     },
   ];
 
   const handleFlip = (index) => {
     setActiveCards((prev) =>
-      prev.includes(index)
-        ? prev.filter((i) => i !== index)
-        : [...prev, index] 
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
 
   return (
     <>
       <div className="section-header">
-        <h2 className="section-title">¿Quiénes Somos?</h2>
+        <h2 className="section-title">Nuestra Trayectoria</h2>
       </div>
 
       <Row className="mt-5">
@@ -50,14 +60,12 @@ const AboutUsSection = () => {
           return (
             <Col key={index} xs={12} md={4} className="mb-4">
               <div
-                className={`${styles.flipCard} ${
-                  isFlipped ? styles.flipped : ""
-                }`}
+                className={`${styles.flipCard} ${isFlipped ? styles.flipped : ""}`}
                 onClick={() => handleFlip(index)}
               >
                 <div className={styles.flipCardInner}>
                   
-                  {/* FRONT */}
+                  {/* FRONT: Logo y Título */}
                   <div className={styles.flipCardFront}>
                     <img 
                       src={card.image} 
@@ -67,9 +75,13 @@ const AboutUsSection = () => {
                     <h5 className="silver-metallic">{card.title}</h5>
                   </div>
 
-                  {/* BACK */}
+                  {/* BACK: Lista tipo CV */}
                   <div className={styles.flipCardBack}>
-                    <p>{card.description}</p>
+                    <ul className={styles.cvList}>
+                      {card.items.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
 
                 </div>

@@ -1,6 +1,3 @@
-/* ===============================
-   CONTENEDOR PRINCIPAL
-================================= */
 .flipCard {
   position: relative;
   perspective: 1200px;
@@ -13,7 +10,6 @@
   transform: var(--trans-hover);
 }
 
-/* Borde derecho (Línea vertical) */
 .flipCard::after {
   content: "";
   position: absolute;
@@ -21,14 +17,11 @@
   right: 0;
   width: 1px;
   height: 80%;
-  background: var(--grad-line-v); /* Variable Global */
+  background: var(--grad-line-v);
   border-radius: 2px;
   pointer-events: none;
 }
 
-/* ===============================
-   CONTENEDOR INTERNO 3D
-================================= */
 .flipCardInner {
   position: relative;
   width: 100%;
@@ -41,9 +34,6 @@
   transform: rotateY(180deg);
 }
 
-/* ===============================
-   CARAS FRONT / BACK
-================================= */
 .flipCardFront,
 .flipCardBack {
   position: absolute;
@@ -55,24 +45,23 @@
   padding: 25px;
   text-align: center;
   border-radius: 2px;
-  box-shadow: var(--shadow-depth); /* Variable Global */
+  box-shadow: var(--shadow-depth);
   backface-visibility: hidden;
   color: var(--text-secondary);
 }
 
 .flipCardFront {
   z-index: 2;
-  background: var(--grad-card-base); /* Variable Global */
+  background: var(--grad-card-base);
 }
 
 .flipCardBack {
   transform: rotateY(180deg);
-  background: var(--grad-card-rev); /* Variable Global */
+  background: var(--grad-card-rev);
+  align-items: stretch;
+  justify-content: center;
 }
 
-/* ===============================
-   ICONO
-================================= */
 .iconClass {
   color: var(--text-muted);
   margin-bottom: 15px;
@@ -84,4 +73,69 @@
 
 .flipCard:hover .iconClass {
   transform: scale(1.1);
+}
+
+.cvList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.cvList li {
+  position: relative;
+  padding: 0.65rem 0.9rem 0.65rem 1.6rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  line-height: 1.4;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-left: 2px solid rgba(192, 192, 192, 0.6);
+  backdrop-filter: blur(2px);
+  transition: all 0.35s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.cvList li:nth-child(1) { animation-delay: 0.1s; }
+.cvList li:nth-child(2) { animation-delay: 0.2s; }
+.cvList li:nth-child(3) { animation-delay: 0.3s; }
+.cvList li:nth-child(4) { animation-delay: 0.4s; }
+
+.cvList li::before {
+  content: "▸";
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: rgba(220, 220, 220, 0.9);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.cvList li:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.04)
+  );
+  transform: translateX(6px);
+  border-left-color: silver;
+}
+
+.cvList li:hover::before {
+  transform: translateY(-50%) translateX(3px);
+  color: #ffffff;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
