@@ -35,7 +35,7 @@ const DifferentialSection = () => {
         </h3>            
       </div>
 
-      <div className={styles.sectionContainer}>
+      <div>
         <Carousel 
           indicators={true} 
           interval={null}
