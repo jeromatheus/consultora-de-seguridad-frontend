@@ -1,18 +1,18 @@
 import { Row, Col, Carousel } from "react-bootstrap";
 import data_protection_logo from "../assets/data_protection_logo.png";
+import veterans_logo from "../assets/veterans_logo.png";
 import styles from "./DifferentialSection.module.css";
 
 const DifferentialSection = () => {
-  const commonImage = data_protection_logo;
   const commonLink = "https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/texto";
 
   const items = [
-    { id: 1, title: "Ex-Fuerzas Armadas / ONU", isLink: false },
-    { id: 2, title: "Certificaciones de Servicio", isLink: false },
-    { id: 3, title: "Ley 25.326 de Seguridad de Datos", isLink: true }, 
-    { id: 4, title: "Protocolos de Ciberseguridad", isLink: true },     
-    { id: 5, title: "Análisis de Riesgo Corporativo", isLink: false },
-    { id: 6, title: "Logística de Valores", isLink: true }              
+    { id: 1, title: "Veteranos Argentinos", isLink: false, logo: veterans_logo },
+    { id: 2, title: "Certificaciones de Servicio", isLink: false, logo: data_protection_logo },
+    { id: 3, title: "Ley 25.326 de Seguridad de Datos", isLink: true, logo: data_protection_logo }, 
+    { id: 4, title: "Protocolos de Ciberseguridad", isLink: true, logo: data_protection_logo },     
+    { id: 5, title: "Análisis de Riesgo Corporativo", isLink: false, logo: data_protection_logo },
+    { id: 6, title: "Logística de Valores", isLink: true, logo: data_protection_logo }              
   ];
 
   // FUNCIÓN AUXILIAR: Agrupar los items en paquetes de 3
@@ -60,7 +60,7 @@ const DifferentialSection = () => {
                     <Col xs={12} md={4} key={item.id} className="mb-4">
                       <Wrapper {...linkProps}>
                         <img
-                          src={commonImage}
+                          src={item.logo}
                           alt={item.title}
                           className={styles.iconImage}
                         />

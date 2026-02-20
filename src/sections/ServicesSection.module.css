@@ -1,5 +1,15 @@
-.servicesWrapper {
-  overflow: hidden;
+.serviceRow {
+  /* mb-4 g-0 gy-5 gy-md-0 */
+  padding: 3em 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.serviceRow:last-child {
+  border-bottom: none;
+}
+
+.serviceRow:hover {
+  background: rgba(255, 255, 255, 0.01);
 }
 
 .imgCol {
@@ -30,17 +40,16 @@
 .textCol {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 2rem;
-  padding-top: 0 !important;
+  justify-content: space-between;
+  padding: 0 2rem;
+  min-height: 450px;
 }
 
 .serviceTitle {
   font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700 !important;
   font-size: 2.2rem !important;
-  line-height: 1;
-  margin-top: 0;
+  line-height: 1.1;
   margin-bottom: 0.5rem;
   color: var(--text-white) !important;
   text-transform: uppercase;
@@ -51,42 +60,117 @@
   border: none;
   height: 2px;
   width: 100px;
-  margin: 1rem 0;
+  margin: 1.2rem 0;
   background: var(--grad-line-h);
 }
 
-.textCol.pe-md-5 .separator {
-  margin-left: auto;
-}
-
 .serviceDescription {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--text-secondary);
+  margin-bottom: 1.5rem;
   text-align: justify;
-  max-width: 90%;
 }
 
-.textCol.pe-md-5 .serviceDescription {
-  margin-left: auto;
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.6rem;
+  color: var(--text-white);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.checkIcon {
+  color: #c0c0c0;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.commercialWrapper {
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: auto; 
+  padding-top: 2rem;
+  width: fit-content; 
+}
+
+.commercialText {
+  display: block;
+  width: 100%; 
+  text-transform: uppercase;
+  font-family: 'Saira', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--text-white);
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  margin-bottom: 2px;
+  border-left: 3px solid #c0c0c0; 
+  box-sizing: border-box;
+}
+
+.textCol.pe-md-5 .commercialText {
+  border-left: none;
+  border-right: 3px solid #c0c0c0;
+}
+
+
+@media (min-width: 768px) {
+  .textCol.ps-md-5 .serviceDescription {
+    margin-right: auto;
+  }
+  .textCol.pe-md-5 .serviceDescription,
+  .textCol.pe-md-5 .separator {
+    margin-left: auto;
+  }
+  .textCol.pe-md-5 .featureItem {
+    justify-content: flex-end;
+  }
+  .textCol.pe-md-5 .commercialText {
+    text-align: right;
+  }
 }
 
 @media (max-width: 767px) {
+  /* .serviceRow {
+    padding: 1rem;
+  } */
+
   .serviceImage {
     height: 300px;
   }
   
   .textCol {
     text-align: center !important;
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1.5rem;
+    min-height: auto;
   }
 
   .separator {
-    margin: 1rem auto !important;
+    margin: 1.5rem auto !important;
   }
 
   .serviceDescription {
     max-width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .featureItem {
+    justify-content: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .commercialWrapper {
+    margin-top: 1rem;
+  }
+
+  .commercialText {
     text-align: center;
   }
 }
