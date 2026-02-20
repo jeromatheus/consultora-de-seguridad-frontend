@@ -1,5 +1,5 @@
 import { Row, Col, Button } from "react-bootstrap";
-import { FaWhatsapp, FaEnvelope } from "react-icons/fa6";
+import { FaWhatsapp, FaEnvelope, FaCalendar } from "react-icons/fa6";
 import { 
   emailAddress, 
   rawWhatsappNumber, 
@@ -31,7 +31,7 @@ const ContactSection = () => {
               {/* WhatsApp */}
               <div className={styles.contactItem}>
                 <Button
-                  className={`${styles.btnWhatsapp} py-3 d-flex align-items-center justify-content-center gap-2`}
+                  className={`${styles.btnWhatsapp}`}
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -47,7 +47,7 @@ const ContactSection = () => {
               {/* Email */}
               <div className={styles.contactItem}>
                 <Button
-                  className={`${styles.btnEmail} py-3 d-flex align-items-center justify-content-center gap-2`}
+                  className={`${styles.btnEmail}`}
                   href={`mailto:${emailAddress}`}
                 >
                   <FaEnvelope size={24} />
@@ -56,6 +56,27 @@ const ContactSection = () => {
                 <small className={styles.contactInfo}>
                   {emailAddress}
                 </small>
+              </div>
+            </div>
+            <div className={styles.scheduleContainer}>
+              <div className={styles.scheduleHeader}>
+                <FaCalendar className="text-secondary" />
+                <span>Horarios de Atención</span>
+              </div>
+              
+              <div className={styles.scheduleBody}>
+                <div className={styles.scheduleLine}>
+                  <span>Lunes a Viernes</span>
+                  <span className={styles.timeBadge}>09:00 — 18:00 HS</span>
+                </div>
+                <div className={styles.scheduleLine}>
+                  <span>Sábados</span>
+                  <span className={styles.timeBadge}>09:00 — 13:00 HS</span>
+                </div>
+                <div className={styles.scheduleLine}>
+                  <span>Domingos</span>
+                  <span className="text-danger fw-bold">CERRADO</span>
+                </div>
               </div>
             </div>
           </Col>

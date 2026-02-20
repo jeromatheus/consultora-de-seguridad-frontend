@@ -31,6 +31,18 @@
   margin-left: 4px;
 }
 
+.btnWhatsapp, .btnEmail {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+}
+
 .btnWhatsapp {
   background-color: #25d366 !important;
   border: none !important;
@@ -39,10 +51,10 @@
 }
 
 .btnWhatsapp:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.1);
+  background: #178640 !important;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  transform: var(--trans-hover) scale(1.01);
 }
-
 .btnEmail {
   background: var(--bg-main) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
@@ -53,4 +65,47 @@
 .btnEmail:hover {
   background: var(--bg-black) !important;
   border-color: var(--text-muted) !important;
+  transform: var(--trans-hover) scale(1.01);
+}
+
+.scheduleContainer {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--text-muted); 
+  padding: 1.2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.scheduleHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-white);
+  font-family: 'Saira Extra Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.scheduleBody {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scheduleLine {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.timeBadge {
+  color: var(--text-white);
+  font-weight: 500;
 }

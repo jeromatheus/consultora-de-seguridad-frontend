@@ -28,8 +28,8 @@ const DifferentialSection = () => {
 
   return (
     <>
-      <div className="section-header text-center mb-5">
-        <h2 className="section-title text-white">Nuestro Diferencial</h2>
+      <div className="section-header">
+        <h2 className="section-title">Nuestro Diferencial</h2>
       </div>
 
       <div className={styles.sectionContainer}>
