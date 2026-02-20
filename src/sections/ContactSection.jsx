@@ -22,7 +22,7 @@ const ContactSection = () => {
       </div>
       <div className={styles.contactContainer}>
         <Row>
-          <Col lg={5}>
+          <Col lg={5} className="mb-5 mb-lg-0"> 
             <div className="d-flex flex-column gap-3 mb-4">
               <h4 className="text-white text-uppercase">
                 Canales de Comunicación
@@ -58,6 +58,7 @@ const ContactSection = () => {
                 </small>
               </div>
             </div>
+
             <div className={styles.scheduleContainer}>
               <div className={styles.scheduleHeader}>
                 <FaCalendar className="text-secondary" />
@@ -80,6 +81,7 @@ const ContactSection = () => {
               </div>
             </div>
           </Col>
+
           <Col lg={7}>
              <h4 className="text-white text-uppercase">
               Hablemos
