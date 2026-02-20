@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
+import { FaRotateLeft } from "react-icons/fa6"; 
 import onuLogo from "../assets/onu_logo.png";
 import certificationLogo from "../assets/international_certification_logo.png";
 import special_forces_logo from "../assets/special_forces_logo.png";
@@ -50,7 +51,7 @@ const AboutUsSection = () => {
   return (
     <>
       <div className="section-header">
-        <h2 className="section-title">Nuestra Trayectoria</h2>
+        <h2 className="section-title">Nuestra Trayectoria</h2>    
       </div>
 
       <Row className="mt-5">
@@ -77,6 +78,9 @@ const AboutUsSection = () => {
 
                   {/* BACK: Lista tipo CV */}
                   <div className={styles.flipCardBack}>
+                    <div className={styles.backArrowWrapper}>
+                      <FaRotateLeft size={18} />
+                    </div>
                     <ul className={styles.cvList}>
                       {card.items.map((item, idx) => (
                         <li key={idx}>{item}</li>

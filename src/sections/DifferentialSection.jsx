@@ -30,6 +30,9 @@ const DifferentialSection = () => {
     <>
       <div className="section-header">
         <h2 className="section-title">Nuestro Diferencial</h2>
+        <h3 className="section-subtitle">
+          "Compromiso legal y ético en seguridad privada"
+        </h3>            
       </div>
 
       <div className={styles.sectionContainer}>

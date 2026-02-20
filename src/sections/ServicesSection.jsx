@@ -29,6 +29,9 @@ const ServicesSection = () => {
     <>
       <div className="section-header">
         <h2 className="section-title">SERVICIOS</h2>
+        <h3 className="section-subtitle">
+          "La seguridad no es un servicio, es una ciencia de precisión"
+        </h3>
       </div>
 
       <Row className="g-4">
