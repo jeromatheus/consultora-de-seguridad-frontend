@@ -21,8 +21,8 @@ function Header() {
         <Navbar.Brand onClick={() => scrollTo("inicio")}>
           <img
             alt="Logo"
-            src="../logo.png"
-            width="60"
+            src="../logo_named.png"
+            // width="150"
             height="50"
             className="d-inline-block align-top me-2"
           />

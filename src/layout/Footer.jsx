@@ -32,7 +32,7 @@ function Footer() {
           {/* COLUMNA 1: LOGO */}
           <Col md={3} xs={6} className="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
             <img 
-              src="./logo.png" 
+              src="./logo_nameless.png" 
               alt="Logo Footer" 
               className="footer-img" 
               onClick={(e) => handleNavClick(e, "inicio")}
