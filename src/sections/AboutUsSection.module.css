@@ -1,8 +1,12 @@
+.flipCardFront {
+  cursor: pointer;
+}
+
 .flipCard {
   position: relative;
   perspective: 1200px;
   height: 260px;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: var(--trans-std);
 }
 
@@ -88,10 +92,10 @@
   width: 60px;
   object-fit: contain;
 }
-
+/* 
 .flipCard:hover .iconClass {
   transform: scale(1.1);
-}
+} */
 
 .cvList {
   list-style: none;
@@ -116,6 +120,7 @@
   backdrop-filter: blur(2px);
   transition: all 0.35s ease;
   opacity: 0;
+  cursor: default;
   transform: translateY(10px);
   animation: fadeInUp 0.5s ease forwards;
 }

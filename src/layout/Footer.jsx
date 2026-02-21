@@ -102,8 +102,7 @@ function Footer() {
         <Row>
           <Col className="text-center">
             <p className="small text-secondary mb-0">
-              &copy; {new Date().getFullYear()} Todos los derechos reservados.
-            </p>
+        &copy; {new Date().getFullYear()} Consultora de Seguridad Ortiz. Todos los derechos reservados.    </p>
           </Col>
         </Row>
       </Container>
