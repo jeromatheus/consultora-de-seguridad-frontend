@@ -73,3 +73,21 @@ footer img {
 /* Tamaños específicos por contexto */
 header img { max-height: 50px; }
 .footer-img { max-height: 120px; width: 100%; }
+
+.smart-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  transition: transform 0.35s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.nav-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}

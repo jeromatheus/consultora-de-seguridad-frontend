@@ -4,13 +4,19 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button"; 
 import { routes } from "../constants/routes";
 import { useScrollTo } from "../hooks/useScrollTo";
+import { useSmartHeader } from "../hooks/useSmartHeader";
 import "./Layout.css";
 
 function Header() {
   const scrollTo = useScrollTo(80);
+  const isVisible = useSmartHeader(15); // Sensibilidad
 
   return (
-    <Navbar expand="lg" className="bg-tactical header-border">
+    <Navbar 
+      expand="lg" 
+      className={`bg-tactical header-border fixed-top smart-navbar ${
+        isVisible ? "nav-visible" : "nav-hidden"
+      }`}>
       <Container fluid className="px-5">
         <Navbar.Brand onClick={() => scrollTo("inicio")}>
           <img
