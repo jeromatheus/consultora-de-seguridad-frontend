@@ -30,17 +30,25 @@ function Footer() {
         <Row className="align-items-start">
           
           {/* COLUMNA 1: LOGO */}
-          <Col md={3} xs={6} className="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
-            <img 
-              src="./logo_nameless.png" 
-              alt="Logo Footer" 
-              className="footer-img" 
-               onClick={() => window.location.href = "/"}
+          <Col md={3} xs={12} className="mb-5 mb-md-0 d-flex align-items-center justify-content-center">
+            {/* Logo para desktop (md y arriba) */}
+            <img
+              src="./logo_nameless.png"
+              alt="Logo Footer"
+              className="footer-img d-none d-md-block"
+              onClick={() => window.location.href = "/"}
+            />
+            {/* Logo para móviles (xs y sm) */}
+            <img
+              src="./logo_named.png"
+              alt="Logo Footer"
+              className="footer-img d-block d-md-none"
+              onClick={() => window.location.href = "/"}
             />
           </Col>
 
           {/* COLUMNA 2: NAVEGACIÓN */}
-          <Col md={3} xs={6} className="mb-4 mb-md-0">
+          <Col md={3} xs={4} className="mb-4 mb-md-0">
             <h5 className="mb-3 text-uppercase fw-bold">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               {routes.map((route) => (
@@ -58,7 +66,7 @@ function Footer() {
           </Col>
 
           {/* COLUMNA 3: CONTACTO */}
-          <Col md={3} xs={6} className="mb-4 mb-md-0">
+          <Col md={3} xs={4} className="mb-4 mb-md-0">
             <h5 className="mb-3 text-uppercase fw-bold">Contacto</h5>
             <ul className="list-unstyled d-flex flex-column gap-2 contact-list">
               <li>
@@ -81,7 +89,7 @@ function Footer() {
           </Col>
 
           {/* COLUMNA 4: QR AFIP */}
-          <Col md={3} xs={6} className="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+          <Col md={3} xs={4} className="mb-4 mb-md-0 d-flex align-items-center justify-content-center">
             <a 
               href={arcaLink} 
               target="_blank" 

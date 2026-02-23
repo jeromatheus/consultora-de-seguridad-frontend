@@ -10,7 +10,7 @@ export const services = [
     ],
     billingType: "Arancel por hora",
     minPrice: "$15.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Protección+Personal",
+    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Protección",
   },
   {
     title: "Custodia y Logística de Activos Críticos",
@@ -23,7 +23,7 @@ export const services = [
     ],
     billingType: "Arancel por kilómetro / escala",
     minPrice: "$45.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Custodia+Logística",
+    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Custodia",
   },
   {
     title: "Gestión de Información y Análisis",
@@ -36,7 +36,7 @@ export const services = [
     ],
     billingType: "Honorarios por auditoría",
     minPrice: "$120.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Gestión+Información",
+    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Información",
   },
   {
     title: "Capacitación Táctica Especializada",
@@ -45,7 +45,7 @@ export const services = [
     features: [],
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Capacitación+Táctica",
+    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Capacitación",
     slogan: "Nuestros cursos están orientados a la excelencia operativa, la disciplina táctica y la preparación integral del personal.",
     categories: [
       {

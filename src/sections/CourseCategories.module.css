@@ -9,6 +9,7 @@
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  text-align: start;
 }
 
 .tabsNav {
@@ -90,4 +91,30 @@
   color: #9a9a9a;
   font-size: 0.85rem;
   line-height: 1.25;
+}
+
+@media (max-width: 767.98px) {
+  .section {
+    padding: 1rem 0 2rem 0;
+  }
+
+  .tabsNav {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+    gap: 4px; 
+  }
+
+  .navItem {
+    flex: 1 1 100%;
+  }
+
+  .navLink {
+    font-size: 0.8rem !important;
+    padding: 6px 8px !important; 
+  }
+
+  .scrollContainer {
+    max-height: 225px;
+  }
 }

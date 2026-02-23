@@ -12,7 +12,7 @@ function App() {
       <section id="inicio">
         <StartSection />
       </section>
-      <Container fluid className="px-3 px-md-5">
+      <Container fluid className="px-3 px-lg-5">
         <section id="nosotros">        
           <AboutUsSection />
         </section>
