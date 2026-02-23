@@ -15,29 +15,30 @@ const AboutUsSection = () => {
       title: "Veteranos de Fuerzas Especiales",
       items: [
         "Operaciones de Alta Complejidad",
-        "Especialistas en Contraterrorismo Urbano",
         "Instrucción Avanzada en Tácticas de Defensa",
-        "Gestión de Seguridad en Entornos Hostiles"
+        "Veteranos de Malvinas argentinas"
       ],
     },
     {
       image: onuLogo,
       title: "Misiones ONU en Zonas de Conflicto",
       items: [
-        "Misión MINURSO, Sahara Occidental (1990)",
-        "Operaciones de Paz UNPROFOR, Balcanes (1992)",
-        "Misión de Estabilización MINUSTAH, Haití (2000)",
-        "Protocolos Internacionales de Protección Civil (2011)"
+        "UNIKOM - Misión de Observación de las Naciones Unidas para el Irak y Kuwait (1991)",
+        "UNPROFOR - Fuerza de Protección de las Naciones Unidas en Croacia y Bosnia-Herzegovina (1992 - 1993)",
+        "UNFICYP - Fuerza de la ONU para el Mantenimiento de la Paz en Chipre (1993)",
+        "UNMIH - Misión de Naciones Unidas en Haití (1995)",
+        "UNMIK - Misión de Administración Provisional de las Naciones Unidas en Kosovo (1999)",
+        "MINUSTAH - Misión de Estabilización de las Naciones Unidas en Haití (2004 - 2008)"
       ],
     },
     {
       image: certificationLogo,
       title: "Certificaciones Internacionales",
       items: [
-        "Certificación ISO 31000 Gestión de Riesgos",
-        "Estándares ANSI/ASIS en Seguridad Privada",
-        "Diplomado en Inteligencia Estratégica",
-        "Auditoría en Protección de Activos Críticos"
+        "Diplomatura XXX en XXX (XXX)",
+        "Diplomatura XXX en XXX (XXX)",
+        "Diplomatura XXX en XXX (XXX)",
+        "Diplomatura XXX en XXX (XXX)",
       ],
     },
   ];
