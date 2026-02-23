@@ -35,7 +35,7 @@ function Footer() {
               src="./logo_nameless.png" 
               alt="Logo Footer" 
               className="footer-img" 
-              onClick={(e) => handleNavClick(e, "inicio")}
+               onClick={() => window.location.href = "/"}
             />
           </Col>
 

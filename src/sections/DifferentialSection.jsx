@@ -1,17 +1,26 @@
 import { Row, Col, Carousel } from "react-bootstrap";
 import data_protection_logo from "../assets/data_protection_logo.png";
 import veterans_logo from "../assets/veterans_logo.png";
+import region_logo from "../assets/region_logo.png";
+import license_card_logo from "../assets/license_card_logo.png";
 import styles from "./DifferentialSection.module.css";
 
 const DifferentialSection = () => {
   const commonLink = "https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/texto";
+  const ANMAC_LINK = "https://www.argentina.gob.ar/justicia/anmac";
 
   const items = [
     { id: 1, title: "Veteranos Argentinos", isLink: false, logo: veterans_logo },
-    { id: 2, title: "Certificaciones de Servicio", isLink: false, logo: data_protection_logo },
+    { id: 2, title: "Conocimiento Regional Exclusivo", isLink: false, logo: region_logo },     
     { id: 3, title: "Ley 25.326 de Seguridad de Datos", isLink: true, logo: data_protection_logo }, 
-    { id: 4, title: "Protocolos de Ciberseguridad", isLink: true, logo: data_protection_logo },     
-    { id: 5, title: "Análisis de Riesgo Corporativo", isLink: false, logo: data_protection_logo },
+    { id: 4, title: "Análisis de Riesgo Corporativo", isLink: false, logo: data_protection_logo },
+    { 
+      id: 5, 
+      title: "Personal con CLU y Portación (ANMaC)", 
+      isLink: true, 
+      logo: license_card_logo, 
+      customLink: ANMAC_LINK 
+    },
     { id: 6, title: "Logística de Valores", isLink: true, logo: data_protection_logo }              
   ];
 

@@ -18,7 +18,7 @@ function Header() {
         isVisible ? "nav-visible" : "nav-hidden"
       }`}>
       <Container fluid className="px-5">
-        <Navbar.Brand onClick={() => scrollTo("inicio")}>
+        <Navbar.Brand onClick={() => window.location.href = "/"}>
           <img
             alt="Logo"
             src="../logo_named.png"
