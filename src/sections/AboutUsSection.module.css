@@ -7,13 +7,16 @@
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease;
-  overflow: hidden;
   height: 55vh;
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(192,192,192,0.3) rgba(255,255,255,0.05);
 }
 
 @media (max-width: 768px) {
   .aboutCard {
-    height: 70vh;
+    height: 65vh;
   }
 }
 
@@ -84,27 +87,20 @@
   margin: 0;
 }
 
-.aboutCardBody {
-  flex: 1;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(192,192,192,0.3) rgba(255,255,255,0.05);
-}
-
-.aboutCardBody::-webkit-scrollbar {
+.aboutCard::-webkit-scrollbar {
   width: 4px;
 }
 
-.aboutCardBody::-webkit-scrollbar-track {
+.aboutCard::-webkit-scrollbar-track {
   background: rgba(255,255,255,0.05);
 }
 
-.aboutCardBody::-webkit-scrollbar-thumb {
+.aboutCard::-webkit-scrollbar-thumb {
   background: rgba(192,192,192,0.3);
   border-radius: 10px;
 }
 
-.aboutCardBody::-webkit-scrollbar-thumb:hover {
+.aboutCard::-webkit-scrollbar-thumb:hover {
   background: rgba(192,192,192,0.6);
 }
 
