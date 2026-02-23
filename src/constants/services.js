@@ -46,7 +46,7 @@ export const services = [
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",
     img: "https://placehold.co/600x450/1a1a1a/FFF?text=Capacitación+Táctica",
-    slogan: "EXCELENCIA OPERATIVA, DISCIPLINA TÁCTICA Y PREPARACIÓN INTEGRAL.",
+    slogan: "Nuestros cursos están orientados a la excelencia operativa, la disciplina táctica y la preparación integral del personal.",
     categories: [
       {
         name: "Seguridad Profesional",

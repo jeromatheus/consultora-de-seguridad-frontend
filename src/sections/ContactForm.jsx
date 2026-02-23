@@ -114,9 +114,10 @@ const ContactForm = () => {
                 isInvalid={!!errors.servicio}
               >
                 <option value="">Seleccione un servicio...</option>
-                <option value="Fisica">Seguridad Física</option>
-                <option value="Personal">Custodia Personal</option>
-                <option value="Monitoreo">Monitoreo</option>
+                <option value="Protección Personal">Protección Personal de Alto Perfil</option>
+                <option value="Custodia de Activos">Custodia y Logística de Activos Críticos</option>
+                <option value="Gestión de Información">Gestión de Información y Análisis</option>
+                <option value="Capacitación">Capacitación Táctica Especializada</option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 {errors.servicio?.message}

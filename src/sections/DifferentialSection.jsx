@@ -1,28 +1,8 @@
 import { Row, Col, Carousel } from "react-bootstrap";
-import data_protection_logo from "../assets/data_protection_logo.png";
-import veterans_logo from "../assets/veterans_logo.png";
-import region_logo from "../assets/region_logo.png";
-import license_card_logo from "../assets/license_card_logo.png";
+import { differential } from "../constants/differential";
 import styles from "./DifferentialSection.module.css";
 
 const DifferentialSection = () => {
-  const commonLink = "https://www.argentina.gob.ar/normativa/nacional/ley-25326-64790/texto";
-  const ANMAC_LINK = "https://www.argentina.gob.ar/justicia/anmac";
-
-  const items = [
-    { id: 1, title: "Veteranos Argentinos", isLink: false, logo: veterans_logo },
-    { id: 2, title: "Conocimiento Regional Exclusivo", isLink: false, logo: region_logo },     
-    { id: 3, title: "Ley 25.326 de Seguridad de Datos", isLink: true, logo: data_protection_logo }, 
-    { id: 4, title: "Análisis de Riesgo Corporativo", isLink: false, logo: data_protection_logo },
-    { 
-      id: 5, 
-      title: "Personal con CLU y Portación (ANMaC)", 
-      isLink: true, 
-      logo: license_card_logo, 
-      customLink: ANMAC_LINK 
-    },
-    { id: 6, title: "Logística de Valores", isLink: true, logo: data_protection_logo }              
-  ];
 
   // FUNCIÓN AUXILIAR: Agrupar los items en paquetes de 3
   const chunkArray = (array, size) => {
@@ -33,7 +13,7 @@ const DifferentialSection = () => {
     return chunked;
   };
 
-  const slides = chunkArray(items, 3);
+  const slides = chunkArray(differential, 3);
 
   return (
     <>
@@ -57,7 +37,7 @@ const DifferentialSection = () => {
                 {group.map((item) => {
                   const Wrapper = item.isLink ? 'a' : 'div';
                   const linkProps = item.isLink ? {
-                    href: commonLink,
+                    href: item.link, 
                     target: "_blank",
                     rel: "noopener noreferrer",
                     className: `${styles.itemWrapper} ${styles.interactiveItem}`
@@ -76,11 +56,6 @@ const DifferentialSection = () => {
                         <h5 className="silver-metallic text-center px-3">
                           {item.title}
                         </h5>
-                        {item.isLink && (
-                          <small className="text-muted mt-2" style={{fontSize: '0.7rem'}}>
-                            (Ver más)
-                          </small>
-                        )}
                       </Wrapper>
                     </Col>
                   );

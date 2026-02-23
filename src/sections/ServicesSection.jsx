@@ -2,14 +2,13 @@ import { Row, Col, Button } from "react-bootstrap";
 import { FaCheck } from "react-icons/fa";
 import { useScrollTo } from "../hooks/useScrollTo";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { services } from "../constants/services"
-import styles from "./ServicesSection.module.css";
+import { services } from "../constants/services";
 import { CourseCategories } from "./CourseCategories";
+import styles from "./ServicesSection.module.css";
 
 const ServicesSection = () => {
   const scrollTo = useScrollTo(80);
   const rowRefs = useScrollReveal(0.15);
-
 
   return (
     <>
@@ -61,9 +60,13 @@ const ServicesSection = () => {
                   ))}
                 </div>
 
-                {
-                  service.categories && <CourseCategories categories={service.categories}/>
-                }
+                {service.slogan && (
+                  <p className={styles.innerSlogan}>"{service.slogan}"</p>
+                )}                     
+
+                {service.categories && (
+                  <CourseCategories categories={service.categories} />
+                )}
 
                 <div
                   className={`${styles.commercialWrapper} ${!isEven ? styles.commercialEnd : ""}`}
@@ -80,11 +83,7 @@ const ServicesSection = () => {
                   >
                     Consultar Ahora
                   </Button>
-                </div>
-
-                {/* {service.slogan && (
-                  <p className={styles.innerSlogan}>"{service.slogan}"</p>
-                )}                 */}
+                </div>           
               </Col>
             </Row>
           );
