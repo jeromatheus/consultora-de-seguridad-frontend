@@ -17,7 +17,7 @@ function Header() {
       className={`bg-tactical header-border fixed-top smart-navbar ${
         isVisible ? "nav-visible" : "nav-hidden"
       }`}>
-      <Container fluid className="px-5">
+      <Container fluid className="px-3 px-lg-5">
         <Navbar.Brand onClick={() => window.location.href = "/"}>
           <img
             alt="Logo"

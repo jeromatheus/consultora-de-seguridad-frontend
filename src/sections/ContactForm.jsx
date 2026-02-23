@@ -42,7 +42,7 @@ const ContactForm = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Row className="mb-3">
           {/* CAMPO: NOMBRE */}
-          <Col md={6}>
+          <Col xs={12} md={6} className="mb-3 mb-md-0">
             <Form.Group controlId="formNombre">
               <Form.Label>Nombre</Form.Label>
               <Form.Control 
@@ -60,7 +60,7 @@ const ContactForm = () => {
           </Col>
 
           {/* CAMPO: TELÉFONO */}
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <Form.Group controlId="formTelefono">
               <Form.Label>Teléfono</Form.Label>
               <Form.Control 
@@ -82,7 +82,7 @@ const ContactForm = () => {
 
         <Row className="mb-3">
           {/* CAMPO: EMAIL */}
-          <Col md={6}>
+          <Col xs={12} md={6} className="mb-3 mb-md-0">
             <Form.Group controlId="formEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control 
@@ -104,7 +104,7 @@ const ContactForm = () => {
           </Col>
 
           {/* CAMPO: SERVICIO */}
-          <Col md={6}>
+          <Col xs={12} md={6}>
             <Form.Group controlId="formServicio">
               <Form.Label>Servicio de Interés</Form.Label>
               <Form.Select 

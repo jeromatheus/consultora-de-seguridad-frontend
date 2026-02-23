@@ -1,53 +1,6 @@
-.section {
-  width: 100%;
-}
-
-.title {
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  text-align: start;
-}
-
-.tabsNav {
-  display: flex;
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  gap: 2px;
-}
-
-.navItem {
-  flex: 1;
-}
-
-.navLink {
-  text-align: center;
-  background-color: #0a0a0a !important;
-  color: #6c757d !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  border-bottom: none !important;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 4px 4px 0 0 !important;
-  font-size: 0.85rem;
-  padding: 8px 5px !important;
-}
-
-.navLinkActive {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  box-shadow: inset 0 -2px 0 #ffffff;
-}
-
 .scrollContainer {
-  height: 170px;
+  max-height: 300px;
   overflow-y: auto;
-  padding-right: 10px;
   scrollbar-width: thin;
   scrollbar-color: rgba(192, 192, 192, 0.3) rgba(255, 255, 255, 0.05);
 }
@@ -70,6 +23,53 @@
   background: rgba(192, 192, 192, 0.6);
 }
 
+ .section {
+  width: 100%;
+}
+
+.title {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-align: start;
+  font-size: clamp(1.125rem, 1vw + 0.75rem, 1.5rem) !important;
+}
+
+.tabsNav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgba(218, 9, 9, 0.1) !important;
+  gap: 2px;
+}
+
+.navItem {
+  flex: 1;
+}
+
+.navLink {
+  text-align: center;
+  background-color: #0a0a0a !important;
+  color: #6c757d !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-bottom: none !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px 4px 0 0 !important;
+  padding: 6px 8px !important;
+  height: 100%;
+  font-size: clamp(0.85rem, 0.5vw + 0.7rem, 1rem) !important;
+}
+
+.navLinkActive {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: inset 0 -2px 0 #ffffff;
+}
+
 .courseCard {
   background-color: rgba(255, 255, 255, 0.03) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -82,15 +82,15 @@
 }
 
 .cardTitle {
-  color: #ffffff!important;
-  font-weight: 600!important;
-  font-size: 0.95rem!important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: clamp(0.9rem, 0.4vw + 0.75rem, 1.05rem) !important;
 }
 
 .cardText {
   color: #9a9a9a;
-  font-size: 0.85rem;
   line-height: 1.25;
+  font-size: clamp(0.8rem, 0.3vw + 0.7rem, 0.95rem) !important;
 }
 
 @media (max-width: 767.98px) {
@@ -99,22 +99,15 @@
   }
 
   .tabsNav {
-    display: flex;
-    flex-direction: column; 
-    width: 100%;
-    gap: 4px; 
+    flex-direction: column;
+    gap: 4px;
   }
 
   .navItem {
     flex: 1 1 100%;
   }
 
-  .navLink {
-    font-size: 0.8rem !important;
-    padding: 6px 8px !important; 
-  }
-
-  .scrollContainer {
-    max-height: 225px;
+  .scrollContainer{
+    max-height: max-content;
   }
 }

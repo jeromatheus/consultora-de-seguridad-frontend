@@ -60,9 +60,9 @@ const ServicesSection = () => {
                   ))}
                 </div>
 
-                {service.slogan && (
+                {/* {service.slogan && (
                   <p className={styles.innerSlogan}>"{service.slogan}"</p>
-                )}                     
+                )}                      */}
 
                 {service.categories && (
                   <CourseCategories categories={service.categories} />
