@@ -17,7 +17,7 @@ const DifferentialSection = () => {
   const slides = chunkArray(differentials, 3);
 
   return (
-    <section id="diferencial" className="px-4 px-lg-5">
+    <section id="diferencial" className="px-4 px-lg-5 bg-tactical-grid">
       <div className="section-header">
         <h2 className="section-title">Nuestro Diferencial</h2>
         <h3 className="section-subtitle">

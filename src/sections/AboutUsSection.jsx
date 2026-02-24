@@ -17,7 +17,7 @@ const AboutUsSection = () => {
   }, []);
 
   return (
-    <section id="nosotros" className="px-3 px-lg-5">
+    <section id="nosotros" className="px-3 px-lg-5 bg-tactical-grid">
       <div className="section-header">
         <h2 className="section-title">Nuestra Trayectoria</h2>
         <h3 className="section-subtitle">
