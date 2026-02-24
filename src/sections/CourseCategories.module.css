@@ -34,7 +34,7 @@
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
   border-bottom: none !important;
   border-radius: 4px 4px 0 0 !important;
-  padding: 6px 8px !important;
+  padding: 1rem 1.5rem !important;
   height: 100%;
   text-align: center;
   font-weight: 600;
@@ -75,4 +75,27 @@
   color: #9a9a9a;
   line-height: 1.25;
   font-size: clamp(0.8rem, 0.3vw + 0.7rem, 0.95rem) !important;
+}
+
+@keyframes softReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tabContentAnimated {
+  animation: softReveal 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.arrowIconOpen {
+  transform: rotate(180deg);
 }
