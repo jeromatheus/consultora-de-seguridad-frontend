@@ -67,11 +67,11 @@ const ServicesSection = () => {
                   <small className={styles.commercialText}>
                     Tipo de Canon: {service.billingType}
                   </small>
-                  <small className={styles.commercialText}>
+                  {/* <small className={styles.commercialText}>
                     Base imponible desde: {service.minPrice}
-                  </small>
+                  </small> */}
                   <Button
-                    className="btn-tactical mt-3"
+                    className="btn-tactical mt-1"
                     onClick={() => scrollTo("contacto")}
                   >
                     Consultar Ahora

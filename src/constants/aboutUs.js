@@ -5,8 +5,7 @@ import special_forces_logo from "../assets/special_forces_logo.png";
 export const aboutUs = [
   {
     image: special_forces_logo,
-    title: "Fuerzas Especiales",
-    subtitle: "VETERANOS OPERATIVOS",
+    title: "Veteranos de Fuerzas Especiales",
     items: [
       "Operaciones de Alta Complejidad",
       "Instrucción Avanzada en Tácticas de Defensa",
@@ -15,8 +14,7 @@ export const aboutUs = [
   },
   {
     image: onuLogo,
-    title: "Misiones ONU",
-    subtitle: "EXPERIENCIA INTERNACIONAL",
+    title: "Experiencia Internacional en Misiones ONU",
     items: [
       "UNIKOM - Misión de Observación de las Naciones Unidas para el Irak y Kuwait (1991)",
       "UNPROFOR - Fuerza de Protección de las Naciones Unidas en Croacia y Bosnia-Herzegovina (1992 - 1993)",
@@ -28,8 +26,7 @@ export const aboutUs = [
   },
   {
     image: certificationLogo,
-    title: "Internacionales",
-    subtitle: "CERTIFICACIONES",
+    title: "Certificaciones Internacionales",
     items: [
       "Diplomatura XXX en XXX (XXX)",
       "Diplomatura XXX en XXX (XXX)",
