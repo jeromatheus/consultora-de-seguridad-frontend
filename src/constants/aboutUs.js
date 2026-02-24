@@ -1,6 +1,6 @@
-import onuLogo from "../assets/onu_logo.png";
-import certificationLogo from "../assets/international_certification_logo.png";
-import special_forces_logo from "../assets/special_forces_logo.png";
+import onuLogo from "../assets/about_us/onu_logo.png";
+import certificationLogo from "../assets/about_us/international_certification_logo.png";
+import special_forces_logo from "../assets/about_us/special_forces_logo.png";
 
 export const aboutUs = [
   {

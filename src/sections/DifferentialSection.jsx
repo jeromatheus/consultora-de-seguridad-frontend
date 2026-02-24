@@ -1,5 +1,5 @@
 import { Row, Col, Carousel } from "react-bootstrap";
-import { differential } from "../constants/differential";
+import { differentials } from "../constants/differentials";
 import styles from "./DifferentialSection.module.css";
 
 const DifferentialSection = () => {
@@ -13,7 +13,7 @@ const DifferentialSection = () => {
     return chunked;
   };
 
-  const slides = chunkArray(differential, 3);
+  const slides = chunkArray(differentials, 3);
 
   return (
     <section id="diferencial" className="px-4 px-lg-5">

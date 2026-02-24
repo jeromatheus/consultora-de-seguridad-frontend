@@ -1,3 +1,7 @@
+import service_1 from "../assets/services/service_1.png";
+import service_2 from "../assets/services/service_2.png";
+import service_3 from "../assets/services/service_3.png";
+
 export const services = [
   {
     title: "Protección Personal de Alto Perfil",
@@ -10,7 +14,7 @@ export const services = [
     ],
     billingType: "Arancel por hora",
     minPrice: "$15.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Protección",
+    img: service_1,
   },
   {
     title: "Custodia y Logística de Activos Críticos",
@@ -23,7 +27,7 @@ export const services = [
     ],
     billingType: "Arancel por kilómetro / escala",
     minPrice: "$45.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Custodia",
+    img: service_2,
   },
   {
     title: "Gestión de Información y Análisis",
@@ -48,7 +52,7 @@ export const services = [
     ],
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Capacitación",
+    img: service_3,
     categories: [
       {
         name: "Seguridad Profesional",
