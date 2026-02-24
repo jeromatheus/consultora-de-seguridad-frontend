@@ -1,39 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap');
 
 :root {
-  /* --- PALETA DE COLORES --- */
   --bg-main: #0d1b2a;
   --bg-dark-1: #111;
   --bg-dark-2: #1c1c1c;
   --bg-dark-3: #1a1a1a;
   --bg-black: #000;
-  
   --text-white: #ffffff;
   --text-primary: #f8f9fa;
   --text-secondary: #d4d4d4;
   --text-muted: #c0c0c0;
+  --text-tactical-gray: #a0a0a0; 
 
-  /* --- GRADIENTES --- */
-  /* Fondo base para tarjetas */
+  --border-light-subtle: rgba(255, 255, 255, 0.05);
+  --border-light-medium: rgba(255, 255, 255, 0.08);
+  --border-light-strong: rgba(255, 255, 255, 0.1);
+
   --grad-card-base: linear-gradient(145deg, var(--bg-dark-1), var(--bg-dark-2));
-  /* Fondo reverso (para el dorso de las tarjetas flip) */
   --grad-card-rev: linear-gradient(145deg, var(--bg-dark-3), var(--bg-black));
-  /* Efecto Metal Plateado */
   --grad-silver: linear-gradient(to bottom right, #7a7a7a 0%, #e8e8e8 40%, #999999 60%, #f0f0f0 100%);
-  
-  /* --- SEPARADORES DE LUZ --- */
-  /* Línea horizontal brillante */
   --grad-line-h: linear-gradient(to right, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.4) 25%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.4) 75%, rgba(255,255,255,0.02) 100%);
-  /* Línea vertical brillante */
   --grad-line-v: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.9), rgba(255,255,255,0.05));
-
-  /* --- SOMBRAS Y EFECTOS --- */
-  /* Efecto "Plástico/Cóncavo" para containers internos */
-  --shadow-plastic: inset 0 2px 4px rgba(255, 255, 255, 0.04), inset 0 -25px 45px -20px rgba(0, 0, 0, 0.7);
-  /* Sombra de elevación fuerte */
-  --shadow-depth: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --grad-surface-dark: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(10,10,10,1) 100%);
+  --grad-surface-darker: linear-gradient(180deg, rgba(40,40,40,1) 0%, rgba(15,15,15,1) 100%);
   
-  /* --- TRANSICIONES --- */
+  --shadow-plastic: inset 0 2px 4px rgba(255, 255, 255, 0.04), inset 0 -25px 45px -20px rgba(0, 0, 0, 0.7);
+  --shadow-depth: 0 12px 30px rgba(0, 0, 0, 0.45);
   --trans-std: transform 0.3s ease;
   --trans-hover: translateY(-6px);
 }
@@ -111,7 +103,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   text-align: center;
   font-style: italic;
   color: var(--text-secondary);
-  /* font-size: clamp(1rem, 3vw, 1.25rem); */
 }
 
 .section-subtitle::before {
@@ -137,7 +128,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   display: inline-block; 
 }
 
-/* Definimos la animación globalmente */
 @keyframes lightScanMove {
   0% {
     left: -100%;
@@ -180,4 +170,43 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 
 .hover-light-scan:hover::after {
   animation: lightScanMove 1.2s ease-in-out forwards;
+}
+
+.global-icon {
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.8;
+  flex-shrink: 0; 
+}
+
+.title-tactical {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-white, #ffffff);
+}
+
+.custom-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(192, 192, 192, 0.3) var(--border-light-subtle);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--border-light-subtle);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(192, 192, 192, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(192, 192, 192, 0.6);
 }

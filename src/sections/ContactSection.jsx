@@ -7,6 +7,7 @@ import {
   defaultWhatsappMessage
 } from "../constants/contactInfo";
 import styles from "./ContactSection.module.css";
+import clsx from "clsx";
 import ContactForm from "./ContactForm";
 
 const ContactSection = () => {
@@ -60,7 +61,7 @@ const ContactSection = () => {
             </div>
 
             <div className={`${styles.scheduleContainer} my-5 my-lg-0`}>
-              <div className={styles.scheduleHeader}>
+              <div className={clsx(styles.scheduleHeader, "title-tactical")}>                
                 <FaCalendar className="text-secondary" />
                 <span>Horarios de Atención</span>
               </div>

@@ -83,11 +83,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-white);
-  font-family: 'Saira Extra Condensed', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 600;
 }
 
 .scheduleBody {

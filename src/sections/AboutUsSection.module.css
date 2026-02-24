@@ -29,9 +29,9 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(10,10,10,1) 100%);
-  border-right: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: var(--grad-surface-dark); 
+  border-right: 1px solid var(--border-light-subtle);
+  border-bottom: 1px solid var(--border-light-subtle);
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -55,7 +55,7 @@
   justify-content: center; 
   align-items: center;
   text-align: left;
-  background: linear-gradient(180deg, rgba(40,40,40,1) 0%, rgba(15,15,15,1) 100%);
+  background: var(--grad-surface-darker);
   box-shadow: inset 0 0 50px rgba(255,255,255,0.02);
   padding-bottom: 3.5rem; 
 }
@@ -129,11 +129,7 @@
 .aboutCardList {
   list-style: none;
   padding: 0 1rem;
-  /* margin: auto 0; */
   margin: 0;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(192, 192, 192, 0.3) rgba(255, 255, 255, 0.05);
 }
 
 .aboutCardItem {
@@ -142,7 +138,7 @@
   align-items: flex-start;
   padding: 10px 0;
   font-size: 1.05rem;
-  color: #a0a0a0;
+  color: var(--text-tactical-gray);
   font-size: 0.95em;
   letter-spacing: 1px;
   font-weight: 500;
@@ -158,7 +154,7 @@
 
 .aboutCardDivider {
   height: 1px;
-  background: rgba(255,255,255,0.08);
+  background: var(--border-light-medium);
   position: relative;
   overflow: hidden;
 }

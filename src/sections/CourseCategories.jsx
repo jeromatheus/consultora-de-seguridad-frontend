@@ -1,5 +1,6 @@
   import { useState } from "react";
   import { Tab, Nav, Row, Col, Card } from "react-bootstrap";
+  import clsx from "clsx";
   import styles from "./CourseCategories.module.css";
 
   export const CourseCategories = ({ categories = [] }) => {
@@ -33,7 +34,7 @@
           <Tab.Content>
             {categories.map((category) => (
               <Tab.Pane eventKey={category.name} key={category.name}>
-                <div className={styles.scrollContainer}>
+                <div className={clsx(styles.scrollContainer, "custom-scrollbar")}>
                   <Row className="mt-1 g-1 me-0">
                     {category.items.map((course, index) => (
                       <Col xs={12} key={index}>

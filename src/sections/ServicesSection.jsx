@@ -4,6 +4,7 @@ import { useScrollTo } from "../hooks/useScrollTo";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { services } from "../constants/services";
 import { CourseCategories } from "./CourseCategories";
+import clsx from "clsx";
 import styles from "./ServicesSection.module.css";
 
 const ServicesSection = () => {
@@ -42,7 +43,7 @@ const ServicesSection = () => {
                 className={`${styles.textCol} ${isEven ? "ps-md-5" : "pe-md-5"}`}
               >
                 <div className={isEven ? "" : "text-md-end"}>
-                  <h4 className={styles.serviceTitle}>{service.title}</h4>
+                  <h4 className={clsx(styles.serviceTitle, "title-tactical")}>{service.title}</h4>
                   <div
                     className={`${styles.separator} ${isEven ? "" : "ms-md-auto"}`}
                   ></div>

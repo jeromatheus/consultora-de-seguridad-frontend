@@ -1,29 +1,8 @@
 .scrollContainer {
   max-height: 300px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(192, 192, 192, 0.3) rgba(255, 255, 255, 0.05);
 }
 
-.scrollContainer::-webkit-scrollbar {
-  width: 4px;
-}
-
-.scrollContainer::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-}
-
-.scrollContainer::-webkit-scrollbar-thumb {
-  background: rgba(192, 192, 192, 0.3);
-  border-radius: 10px;
-}
-
-.scrollContainer::-webkit-scrollbar-thumb:hover {
-  background: rgba(192, 192, 192, 0.6);
-}
-
- .section {
+.section {
   width: 100%;
 }
 
