@@ -58,6 +58,7 @@
   border: 1px solid rgba(255, 255, 255, 0.05) !important;
   border-left: 3px solid rgba(255, 255, 255, 0.2) !important;
   transition: transform 0.2s ease;
+  text-align: start;
 }
 
 .courseCard:hover {

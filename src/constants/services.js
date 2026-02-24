@@ -1,6 +1,7 @@
 import service_1 from "../assets/services/service_1.png";
 import service_2 from "../assets/services/service_2.png";
 import service_3 from "../assets/services/service_3.png";
+import service_4 from "../assets/services/service_4.png";
 
 export const services = [
   {
@@ -40,7 +41,7 @@ export const services = [
     ],
     billingType: "Honorarios por auditoría",
     minPrice: "$120.000,00",
-    img: "https://placehold.co/600x450/1a1a1a/FFF?text=Información",
+    img: service_4,
   },
   {
     title: "Capacitación Táctica Especializada",

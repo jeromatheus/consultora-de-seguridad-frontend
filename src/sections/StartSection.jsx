@@ -31,9 +31,7 @@ function StartSection() {
             <div className={clsx(styles.carouselCaptionFix)}>
               <div className={clsx(styles.contentWrapper)}>
                 <h1 className={clsx(styles.title)}>{slide.title}</h1>
-
                 <p className={clsx(styles.subtitle)}>{slide.subtitle}</p>
-
                 <Button
                   size="lg"
                   className={clsx("btn-tactical")}

@@ -62,20 +62,28 @@
 }
 
 .serviceDescription {
-  font-size: var(--fs-body-md);
-  line-height: 1.6;
+  padding-left: 1rem;
+  font-size: var(--fs-body-ml);
   color: var(--text-secondary);
+  line-height: 2;
+  letter-spacing: 1.25px;
   text-align: justify;
+  border-left: 3px solid #476588; 
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .featureItem {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 0.45rem;
-  font-size: var(--fs-body-sm);
+  margin: 0.45rem;
+  letter-spacing: 1.5px;
+  font-size: var(--fs-body-md);
   color: var(--text-secondary);
   text-transform: uppercase;
+  padding-left: 1rem;
+  font-weight: 600;
+
 }
 
 .commercialWrapper {

@@ -59,12 +59,14 @@ const ServicesSection = () => {
                     {service.description}
                   </p>
 
-                  {service.features?.map((feature, fIndex) => (
-                    <div key={fIndex} className={clsx(styles.featureItem)}>
-                      <FaShieldAlt className={clsx("global-icon")} />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
+                  <div className="my-4">
+                    {service.features?.map((feature, fIndex) => (
+                      <div key={fIndex} className={clsx(styles.featureItem)}>
+                        <FaShieldAlt className={clsx("global-icon")} />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {service.categories && (

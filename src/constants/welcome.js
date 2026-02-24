@@ -12,14 +12,14 @@ export const welcome_slides = [
   },
   {
     id: 2,
-    image: hero_2,
+    image: hero_3,
     title: "Protección de Activos Críticos y Logística",
     subtitle:
       "Soluciones integrales en seguridad personal, custodia de valores y prevención de riesgos corporativos.",
   },
   {
     id: 3,
-    image: hero_3,
+    image: hero_2,
     title: "Análisis de Información para la Toma de Decisiones",
     subtitle:
       "Gestión de crisis y análisis de inteligencia estratégica para anticiparse a las amenazas.",

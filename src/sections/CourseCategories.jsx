@@ -28,7 +28,6 @@ export const CourseCategories = ({ categories = [] }) => {
                 )}
               >
                 <span>{category.name}</span>
-                {/* 1. Agregamos la clase de rotación condicional a la flecha */}
                 <FaArrowDown
                   className={clsx(
                     styles.arrowIcon,
@@ -43,7 +42,6 @@ export const CourseCategories = ({ categories = [] }) => {
         <Tab.Content>
           {categories.map((category) => (
             <Tab.Pane eventKey={category.name} key={category.name}>
-              {/* 2. Agregamos la clase de animación al contenedor que aparece */}
               <div
                 className={clsx(
                   styles.scrollContainer,
