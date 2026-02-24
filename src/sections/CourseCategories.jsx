@@ -3,9 +3,7 @@ import { Tab, Nav, Row, Col, Card } from "react-bootstrap";
 import styles from "./CourseCategories.module.css";
 
 export const CourseCategories = ({ categories = [] }) => {
-  const [activeKey, setActiveKey] = useState(
-    categories.length ? categories[0].name : "",
-  );
+  const [activeKey, setActiveKey] = useState(null);
 
   if (!categories.length) return null;
 
@@ -14,7 +12,7 @@ export const CourseCategories = ({ categories = [] }) => {
       <h5 className={styles.title}>Nuestros Programas</h5>
       <Tab.Container
         activeKey={activeKey}
-        onSelect={(k) => setActiveKey(k)}
+        onSelect={(k) => setActiveKey(activeKey === k ? null : k)}
         className={styles.coursesContainer}
       >
         <Nav variant="tabs" className={styles.tabsNav}>

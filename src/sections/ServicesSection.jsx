@@ -1,5 +1,5 @@
 import { Row, Col, Button } from "react-bootstrap";
-import { FaCheck } from "react-icons/fa";
+import { FaShieldAlt } from "react-icons/fa";
 import { useScrollTo } from "../hooks/useScrollTo";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { services } from "../constants/services";
@@ -11,7 +11,7 @@ const ServicesSection = () => {
   const rowRefs = useScrollReveal(0.15);
 
   return (
-    <>
+    <section id="servicios">
       <div className="section-header">
         <h2 className="section-title">SERVICIOS</h2>
         <h3 className="section-subtitle">
@@ -30,14 +30,11 @@ const ServicesSection = () => {
               className={`${styles.serviceRow} ${isEven ? styles.fromLeft : styles.fromRight} ${!isEven ? "flex-md-row-reverse" : ""}`}
             >
               <Col md={4} className={styles.imgCol}>
-                <div className={styles.imageFrame}>
-                  <img
-                    src={service.img}
-                    alt={service.title}
-                    className={styles.serviceImage}
-                  />
-                  <div className={styles.imageOverlay}></div>
-                </div>
+                <img
+                  src={service.img}
+                  alt={service.title}
+                  className={styles.serviceImage}
+                />
               </Col>
 
               <Col
@@ -54,15 +51,11 @@ const ServicesSection = () => {
                   </p>
                   {service.features?.map((feature, fIndex) => (
                     <div key={fIndex} className={styles.featureItem}>
-                      <FaCheck className={styles.checkIcon} />
+                      <FaShieldAlt className={styles.checkIcon} />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
-
-                {/* {service.slogan && (
-                  <p className={styles.innerSlogan}>"{service.slogan}"</p>
-                )}                      */}
 
                 {service.categories && (
                   <CourseCategories categories={service.categories} />
@@ -83,13 +76,13 @@ const ServicesSection = () => {
                   >
                     Consultar Ahora
                   </Button>
-                </div>           
+                </div>
               </Col>
             </Row>
           );
         })}
       </div>
-    </>
+    </section>
   );
 };
 

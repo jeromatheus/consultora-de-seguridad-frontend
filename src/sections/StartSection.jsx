@@ -32,7 +32,7 @@ function StartSection() {
   ];
 
   return (
-    <>
+    <section id="inicio">
       <Carousel
         fade
         controls={false}
@@ -67,7 +67,7 @@ function StartSection() {
           </Carousel.Item>
         ))}
       </Carousel>
-    </>
+    </section>
   );
 }
 

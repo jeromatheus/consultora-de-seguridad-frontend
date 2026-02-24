@@ -6,12 +6,15 @@ import styles from "./AboutUsSection.module.css";
 
 const AboutUsSection = () => {
   return (
-    <>
-      <div className="section-header mb-5">
+    <section id="nosotros" className="px-3 px-lg-5">
+      <div className="section-header">
         <h2 className="section-title">Nuestra Trayectoria</h2>
+        <h3 className="section-subtitle">
+          "Más de 20 años de experiencia continua en Seguridad"
+        </h3>         
       </div>
 
-      <Row className="g-3 mt-5">
+      <Row className="gy-5">
         {aboutUs.map((card) => (
           <Col key={card.title} lg={4} md={12}>
             <div className={styles.aboutCard}>
@@ -53,7 +56,7 @@ const AboutUsSection = () => {
           </Col>
         ))}
       </Row>
-    </>
+    </section>
   );
 };
 

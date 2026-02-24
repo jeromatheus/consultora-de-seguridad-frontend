@@ -3,14 +3,14 @@
 }
 
 .serviceRow {
-  padding: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.075);
   opacity: 0;
   transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .serviceRow:first-of-type {
-  padding-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.075);
 }
 
 .serviceRow:last-child {
@@ -18,7 +18,7 @@
 }
 
 .serviceRow:hover {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .fromLeft {
@@ -40,20 +40,15 @@
   border-radius: 2px;
   box-shadow: var(--shadow-depth);
   padding: 0!important;
+  max-height: 500px;
 }
 
 .serviceImage {
   width: 100%;
-  height: 450px;
+  height: 100%;
+  max-height: 500px;
   object-fit: cover;
   display: block;
-}
-
-.imageOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  pointer-events: none;
 }
 
 .textCol {
@@ -61,7 +56,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 2rem;
-  min-height: 450px;
+  min-height: 500px;
 }
 
 .serviceTitle {
@@ -89,11 +84,11 @@
 .featureItem {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 0.6rem;
+  gap: 10px;
+  margin-bottom: 0.45rem;
   font-size: 0.9rem;
+  color: var(--text-secondary);
   text-transform: uppercase;
-  color: var(--text-white);
 }
 
 .commercialWrapper {
@@ -135,21 +130,6 @@
   border-right: 3px solid #c0c0c0;
 }
 
-.innerSlogan {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-style: italic;
-  margin-top: 1rem;
-  text-align: center;
-  padding: 10px;
-  color: #fff;
-  background: #222;
-  box-shadow:
-    1px 1px 0 rgba(0, 0, 0, 0.4),
-    2px 2px 0 rgba(0, 0, 0, 0.25),
-    3px 3px 4px rgba(0, 0, 0, 0.15);
-}
-
 @media (max-width: 991px) {
   .textCol {
     min-height: auto;
@@ -157,7 +137,7 @@
   }
 
   .serviceRow {
-    padding: 3rem 0;
+    padding: 2rem;
     text-align: center;
   }
 

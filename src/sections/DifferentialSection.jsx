@@ -16,7 +16,7 @@ const DifferentialSection = () => {
   const slides = chunkArray(differential, 3);
 
   return (
-    <>
+    <section id="diferencial" className="px-4 px-lg-5">
       <div className="section-header">
         <h2 className="section-title">Nuestro Diferencial</h2>
         <h3 className="section-subtitle">
@@ -65,7 +65,7 @@ const DifferentialSection = () => {
           ))}
         </Carousel>
       </div>
-    </>
+    </section>
   );
 };
 

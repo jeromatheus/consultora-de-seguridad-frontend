@@ -16,7 +16,7 @@ const ContactSection = () => {
   )}`;
 
   return (
-    <>
+    <section id="contacto" className="px-4 px-lg-5">
       <div className="section-header">
         <h2 className="section-title">Contactanos</h2>
       </div>
@@ -90,7 +90,7 @@ const ContactSection = () => {
           </Col>
         </Row>
       </div>
-    </>
+    </section>
   );
 };
 

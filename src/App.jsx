@@ -9,22 +9,12 @@ import { Container } from 'react-bootstrap';
 function App() {
   return (
     <Layout>
-      <section id="inicio">
-        <StartSection />
-      </section>
-      <Container fluid className="px-4 px-lg-5">
-        <section id="nosotros">        
-          <AboutUsSection />
-        </section>
-        <section id="servicios">
-          <ServicesSection />
-        </section>
-        <section id="diferencial">
-          <DifferentialSection />
-        </section>      
-        <section id="contacto">
-          <ContactSection />
-        </section>
+      <StartSection />
+      <Container fluid className="px-0">
+        <AboutUsSection />
+        <ServicesSection />
+        <DifferentialSection />
+        <ContactSection />
       </Container>
     </Layout>
   );

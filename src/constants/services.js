@@ -42,11 +42,13 @@ export const services = [
     title: "Capacitación Táctica Especializada",
     description:
       "Desarrollamos programas de entrenamiento diseñados para profesionales que operan en entornos de alto riesgo. Nuestra formación combina doctrina operativa, escenarios reales y metodologías actualizadas para maximizar desempeño y seguridad.",
-    features: [],
+    features: [
+      "Preparación Integral del Personal",
+      "Modalidad Presencial"
+    ],
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",
     img: "https://placehold.co/600x450/1a1a1a/FFF?text=Capacitación",
-    // slogan: "Nuestros cursos están orientados a la excelencia operativa, la disciplina táctica y la preparación integral del personal.",
     categories: [
       {
         name: "Seguridad Profesional",
