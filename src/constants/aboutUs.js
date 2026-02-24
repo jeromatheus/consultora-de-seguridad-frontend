@@ -5,6 +5,7 @@ import special_forces_logo from "../assets/about_us/special_forces_logo.png";
 export const aboutUs = [
   {
     image: special_forces_logo,
+    id: 0, 
     title: "Veteranos de Fuerzas Especiales",
     items: [
       "Operaciones de Alta Complejidad",
@@ -14,6 +15,7 @@ export const aboutUs = [
   },
   {
     image: onuLogo,
+    id: 1, 
     title: "Experiencia Internacional en Misiones ONU",
     items: [
       "UNIKOM - Misión de Observación de las Naciones Unidas para el Irak y Kuwait (1991)",
@@ -26,6 +28,7 @@ export const aboutUs = [
   },
   {
     image: certificationLogo,
+    id: 2, 
     title: "Certificaciones Internacionales",
     items: [
       "Diplomatura XXX en XXX (XXX)",

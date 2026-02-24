@@ -35,7 +35,7 @@ function Header() {
             {routes.map((route) => (
               <Nav.Link
                 key={route.id}
-                className="nav-link"
+                className="nav-link text-uppercase fw-semibold"
                 onClick={() => scrollTo(route.id)}
               >
                 {route.label}

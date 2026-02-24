@@ -63,7 +63,7 @@
   margin: 0;
   font-weight: 700;
   line-height: 1.1;
-  font-size: clamp(1.8rem, 6vw, 4.2rem);
+  font-size: var(--fs-hero);
   text-transform: uppercase;
   text-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
@@ -72,7 +72,7 @@
   margin: 0;
   font-weight: 300;
   line-height: 1.4;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-size: var(--fs-body-lg);
   color: var(--text-secondary);
   text-shadow: 0 2px 5px rgba(0,0,0,0.8);
   max-width: 750px;
@@ -86,12 +86,6 @@
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }

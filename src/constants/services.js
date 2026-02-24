@@ -56,6 +56,7 @@ export const services = [
     categories: [
       {
         name: "Seguridad Profesional",
+        id: 0,
         items: [
           {
             title: "Tactical Shooting",
@@ -81,6 +82,7 @@ export const services = [
       },
       {
         name: "Supervivencia y Rescate",
+        id: 1,
         items: [
           {
             title: "Paramedic Response",
@@ -102,6 +104,7 @@ export const services = [
       },
       {
         name: "Preparación y Autodefensa",
+        id: 2,
         items: [
           {
             title: "ESA Boot Camp",

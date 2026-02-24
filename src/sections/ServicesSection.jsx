@@ -13,14 +13,14 @@ const ServicesSection = () => {
 
   return (
     <section id="servicios">
-      <div className="section-header">
-        <h2 className="section-title">SERVICIOS</h2>
-        <h3 className="section-subtitle">
+      <div className={clsx("section-header", "px-4", "px-lg-5")}>
+        <h2 className={clsx("section-title")}>SERVICIOS</h2>
+        <h3 className={clsx("section-subtitle")}>
           "La seguridad no es un servicio, es una ciencia de precisión"
         </h3>
       </div>
 
-      <div className={styles.container}>
+      <div className={clsx(styles.container)}>
         {services.map((service, index) => {
           const isEven = index % 2 === 0;
 
@@ -28,31 +28,40 @@ const ServicesSection = () => {
             <Row
               ref={(el) => (rowRefs.current[index] = el)}
               key={index}
-              className={`${styles.serviceRow} ${isEven ? styles.fromLeft : styles.fromRight} ${!isEven ? "flex-md-row-reverse" : ""}`}
+              className={clsx(
+                styles.serviceRow,
+                isEven ? styles.fromLeft : styles.fromRight,
+                !isEven && "flex-md-row-reverse",
+              )}
             >
-              <Col md={4} className={styles.imgCol}>
+              <Col md={4} className={clsx(styles.imgCol)}>
                 <img
                   src={service.img}
                   alt={service.title}
-                  className={styles.serviceImage}
+                  className={clsx(styles.serviceImage)}
                 />
               </Col>
 
               <Col
                 md={8}
-                className={`${styles.textCol} ${isEven ? "ps-md-5" : "pe-md-5"}`}
+                className={clsx(styles.textCol, isEven ? "ps-md-5" : "pe-md-5")}
               >
-                <div className={isEven ? "" : "text-md-end"}>
-                  <h4 className={clsx(styles.serviceTitle, "title-tactical")}>{service.title}</h4>
+                <div className={clsx(!isEven && "text-md-end")}>
+                  <h4 className={clsx(styles.serviceTitle, "title-tactical")}>
+                    {service.title}
+                  </h4>
+
                   <div
-                    className={`${styles.separator} ${isEven ? "" : "ms-md-auto"}`}
-                  ></div>
-                  <p className={styles.serviceDescription}>
+                    className={clsx(styles.separator, !isEven && "ms-md-auto")}
+                  />
+
+                  <p className={clsx(styles.serviceDescription)}>
                     {service.description}
                   </p>
+
                   {service.features?.map((feature, fIndex) => (
-                    <div key={fIndex} className={styles.featureItem}>
-                      <FaShieldAlt className={styles.checkIcon} />
+                    <div key={fIndex} className={clsx(styles.featureItem)}>
+                      <FaShieldAlt className={clsx("global-icon")} />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -63,16 +72,17 @@ const ServicesSection = () => {
                 )}
 
                 <div
-                  className={`${styles.commercialWrapper} ${!isEven ? styles.commercialEnd : ""}`}
+                  className={clsx(
+                    styles.commercialWrapper,
+                    !isEven && styles.commercialEnd,
+                  )}
                 >
-                  <small className={styles.commercialText}>
+                  <small className={clsx(styles.commercialText)}>
                     Tipo de Canon: {service.billingType}
                   </small>
-                  {/* <small className={styles.commercialText}>
-                    Base imponible desde: {service.minPrice}
-                  </small> */}
+
                   <Button
-                    className="btn-tactical mt-1"
+                    className={clsx("btn-tactical", "mt-1")}
                     onClick={() => scrollTo("contacto")}
                   >
                     Consultar Ahora

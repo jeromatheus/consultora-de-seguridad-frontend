@@ -1,6 +1,7 @@
 import { Row, Col, Carousel } from "react-bootstrap";
 import { differentials } from "../constants/differentials";
 import styles from "./DifferentialSection.module.css";
+import clsx from "clsx";
 
 const DifferentialSection = () => {
 
@@ -24,47 +25,53 @@ const DifferentialSection = () => {
         </h3>            
       </div>
 
-      <div>
-        <Carousel 
-          indicators={true} 
-          interval={null}
-          controls={true} 
-          className="pb-5" 
-        >
-          {slides.map((group, slideIndex) => (
-            <Carousel.Item key={slideIndex}>
-              <Row className="justify-content-center">
-                {group.map((item) => {
-                  const Wrapper = item.isLink ? 'a' : 'div';
-                  const linkProps = item.isLink ? {
-                    href: item.link, 
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    className: `${styles.itemWrapper} ${styles.interactiveItem}`
-                  } : {
-                    className: styles.itemWrapper
-                  };
+      <Carousel 
+        indicators 
+        interval={null}
+        controls 
+        className="pb-5"
+      >
+        {slides.map((group, slideIndex) => (
+          <Carousel.Item key={slideIndex}>
+            <Row className="justify-content-center">
+              {group.map((item) => {
+                const Wrapper = item.isLink ? "a" : "div";
 
-                  return (
-                    <Col xs={12} md={4} key={item.id} className="mb-4">
-                      <Wrapper {...linkProps}>
-                        <img
-                          src={item.logo}
-                          alt={item.title}
-                          className={styles.iconImage}
-                        />
-                        <h5 className="silver-metallic text-center px-3">
-                          {item.title}
-                        </h5>
-                      </Wrapper>
-                    </Col>
-                  );
-                })}
-              </Row>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </div>
+                return (
+                  <Col xs={12} md={4} key={item.id} className="mb-4">
+                    <Wrapper
+                      {...(item.isLink && {
+                        href: item.link,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                      })}
+                      className={clsx(
+                        styles.itemWrapper,
+                        item.isLink && styles.interactiveItem
+                      )}
+                    >
+                      <img
+                        src={item.logo}
+                        alt={item.title}
+                        className={styles.iconImage}
+                      />
+                      <h5
+                        className={clsx(
+                          "text-silver",
+                          "text-center",
+                          "px-3"
+                        )}
+                      >
+                        {item.title}
+                      </h5>
+                    </Wrapper>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </section>
   );
 };

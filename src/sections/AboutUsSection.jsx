@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useCallback } from "react";
 import { Row, Col } from "react-bootstrap";
 import { FaShieldAlt } from "react-icons/fa";
 import { aboutUs } from "../constants/aboutUs";
@@ -6,15 +6,15 @@ import clsx from "clsx";
 import styles from "./AboutUsSection.module.css";
 
 const AboutUsSection = () => {
-  const [flippedCards, setFlippedCards] = useState([]);
+  const [flippedCards, setFlippedCards] = useState(() => new Set());
 
-  const handleFlip = (title) => {
-    setFlippedCards((prev) =>
-      prev.includes(title)
-        ? prev.filter((t) => t !== title) 
-        : [...prev, title] 
-    );
-  };
+  const handleFlip = useCallback((id) => {
+    setFlippedCards((prev) => {
+      const newSet = new Set(prev);
+      newSet.has(id) ? newSet.delete(id) : newSet.add(id);
+      return newSet;
+    });
+  }, []);
 
   return (
     <section id="nosotros" className="px-3 px-lg-5">
@@ -27,13 +27,20 @@ const AboutUsSection = () => {
 
       <Row className="gy-5">
         {aboutUs.map((card) => {
-          const isFlipped = flippedCards.includes(card.title);
+          const isFlipped = flippedCards.has(card.id);
 
           return (
-            <Col lg={4} md={12} key={card.title}>
+            <Col lg={4} md={12} key={card.id}>
               <div
                 className={styles.flipCard}
-                onClick={() => handleFlip(card.title)}
+                onClick={() => handleFlip(card.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleFlip(card.id);
+                  }
+                }}
               >
                 <div
                   className={clsx(styles.flipCardInner, {
@@ -50,14 +57,12 @@ const AboutUsSection = () => {
                           src={card.image}
                           alt={card.title}
                           className={styles.aboutCardLogo}
+                          loading="lazy"
                         />
                       </div>
 
                       <h4
-                        className={clsx(
-                          "silver-metallic",
-                          styles.aboutCardTitle,
-                        )}
+                        className={clsx("text-silver", styles.aboutCardTitle)}
                       >
                         {card.title}
                       </h4>
@@ -69,26 +74,26 @@ const AboutUsSection = () => {
                   {/* Back */}
                   <div className={styles.flipCardBack}>
                     <h4
-                      className={clsx(
-                        "silver-metallic",
-                        styles.aboutCardTitleBack,
-                      )}
+                      className={clsx("text-silver", styles.aboutCardTitleBack)}
                     >
                       {card.title}
                     </h4>
 
                     <div className={styles.aboutCardBody}>
-                      <ul className={clsx(styles.aboutCardList, "custom-scrollbar")}>
+                      <ul
+                        className={clsx(
+                          styles.aboutCardList,
+                          "custom-scrollbar",
+                        )}
+                      >
                         {card.items.map((item, idx) => (
-                          <React.Fragment key={`${card.title}-${idx}`}>
-                            <li className={styles.aboutCardItem}>
-                              <FaShieldAlt className="global-icon" />
-                              {item}
-                            </li>
-                            {idx < card.items.length - 1 && (
-                              <div className={styles.aboutCardDivider} />
-                            )}
-                          </React.Fragment>
+                          <li
+                            key={`${card.id}-${idx}`}
+                            className={styles.aboutCardItem}
+                          >
+                            <FaShieldAlt className="global-icon mt-1" />
+                            {item}
+                          </li>
                         ))}
                       </ul>
                     </div>
