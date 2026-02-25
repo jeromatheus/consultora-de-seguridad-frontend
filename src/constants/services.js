@@ -1,7 +1,7 @@
-import service_1 from "../assets/services/service_1.png";
-import service_2 from "../assets/services/service_2.png";
-import service_3 from "../assets/services/service_3.png";
-import service_4 from "../assets/services/service_4.png";
+import service_personal_protection from "../assets/services/service_personal_protection.png";
+import service_asset_custody from "../assets/services/service_asset_custody.png";
+import service_capacitation from "../assets/services/service_capacitation.png";
+import service_information from "../assets/services/service_information.png";
 
 export const services = [
   {
@@ -9,13 +9,13 @@ export const services = [
     description:
       "Brindamos soluciones de protección diseñadas para ejecutivos, empresarios, figuras públicas y personas con alta exposición. Nuestro enfoque combina planificación estratégica, inteligencia preventiva y equipos altamente capacitados para garantizar seguridad, discreción y continuidad operativa. Operamos bajo estrictos protocolos internacionales, con análisis permanente de riesgos, rutas seguras, logística avanzada y capacidad de respuesta inmediata ante cualquier contingencia.",
     features: [
-      "Custodia Ejecutiva con Protocolos Internacionales",
+      "Custodia Ejecutiva",
       "Análisis de Rutas Seguras",
       "Continuidad Operativa y Protección Reputacional",
     ],
     billingType: "Arancel por hora",
     minPrice: "$15.000,00",
-    img: service_1,
+    img: service_personal_protection,
   },
   {
     title: "Custodia y Logística de Activos Críticos",
@@ -28,7 +28,7 @@ export const services = [
     ],
     billingType: "Arancel por kilómetro / escala",
     minPrice: "$45.000,00",
-    img: service_2,
+    img: service_asset_custody,
   },
   {
     title: "Gestión de Información y Análisis",
@@ -41,7 +41,7 @@ export const services = [
     ],
     billingType: "Honorarios por auditoría",
     minPrice: "$120.000,00",
-    img: service_4,
+    img: service_information,
   },
   {
     title: "Capacitación Táctica Especializada",
@@ -53,7 +53,7 @@ export const services = [
     ],
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",
-    img: service_3,
+    img: service_capacitation,
     categories: [
       {
         name: "Seguridad Profesional",

@@ -8,12 +8,15 @@ import {
   rawWhatsappNumber,
   styledWhatsappNumber,
   defaultWhatsappMessage,
+  location,
+  schedule,
 } from "../constants/contactInfo";
-
 import { footerConfig } from "../constants/footer";
 
 function Footer() {
   const scrollTo = useScrollTo(80);
+
+  const openedDays = schedule.filter((d) => !d.isClosed);
 
   const whatsappUrl = `https://wa.me/${rawWhatsappNumber}?text=${encodeURIComponent(
     defaultWhatsappMessage,
@@ -28,7 +31,6 @@ function Footer() {
     <footer className="mt-5 pt-5 pb-4 footer-border bg-tactical-reverse">
       <Container fluid className="px-3 px-lg-5">
         <Row className="align-items-start justify-content-between">
-          {/* LOGO */}
           <Col
             lg={3}
             md={12}
@@ -48,7 +50,6 @@ function Footer() {
             />
           </Col>
 
-          {/* NAVEGACIÓN */}
           <Col lg={3} md={4} xs={6} className="mb-4 mb-lg-0">
             <h5 className="mb-3 text-uppercase fw-bold">Navegación</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
@@ -66,7 +67,6 @@ function Footer() {
             </ul>
           </Col>
 
-          {/* CONTACTO */}
           <Col
             lg={3}
             md={5}
@@ -93,16 +93,22 @@ function Footer() {
                   {emailAddress}
                 </a>
               </li>
+
+              {openedDays.map((item, index) => (
+                <li
+                  key={index}
+                  className="text-secondary"
+                >
+                  {item.days}: <span>{item.hours}</span>
+                </li>
+              ))}
+
               <li className="text-secondary">
-                {footerConfig.businessInfo.schedule}
-              </li>
-              <li className="text-secondary">
-                {footerConfig.businessInfo.location}
+                {location}
               </li>
             </ul>
           </Col>
 
-          {/* QR ARCA */}
           <Col
             lg={2}
             md={3}

@@ -1,10 +1,12 @@
 import { Row, Col, Button } from "react-bootstrap";
-import { FaWhatsapp, FaEnvelope, FaCalendar } from "react-icons/fa6";
+import { FaWhatsapp, FaEnvelope, FaCalendar, FaLocationDot } from "react-icons/fa6";
 import {
   emailAddress,
   rawWhatsappNumber,
   styledWhatsappNumber,
   defaultWhatsappMessage,
+  location,
+  schedule, 
 } from "../constants/contactInfo";
 import styles from "./ContactSection.module.css";
 import clsx from "clsx";
@@ -34,7 +36,6 @@ const ContactSection = () => {
                 Canales de Comunicación
               </h4>
 
-              {/* WhatsApp */}
               <div className={styles.contactItem}>
                 <Button
                   className={clsx(styles.btnWhatsapp)}
@@ -51,17 +52,26 @@ const ContactSection = () => {
                 </small>
               </div>
 
-              {/* Email */}
               <div className={styles.contactItem}>
                 <Button
                   className={clsx(styles.btnEmail)}
-                  href={`mailto:${emailAddress}`}
+                  href={`mailto:${emailAddress}?subject=Consulta%20Servicios%20de%20Seguridad`}
                 >
                   <FaEnvelope size={24} />
                   <span>Email Corporativo</span>
                 </Button>
 
                 <small className={styles.contactInfo}>{emailAddress}</small>
+              </div>
+
+              <div className={styles.contactItem}>
+                <Button
+                  className={clsx(styles.btnLocation)}
+                  variant="dark"
+                >
+                  <FaLocationDot size={24} className="me-2" />
+                  <span>{location}</span>
+                </Button>            
               </div>
             </div>
 
@@ -70,24 +80,15 @@ const ContactSection = () => {
                 <FaCalendar className="text-secondary" />
                 <span>Horarios de Atención</span>
               </div>
-
               <div className={styles.scheduleBody}>
-                <div className={styles.scheduleLine}>
-                  <span>Lunes a Viernes</span>
-                  <span>09:00 — 18:00 HS</span>
-                </div>
-
-                <div className={styles.scheduleLine}>
-                  <span>Sábados</span>
-                  <span>09:00 — 13:00 HS</span>
-                </div>
-
-                <div className={styles.scheduleLine}>
-                  <span>Domingos</span>
-                  <span className={clsx("text-danger", "fw-bold")}>
-                    CERRADO
-                  </span>
-                </div>
+                {schedule.map((item, index) => (
+                  <div key={index} className={styles.scheduleLine}>
+                    <span>{item.days}</span>
+                    <span className={item.isClosed ? clsx("text-danger", "fw-bold") : ""}>
+                      {item.hours}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </Col>
