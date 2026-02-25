@@ -1,22 +1,22 @@
 export const routes = [
   {
-    id: "inicio",
+    id: "start",
     label: "Inicio",
   },
   {
-    id: "nosotros",
+    id: "aboutUs",
     label: "Nosotros",
   },
   {
-    id: "servicios",
+    id: "services",
     label: "Servicios",
   },
   {
-    id: "diferencial",
+    id: "differential",
     label: "Diferencial",
   },
   {
-    id: "contacto",
+    id: "contact",
     label: "Contacto",
   },
 ];

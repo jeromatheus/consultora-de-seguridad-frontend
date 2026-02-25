@@ -9,7 +9,7 @@ function StartSection() {
   const scrollTo = useScrollTo(80);
 
   return (
-    <section id="inicio">
+    <section id="start">
       <Carousel
         fade
         controls={false}

@@ -36,9 +36,7 @@
   --trans-std: transform 0.3s ease;
   --trans-hover: translateY(-6px);
 
-  /* =========================================
-     ESCALA TIPOGRÁFICA (Fluid Typography)
-     ========================================= */
+  /* TIPOGRAFÍA */
   --fs-hero: clamp(2.5rem, 6vw, 4.2rem);     /* Títulos gigantes */
   --fs-h2: clamp(2rem, 5vw, 3rem);           /* Títulos de sección */
   --fs-h3: clamp(1.25rem, 2vw, 1.5rem);      /* Subtítulos de sección / Títulos de tarjetas grandes */
@@ -49,9 +47,7 @@
   --fs-body-sm: clamp(0.85rem, 1vw, 0.95rem);/* Textos secundarios, items de listas */
   --fs-body-xs: 0.75rem;                     /* Letra pequeña, badges, horarios */
 
-  /* =========================================
-     RADIOS DE BORDE (Border Radius)
-     ========================================= */
+  /* BORDER RADIUS */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;

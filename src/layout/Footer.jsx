@@ -10,7 +10,7 @@ import {
   defaultWhatsappMessage,
   location,
   schedule,
-} from "../constants/contactInfo";
+} from "../constants/companyInfo";
 import { footerConfig } from "../constants/footer";
 
 function Footer() {

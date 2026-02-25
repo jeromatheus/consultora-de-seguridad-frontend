@@ -7,7 +7,7 @@ import {
   defaultWhatsappMessage,
   location,
   schedule, 
-} from "../constants/contactInfo";
+} from "../constants/companyInfo";
 import styles from "./ContactSection.module.css";
 import clsx from "clsx";
 import ContactForm from "./ContactForm";
@@ -23,7 +23,7 @@ const ContactSection = () => {
   );
 
   return (
-    <section id="contacto" className="px-4 px-lg-5 bg-tactical-grid">
+    <section id="contact" className="px-4 px-lg-5 bg-tactical-grid">
       <div className="section-header">
         <h2 className="section-title">Contactanos</h2>
       </div>

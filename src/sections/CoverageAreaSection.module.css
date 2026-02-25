@@ -1,0 +1,32 @@
+.areaCard {
+  cursor: default;
+  transition: all 0.3s ease;
+  background-color: #0f1c2e;
+  border: 1px solid rgba(var(--bs-secondary-rgb), 0.25);
+}
+
+.areaCard:hover {
+  border-color: rgba(var(--bs-secondary-rgb), 0.6);
+  background-color: #16263d;
+  transform: translateX(8px);
+}
+
+.areaCard:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateX(10px);
+  border-color: var(--bs-secondary) !important;
+}
+
+.mapContainer {
+  min-height: 450px;
+  background-color: #121212;
+}
+
+.mapFrame {
+  border: 0;
+  filter: invert(90%) hue-rotate(180deg) grayscale(30%) contrast(110%);
+}
+
+.mapDisabled {
+  pointer-events: none;
+}

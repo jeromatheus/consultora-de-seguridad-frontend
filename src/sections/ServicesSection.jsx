@@ -12,7 +12,7 @@ const ServicesSection = () => {
   const rowRefs = useScrollReveal(0.15);
 
   return (
-    <section id="servicios" className="bg-tactical-grid">
+    <section id="services" className="bg-tactical-grid">
       <div className={clsx("section-header", "px-4", "px-lg-5")}>
         <h2 className={clsx("section-title")}>SERVICIOS</h2>
         <h3 className={clsx("section-subtitle")}>
