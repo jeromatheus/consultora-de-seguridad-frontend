@@ -12,10 +12,6 @@
 }
 
 .flipCardInner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
   transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
 }
@@ -24,66 +20,40 @@
   transform: rotateY(180deg);
 }
 
-.flipCardFront, .flipCardBack {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.flipCardFront,
+.flipCardBack {
   backface-visibility: hidden;
   background: var(--grad-surface-dark);
   border-right: 1px solid var(--border-light-subtle);
   border-bottom: 1px solid var(--border-light-subtle);
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
   border-radius: var(--radius-md);
-}
-
-.flipCardFront {
-  align-items: center;
-  justify-content: center;
-}
-
-.cardContentWrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 2rem;
 }
 
 .flipCardBack {
   transform: rotateY(180deg);
-  justify-content: center; 
-  align-items: center;
-  text-align: left;
   background: var(--grad-surface-darker);
-  box-shadow: inset 0 0 50px rgba(255,255,255,0.02);
-  padding-bottom: 3.5rem; 
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.02);
+  padding-bottom: 3.5rem;
 }
 
 .cardToggleButton {
-  position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   font-size: var(--fs-body-sm);
-  text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.5);
   transition: color 0.3s ease;
+  color: var(--text-tactical-gray);
 }
 
 .flipCard:hover .cardToggleButton {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .aboutCardImage {
   width: 100px;
   height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
 }
 
 .aboutCardLogo {
@@ -99,66 +69,27 @@
 }
 
 .aboutCardTitle {
-  color: var(--text-white);
   font-size: var(--fs-h3);
   font-weight: 800;
-  text-transform: uppercase;
-  margin: 0;
 }
 
 .aboutCardTitleBack {
   color: var(--text-white);
   font-size: var(--fs-h3);
   font-weight: 800;
-  text-transform: uppercase;
   margin: 0 0 20px 0;
-  width: 100%;
-  text-align: center;
   border-bottom: 1px solid var(--border-light-strong);
-  padding-bottom: 15px;
   flex-shrink: 0;
 }
 
 .aboutCardBody {
-  flex: 1; 
-  width: 100%;
-  min-height: 0; 
-  display: flex;
-  flex-direction: column;
-}
-
-.aboutCardList {
-  list-style: none;
-  padding: 0 1rem;
-  margin: 0;
+  min-height: 0;
 }
 
 .aboutCardItem {
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
-  padding: 10px 0;
   color: var(--text-tactical-gray);
   font-size: var(--fs-body-sm);
   letter-spacing: 1px;
-  font-weight: 500;
-}
-
-.aboutCardDivider {
-  height: 1px;
-  background: var(--border-light-medium);
-  position: relative;
-  overflow: hidden;
-}
-
-.aboutCardDivider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -40%;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
 }
 
 .flipCardInner.flipped .aboutCardDivider::after {
@@ -166,6 +97,11 @@
 }
 
 @keyframes scanPulse {
-  0% { left: -40%; }
-  100% { left: 120%; }
+  0% {
+    left: -40%;
+  }
+
+  100% {
+    left: 120%;
+  }
 }

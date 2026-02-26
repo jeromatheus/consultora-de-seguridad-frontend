@@ -43,16 +43,27 @@ const AboutUsSection = () => {
                 }}
               >
                 <div
-                  className={clsx(styles.flipCardInner, {
-                    [styles.flipped]: isFlipped,
-                  })}
+                  className={clsx(
+                    styles.flipCardInner,
+                    "position-relative w-100 h-100 text-center",
+                    {
+                      [styles.flipped]: isFlipped,
+                    },
+                  )}
                 >
                   {/* Front */}
                   <div
-                    className={clsx(styles.flipCardFront, "hover-light-scan")}
+                    className={clsx(
+                      styles.flipCardFront,
+                      "position-absolute d-flex flex-column w-100 h-100 hover-light-scan align-items-center justify-content-center",
+                    )}
                   >
-                    <div className={styles.cardContentWrapper}>
-                      <div className={styles.aboutCardImage}>
+                    <div
+                      className={clsx(
+                        "d-flex flex-column align-items-center justify-content-center flex-fill",
+                      )}
+                    >
+                      <div className={clsx(styles.aboutCardImage, "mb-3")}>
                         <img
                           src={card.image}
                           alt={card.title}
@@ -62,34 +73,55 @@ const AboutUsSection = () => {
                       </div>
 
                       <h4
-                        className={clsx("text-silver", styles.aboutCardTitle)}
+                        className={clsx(
+                          "text-silver text-uppercase m-0",
+                          styles.aboutCardTitle,
+                        )}
                       >
                         {card.title}
                       </h4>
                     </div>
 
-                    <span className={styles.cardToggleButton}>Ver más</span>
+                    <span
+                      className={clsx(
+                        styles.cardToggleButton,
+                        "text-uppercase position-absolute",
+                      )}
+                    >
+                      Ver más
+                    </span>
                   </div>
 
                   {/* Back */}
-                  <div className={styles.flipCardBack}>
+                  <div
+                    className={clsx(
+                      styles.flipCardBack,
+                      "position-absolute d-flex flex-column w-100 h-100 justify-content-center align-items-center text-start",
+                    )}
+                  >
                     <h4
-                      className={clsx("text-silver", styles.aboutCardTitleBack)}
+                      className={clsx(
+                        "text-silver pb-3 w-100 text-center text-uppercase",
+                        styles.aboutCardTitleBack,
+                      )}
                     >
                       {card.title}
                     </h4>
 
-                    <div className={styles.aboutCardBody}>
-                      <ul
-                        className={clsx(
-                          styles.aboutCardList,
-                          "custom-scrollbar",
-                        )}
-                      >
+                    <div
+                      className={clsx(
+                        "d-flex flex-column flex-fill w-100",
+                        styles.aboutCardBody,
+                      )}
+                    >
+                      <ul className={clsx("custom-scrollbar px-2 m-0")}>
                         {card.items.map((item, idx) => (
                           <li
                             key={`${card.id}-${idx}`}
-                            className={styles.aboutCardItem}
+                            className={clsx(
+                              styles.aboutCardItem,
+                              "d-flex gap-3 align-items-start py-2",
+                            )}
                           >
                             <FaShieldAlt className="global-icon mt-1" />
                             {item}
@@ -98,7 +130,14 @@ const AboutUsSection = () => {
                       </ul>
                     </div>
 
-                    <span className={styles.cardToggleButton}>Ver menos</span>
+                    <span
+                      className={clsx(
+                        styles.cardToggleButton,
+                        "text-uppercase position-absolute",
+                      )}
+                    >
+                      Ver menos
+                    </span>
                   </div>
                 </div>
               </div>
