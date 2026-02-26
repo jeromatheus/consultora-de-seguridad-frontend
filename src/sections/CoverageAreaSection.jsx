@@ -12,7 +12,7 @@ const CoverageAreaSection = () => {
     <section id="covertura" className="px-4 px-lg-5">
       <Container
         fluid="sm"
-        className={clsx(styles.coverageContainer, "px-3 px-lg-5 py-5")}
+        className={clsx(styles.coverageContainer, "px-4 px-lg-5 py-5")}
       >
         <div className="d-flex justify-content-center gap-3">
           <FaMapLocationDot size={32} />
