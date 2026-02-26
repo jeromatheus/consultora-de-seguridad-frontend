@@ -13,58 +13,74 @@ const ServicesSection = () => {
   const rowRefs = useScrollReveal(0.15);
 
   return (
-    <section id="services" className="bg-tactical-grid">
+    <section id="services">
       <div className={clsx("section-header", "px-4", "px-lg-5")}>
-        <h2 className={clsx("section-title")}>SERVICIOS</h2>
-        <h3 className={clsx("section-subtitle")}>
+        <h2 className="section-title">SERVICIOS</h2>
+        <h3 className="section-subtitle">
           "La seguridad no es un servicio, es una ciencia de precisión"
         </h3>
       </div>
 
-      <div className={clsx(styles.container)}>
+      <div className="overflow-hidden">
         {services.map((service, index) => {
           const isEven = index % 2 === 0;
-
           return (
             <Row
               ref={(el) => (rowRefs.current[index] = el)}
               key={index}
               className={clsx(
+                "m-0 align-items-stretch p-4",
                 styles.serviceRow,
                 isEven ? styles.fromLeft : styles.fromRight,
-                !isEven && "flex-md-row-reverse",
+                !isEven && "flex-md-row-reverse"
               )}
             >
-              <Col md={4} className={clsx(styles.imgCol)}>
+              {/* Contenedor de Imagen */}
+              <Col md={4} className={clsx("p-0 position-relative overflow-hidden", styles.imgCol)}>
                 <img
                   src={service.img}
                   alt={service.title}
-                  className={clsx(styles.serviceImage)}
+                  className={clsx("w-100 h-100 d-block", styles.serviceImage)}
                 />
               </Col>
 
+              {/* Contenedor de Texto */}
               <Col
                 md={8}
-                className={clsx(styles.textCol, isEven ? "ps-md-5" : "pe-md-5")}
+                className={clsx(
+                  "d-flex flex-column justify-content-between py-0 mt-4 mt-md-0",
+                  isEven ? "ps-md-5" : "pe-md-5",
+                  styles.textCol
+                )}
               >
-                <div className={clsx(!isEven && "text-md-end")}>
-                  <h4 className={clsx(styles.serviceTitle, "title-tactical")}>
+                <div className={clsx("text-center", isEven ? "text-md-start" : "text-md-end")}>
+                  <h4 className={clsx("title-tactical mt-3 mt-md-0", styles.serviceTitle)}>
                     {service.title}
                   </h4>
 
                   <div
-                    className={clsx(styles.separator, !isEven && "ms-md-auto")}
+                    className={clsx(
+                      "mx-auto my-4",
+                      isEven ? "ms-md-0 me-md-auto" : "ms-md-auto me-md-0",
+                      styles.separator
+                    )}
                   />
 
-                  <p className={clsx(styles.serviceDescription)}>
+                  <p className={clsx(styles.serviceDescription, "ps-3")}>
                     {service.description}
                   </p>
 
                   <div className="my-4">
                     {service.features?.map((feature, fIndex) => (
-                      <div key={fIndex} className={clsx(styles.featureItem)}>
-                        <FaShieldAlt className={clsx("global-icon")} />
-                        <span>{feature}</span>
+                      <div
+                        key={fIndex}
+                        className={clsx(
+                          "d-flex align-items-center gap-2 text-uppercase fw-semibold m-2 ms-0 ms-lg-3",
+                          styles.featureItem
+                        )}
+                      >
+                        <FaShieldAlt className="global-icon flex-shrink-0" />
+                        <span className="text-start">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -74,18 +90,26 @@ const ServicesSection = () => {
                   <CourseCategories categories={service.categories} />
                 )}
 
+                {/* Wrapper Comercial */}
                 <div
                   className={clsx(
-                    styles.commercialWrapper,
-                    !isEven && styles.commercialEnd,
+                    "d-flex flex-column mt-4",
+                    isEven ? "align-items-center align-items-md-start" : "align-items-center align-items-md-end ms-md-auto",
+                    styles.commercialWrapper
                   )}
                 >
-                  <small className={clsx(styles.commercialText)}>
+                  <small
+                    className={clsx(
+                      "text-uppercase fw-bold d-block w-100 py-3 px-4",
+                      styles.commercialText,
+                      !isEven && styles.commercialTextEnd
+                    )}
+                  >
                     Tipo de Canon: {service.billingType}
                   </small>
 
                   <Button
-                    className={clsx("btn-tactical", "mt-1")}
+                    className="btn-tactical mt-2 w-100 rounded-0"
                     onClick={() => scrollTo(SECTION_IDS.CONTACT)}
                   >
                     Consultar Ahora

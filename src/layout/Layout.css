@@ -12,15 +12,6 @@
   background: linear-gradient(to bottom, var(--bg-main) 0%, var(--bg-black) 50%) !important;
 }
 
-.bg-tactical-grid {
-  background-color: var(--bg-main);
-  background-image: 
-    linear-gradient(var(--border-light-subtle) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border-light-subtle) 1px, transparent 1px);
-  background-size: 40px 40px;
-  background-position: center center;
-}
-
 .header-border {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }

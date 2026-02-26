@@ -49,7 +49,8 @@ export const services = [
       "Desarrollamos programas de entrenamiento diseñados para profesionales que operan en entornos de alto riesgo. Nuestra formación combina doctrina operativa, escenarios reales y metodologías actualizadas para maximizar desempeño y seguridad.",
     features: [
       "Preparación Integral del Personal",
-      "Modalidad Presencial"
+      "Modalidad Presencial",
+      "Cursos para Principiates y Avanzados",
     ],
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",

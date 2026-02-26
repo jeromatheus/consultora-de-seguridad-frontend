@@ -9,13 +9,14 @@ const CoverageAreaSection = () => {
   const { selectedArea, setSelectedArea, mapSrc, isActive } = useCoverageMap();
 
   return (
-    <section id="covertura" className="bg-tactical-grid">
-      <Container className="px-3 px-lg-5">
-        <div className="section-header mb-0">
-          <div className="d-flex justify-content-center align-items-center gap-3">
-            <FaMapLocationDot size={32} className="text-secondary" />
-            <h2 className="section-title">Áreas de Cobertura</h2>
-          </div>
+    <section id="covertura" className="px-4 px-lg-5">
+      <Container
+        fluid="sm"
+        className={clsx(styles.coverageContainer, "p-3 p-lg-5")}
+      >
+        <div className="d-flex justify-content-center gap-3">
+          <FaMapLocationDot size={32} />
+          <h2 className="text-uppercase fw-semibold">Áreas de Cobertura</h2>
         </div>
         <p className={clsx("text-secondary text-center my-4")}>
           {coverageMessage}

@@ -1,3 +1,15 @@
+.coverageContainer {
+  margin-top: 5rem!important;
+  background: var(--bg-black);
+}
+
+@media (min-width: 992px) {
+  .coverageContainer {
+    max-width: 1100px!important; 
+    margin: 0 auto;
+  }
+}
+
 .areaCard {
   cursor: pointer;
   transition: all 0.3s ease;

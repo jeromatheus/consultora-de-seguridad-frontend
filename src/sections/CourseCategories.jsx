@@ -4,6 +4,7 @@ import { FaArrowDown } from "react-icons/fa";
 import clsx from "clsx";
 import styles from "./CourseCategories.module.css";
 
+// TODO: niveles de dificultad, pdf, duración, modalidad, formulario de pre-inscripción
 export const CourseCategories = ({ categories = [] }) => {
   const [activeKey, setActiveKey] = useState(null);
 

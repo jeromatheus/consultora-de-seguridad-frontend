@@ -58,6 +58,11 @@ body {
   color: var(--text-primary); 
   font-family: 'Roboto', sans-serif;
   padding-top: var(--header-height); 
+  background-image: 
+    linear-gradient(var(--border-light-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light-subtle) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;  
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
@@ -65,9 +70,14 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   letter-spacing: 1.5px; 
 }
 
-/* =========================================
-   BOTÓN TÁCTICO GLOBAL
-   ========================================= */
+.title-tactical {
+  font-family: 'Saira Extra Condensed', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-white);
+}
+
 .btn-tactical {
   background-color: #1f468f !important; 
   border: 1px solid #476588 !important; 
@@ -158,26 +168,12 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   display: inline-block; 
 }
 
-.bg-silver {
-  background: var(--grad-silver);
-  filter: drop-shadow(0px 2px 0px rgba(0,0,0,0.5));
-}
-
-.title-tactical {
-  font-family: 'Saira Extra Condensed', sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: var(--text-white);
-}
-
 .global-icon {
   font-size: 0.9rem;
   opacity: 0.8;
   flex-shrink: 0; 
 }
 
-/* Scrollbar Unificado */
 .custom-scrollbar {
   overflow-y: auto;
   scrollbar-width: thin;

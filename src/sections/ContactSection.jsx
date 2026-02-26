@@ -23,7 +23,7 @@ const ContactSection = () => {
   );
 
   return (
-    <section id="contact" className="px-4 px-lg-5 bg-tactical-grid">
+    <section id="contact" className="px-4 px-lg-5">
       <div className="section-header">
         <h2 className="section-title">Contactanos</h2>
       </div>
