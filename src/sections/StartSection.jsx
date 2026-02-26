@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
-import clsx from "clsx";
-import styles from "./StartSection.module.css";
 import { welcome_slides } from "../constants/welcome";
 import { useScrollTo } from "../hooks/useScrollTo";
+import { SECTION_IDS } from "../constants/routes";
+import clsx from "clsx";
+import styles from "./StartSection.module.css";
 
 function StartSection() {
   const scrollTo = useScrollTo(80);
@@ -35,7 +36,7 @@ function StartSection() {
                 <Button
                   size="lg"
                   className={clsx("btn-tactical")}
-                  onClick={() => scrollTo("contacto")}
+                  onClick={() => scrollTo(SECTION_IDS.CONTACT)}
                 >
                   Agendar Consulta de Diagnóstico
                 </Button>

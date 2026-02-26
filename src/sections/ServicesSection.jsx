@@ -4,6 +4,7 @@ import { useScrollTo } from "../hooks/useScrollTo";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { services } from "../constants/services";
 import { CourseCategories } from "./CourseCategories";
+import { SECTION_IDS } from "../constants/routes";
 import clsx from "clsx";
 import styles from "./ServicesSection.module.css";
 
@@ -85,7 +86,7 @@ const ServicesSection = () => {
 
                   <Button
                     className={clsx("btn-tactical", "mt-1")}
-                    onClick={() => scrollTo("contacto")}
+                    onClick={() => scrollTo(SECTION_IDS.CONTACT)}
                   >
                     Consultar Ahora
                   </Button>
