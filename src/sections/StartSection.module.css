@@ -1,18 +1,11 @@
 .heroCarousel {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
   background-color: var(--bg-black);
   color: var(--text-white);
   height: calc(100vh - var(--header-height));
 }
 
 .carouselItem {
-  height: calc(100vh - var(--header-height));
   height: 100vh;
-  width: 100%;
-  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -34,27 +27,13 @@
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
   pointer-events: none;
 }
 
 .carouselCaptionFix {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
   padding-bottom: clamp(4rem, 15vh, 10rem);  
   padding-left: clamp(1.25rem, 5vw, 4rem);
   padding-right: clamp(1.25rem, 5vw, 4rem);
@@ -63,25 +42,17 @@
 .contentWrapper {
   width: 100%;
   max-width: 900px;
-  text-align: center;
   animation: fadeInUp 1s ease-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
 }
 
 .title {
-  margin: 0;
-  font-weight: 700;
   line-height: 1.1;
   font-size: var(--fs-hero);
-  text-transform: uppercase;
   text-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 
 .subtitle {
-  margin: 0;
   font-weight: 300;
   line-height: 1.4;
   font-size: var(--fs-body-lg);
@@ -91,7 +62,6 @@
 }
 
 .contentWrapper :global(.btn-tactical) {
-  width: auto !important;
   min-width: fit-content;
   padding: 12px 35px;
   display: inline-block;

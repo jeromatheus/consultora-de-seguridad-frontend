@@ -5,7 +5,6 @@ import clsx from "clsx";
 
 const DifferentialSection = () => {
 
-  // FUNCIÓN AUXILIAR: Agrupar los items en paquetes de 3
   const chunkArray = (array, size) => {
     const chunked = [];
     for (let i = 0; i < array.length; i += size) {
@@ -46,6 +45,7 @@ const DifferentialSection = () => {
                         rel: "noopener noreferrer",
                       })}
                       className={clsx(
+                        "d-flex flex-column align-items-center justify-content-center text-decoration-none h-100 p-2 p-md-3",
                         styles.itemWrapper,
                         item.isLink && styles.interactiveItem
                       )}
@@ -53,14 +53,10 @@ const DifferentialSection = () => {
                       <img
                         src={item.logo}
                         alt={item.title}
-                        className={styles.iconImage}
+                        className={clsx("mb-4", styles.iconImage)}
                       />
                       <h5
-                        className={clsx(
-                          "text-silver",
-                          "text-center",
-                          "px-3"
-                        )}
+                        className="text-silver text-center px-3 m-0"
                       >
                         {item.title}
                       </h5>
