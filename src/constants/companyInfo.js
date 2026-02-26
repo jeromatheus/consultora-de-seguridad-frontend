@@ -28,4 +28,4 @@ export const coverageAreas = [
   "Banda del Río Salí",
   "Alderetes"
 ];
-export const coverageMessage = "Desplegamos nuestros servicios de seguridad integral y consultoría estratégica en los principales puntos de la provincia de Tucumán. Nuestra sede central se encuentra en la localidad de Yerba Buena, sin embargo, nuestros servicios se extienden hasta las siguientes localidades.";
+export const coverageMessage = "Desplegamos nuestros servicios de seguridad integral y consultoría estratégica en los principales puntos de la provincia de Tucumán. Nuestra sede central se encuentra en la localidad de Yerba Buena y nuestros servicios se extienden hasta las siguientes localidades.";

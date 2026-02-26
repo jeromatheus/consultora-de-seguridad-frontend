@@ -18,7 +18,6 @@ const CoverageAreaSection = () => {
           </div>
         </div>
         <p className={clsx("text-secondary text-center my-4")}>
-          {" "}
           {coverageMessage}
         </p>
         <Row className="g-4 align-items-stretch">
