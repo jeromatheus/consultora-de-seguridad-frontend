@@ -20,6 +20,12 @@
 .mapContainer {
   min-height: 450px;
   background-color: #121212;
+  filter:
+    invert(85%)
+    hue-rotate(180deg)
+    brightness(1.15)
+    contrast(1.25)
+    saturate(0.9);
 }
 
 .mapFrame {
