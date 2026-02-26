@@ -2,54 +2,23 @@
   max-height: 300px;
 }
 
-.section {
-  width: 100%;
-}
-
 .title {
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 600;
   letter-spacing: 2px;
-  margin: 1.5rem 0;
-  text-align: start;
   font-size: clamp(1.125rem, 1vw + 0.75rem, 1.5rem) !important;
-}
-
-.tabsNav {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-bottom: 1px solid rgba(218, 9, 9, 0.1) !important;
-  gap: 4px;
-}
-
-.navItem {
-  flex: 1;
 }
 
 .navLink {
   background-color: #0a0a0a !important;
   color: #b0c2d3 !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
-  border-bottom: none !important;
-  border-radius: 4px 4px 0 0 !important;
-  padding: 1rem 1.5rem !important;
-  height: 100%;
-  text-align: center;
-  font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  font-weight: 600;
   transition: all 0.25s ease;
   font-size: clamp(0.8rem, 0.5vw + 0.65rem, 0.95rem) !important;
-  position: relative;
-  overflow: hidden;  
 }
 
 .navLinkActive {
   background-color: #1a1a1a !important;
   color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
   box-shadow: inset 0 -2px 0 #ffffff;
 }
 
@@ -67,8 +36,6 @@
 }
 
 .cardTitle {
-  color: #ffffff !important;
-  font-weight: 600 !important;
   font-size: clamp(0.9rem, 0.4vw + 0.75rem, 1.05rem) !important;
 }
 
@@ -83,6 +50,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
