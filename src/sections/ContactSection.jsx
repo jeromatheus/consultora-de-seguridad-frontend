@@ -11,6 +11,7 @@ import {
 import styles from "./ContactSection.module.css";
 import clsx from "clsx";
 import ContactForm from "./ContactForm";
+import { SECTION_IDS } from "../constants/routes";
 import { useMemo } from "react";
 
 const ContactSection = () => {
@@ -23,7 +24,7 @@ const ContactSection = () => {
   );
 
   return (
-    <section id="contact" className="px-4 px-lg-5">
+    <section id={SECTION_IDS.CONTACT} className="px-4 px-lg-5">
       <div className="section-header">
         <h2 className="section-title">Contactanos</h2>
       </div>

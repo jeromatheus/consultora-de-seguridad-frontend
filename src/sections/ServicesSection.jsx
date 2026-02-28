@@ -1,6 +1,7 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { FaShieldAlt } from "react-icons/fa";
-import { useScrollTo } from "../hooks/useScrollTo";
+import { HashLink } from "react-router-hash-link"; 
+import { scrollWithOffset } from "../utils/scrollUtils"; 
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { services } from "../constants/services";
 import { CourseCategories } from "./CourseCategories";
@@ -9,11 +10,10 @@ import clsx from "clsx";
 import styles from "./ServicesSection.module.css";
 
 const ServicesSection = () => {
-  const scrollTo = useScrollTo(80);
   const rowRefs = useScrollReveal(0.15);
 
   return (
-    <section id="services">
+    <section id={SECTION_IDS.SERVICES}>
       <div className={clsx("section-header", "px-4", "px-lg-5")}>
         <h2 className="section-title">SERVICIOS</h2>
         <h3 className="section-subtitle">
@@ -35,7 +35,6 @@ const ServicesSection = () => {
                 !isEven && "flex-md-row-reverse"
               )}
             >
-              {/* Contenedor de Imagen */}
               <Col md={4} className={clsx("p-0 position-relative overflow-hidden", styles.imgCol)}>
                 <img
                   src={service.img}
@@ -44,7 +43,6 @@ const ServicesSection = () => {
                 />
               </Col>
 
-              {/* Contenedor de Texto */}
               <Col
                 md={8}
                 className={clsx(
@@ -90,7 +88,6 @@ const ServicesSection = () => {
                   <CourseCategories categories={service.categories} />
                 )}
 
-                {/* Wrapper Comercial */}
                 <div
                   className={clsx(
                     "d-flex flex-column mt-4",
@@ -109,8 +106,11 @@ const ServicesSection = () => {
                   </small>
 
                   <Button
+                    as={HashLink}
+                    smooth
+                    to={`/#${SECTION_IDS.CONTACT}`}
+                    scroll={scrollWithOffset}
                     className="btn-tactical mt-2 w-100 rounded-0"
-                    onClick={() => scrollTo(SECTION_IDS.CONTACT)}
                   >
                     Consultar Ahora
                   </Button>

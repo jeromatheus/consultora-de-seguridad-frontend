@@ -2,36 +2,32 @@ import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button"; 
+import Button from "react-bootstrap/Button";
+import { HashLink } from "react-router-hash-link";
+import { scrollWithOffset } from "../utils/scrollUtils";
 import { routes } from "../constants/routes";
-import { useScrollTo } from "../hooks/useScrollTo";
 import { useSmartHeader } from "../hooks/useSmartHeader";
 import { clsx } from "clsx";
-import styles from "./Header.module.css"
+import styles from "./Header.module.css";
 
 function Header() {
-  const scrollTo = useScrollTo(80);
   const isVisible = useSmartHeader(15);
   const [expanded, setExpanded] = useState(false);
 
-  const handleClick = (id) => {
-    scrollTo(id);
-    setExpanded(false); 
-  };
+  const closeMenu = () => setExpanded(false);
 
   return (
-    <Navbar 
+    <Navbar
       expand="lg"
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
       className={clsx("fixed-top", styles.headerWrapper, {
         [styles.navbarVisible]: isVisible,
-        [styles.navbarHidden]: !isVisible
+        [styles.navbarHidden]: !isVisible,
       })}
     >
       <Container fluid className="px-3 px-lg-5">
-        
-        <Navbar.Brand onClick={() => window.location.href = "/"}>
+        <Navbar.Brand as={HashLink} smooth to="/#top" onClick={closeMenu}>
           <img
             alt="Logo"
             src="../logo_named.png"
@@ -40,7 +36,7 @@ function Header() {
           />
         </Navbar.Brand>
 
-        <Navbar.Toggle 
+        <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           onClick={() => setExpanded(!expanded)}
         />
@@ -50,8 +46,12 @@ function Header() {
             {routes.map((route) => (
               <Nav.Link
                 key={route.id}
+                as={HashLink}
+                smooth
+                to={route.path}
+                scroll={scrollWithOffset}
                 className="hover-item text-uppercase fw-semibold text-white text-uppecase"
-                onClick={() => handleClick(route.id)}
+                onClick={closeMenu}
               >
                 {route.label}
               </Nav.Link>
@@ -59,15 +59,18 @@ function Header() {
           </Nav>
 
           <div className="d-flex justify-content-center mt-3 mt-lg-0">
-            <Button 
+            <Button
+              as={HashLink}
+              smooth
+              to="/#contacto"
+              scroll={scrollWithOffset}
               size="sm"
               className="btn-tactical px-3"
-              onClick={() => handleClick("contacto")}
+              onClick={closeMenu}
             >
               Consulta de Riesgos
             </Button>
           </div>
-
         </Navbar.Collapse>
       </Container>
     </Navbar>

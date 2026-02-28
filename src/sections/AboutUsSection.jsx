@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { Row, Col } from "react-bootstrap";
 import { FaShieldAlt } from "react-icons/fa";
 import { aboutUs } from "../constants/aboutUs";
+import { SECTION_IDS } from "../constants/routes";
 import clsx from "clsx";
 import styles from "./AboutUsSection.module.css";
 
@@ -17,7 +18,7 @@ const AboutUsSection = () => {
   }, []);
 
   return (
-    <section id="aboutUs" className="px-3 px-lg-5">
+    <section id={SECTION_IDS.ABOUT_US} className="px-3 px-lg-5">
       <div className="section-header">
         <h2 className="section-title">Nuestra Trayectoria</h2>
         <h3 className="section-subtitle">

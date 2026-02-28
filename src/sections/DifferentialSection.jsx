@@ -1,6 +1,7 @@
 import { Row, Col, Carousel } from "react-bootstrap";
 import { differentials } from "../constants/differentials";
 import styles from "./DifferentialSection.module.css";
+import { SECTION_IDS } from "../constants/routes";
 import clsx from "clsx";
 
 const DifferentialSection = () => {
@@ -16,7 +17,7 @@ const DifferentialSection = () => {
   const slides = chunkArray(differentials, 3);
 
   return (
-    <section id="differential" className="px-4 px-lg-5">
+    <section id={SECTION_IDS.DIFFERENTIAL} className="px-4 px-lg-5">
       <div className="section-header">
         <h2 className="section-title">Nuestro Diferencial</h2>
         <h3 className="section-subtitle">

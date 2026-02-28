@@ -1,8 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { HashLink } from "react-router-hash-link";
+import { scrollWithOffset } from "../utils/scrollUtils";
 import { routes } from "../constants/routes";
-import { useScrollTo } from "../hooks/useScrollTo";
 import {
   emailAddress,
   rawWhatsappNumber,
@@ -16,18 +17,11 @@ import { clsx } from "clsx";
 import styles from "./Footer.module.css";
 
 function Footer() {
-  const scrollTo = useScrollTo(80);
-
   const openedDays = schedule.filter((d) => !d.isClosed);
 
   const whatsappUrl = `https://wa.me/${rawWhatsappNumber}?text=${encodeURIComponent(
     defaultWhatsappMessage,
   )}`;
-
-  const handleNavClick = (e, id) => {
-    e.preventDefault();
-    scrollTo(id);
-  };
 
   return (
     <footer className={clsx("mt-5 pt-5 pb-4", styles.footerWrapper)}>
@@ -38,18 +32,20 @@ function Footer() {
             md={12}
             className="mb-5 mb-lg-0 d-flex align-items-center justify-content-center justify-content-lg-start"
           >
-            <img
-              src={footerConfig.logos.desktop}
-              alt="Logo Footer"
-              className={clsx("d-none d-md-block", styles.footerLogo)}
-              onClick={() => (window.location.href = "/")}
-            />
-            <img
-              src={footerConfig.logos.mobile}
-              alt="Logo Footer"
-              className={clsx("d-block d-md-none", styles.footerLogo)}
-              onClick={() => (window.location.href = "/")}
-            />
+            <HashLink smooth to="/#top" className="d-none d-md-block">
+              <img
+                src={footerConfig.logos.desktop}
+                alt="Logo Footer"
+                className={styles.footerLogo}
+              />
+            </HashLink>
+            <HashLink smooth to="/#top" className="d-block d-md-none">
+              <img
+                src={footerConfig.logos.mobile}
+                alt="Logo Footer"
+                className={styles.footerLogo}
+              />
+            </HashLink>
           </Col>
 
           <Col lg={3} md={4} xs={6} className="mb-4 mb-lg-0">
@@ -57,16 +53,17 @@ function Footer() {
             <ul className="list-unstyled d-flex flex-column gap-2">
               {routes.map((route) => (
                 <li key={route.id}>
-                  <a
-                    href={`#${route.id}`}
+                  <HashLink
+                    smooth
+                    to={route.path}
+                    scroll={scrollWithOffset}
                     className={clsx(
                       "hover-item p-0 text-white text-decoration-none",
                       styles.footerListItem,
                     )}
-                    onClick={(e) => handleNavClick(e, route.id)}
                   >
                     {route.label}
-                  </a>
+                  </HashLink>
                 </li>
               ))}
             </ul>
@@ -146,7 +143,7 @@ function Footer() {
         <Row className="align-items-center">
           <Col md={6} className="text-center text-md-start mb-3 mb-md-0">
             <p className={clsx("text-secondary mb-0", styles.extraSmall)}>
-              &copy; {new Date().getFullYear()}
+              &copy; {new Date().getFullYear()}{" "}
               {footerConfig.businessInfo.companyName}. Todos los derechos
               reservados.
             </p>
@@ -162,7 +159,10 @@ function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={clsx("nav-link p-0 text-secondary opacity-75", styles.extraSmall)}
+                className={clsx(
+                  "p-0 text-secondary opacity-75 text-decoration-none",
+                  styles.extraSmall,
+                )}
                 title={link.title}
               >
                 {link.label}
