@@ -39,7 +39,7 @@ const CoverageAreaSection = () => {
                 >
                   <div className="d-flex align-items-center gap-3">
                     <FaLocationCrosshairs
-                      className="text-secondary"
+                      className="text-secondary global-icon"
                       size={20}
                     />
                     <span className="text-white fw-semibold">{area}</span>

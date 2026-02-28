@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Tab, Nav, Row, Col, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Tab, Nav, Row, Col, Card, Button } from "react-bootstrap";
 import { FaArrowDown } from "react-icons/fa";
 import clsx from "clsx";
 import styles from "./CourseCategories.module.css";
 
 // TODO: niveles de dificultad, pdf, duración, modalidad, formulario de pre-inscripción
+// TODO: empezar bien arriba cuando hago click en una categoría, no mantener el scroll 
+// TODO: los links, si estoy en otra página deben enviarme primero a la página de inicio y luego hacer el scroll
 export const CourseCategories = ({ categories = [] }) => {
   const [activeKey, setActiveKey] = useState(null);
 
@@ -65,7 +68,12 @@ export const CourseCategories = ({ categories = [] }) => {
                     <Col xs={12} key={index}>
                       <Card className={clsx(styles.courseCard, "text-start")}>
                         <Card.Body className={clsx("p-3")}>
-                          <Card.Title className={clsx(styles.cardTitle, "text-white fw-semibold")}>
+                          <Card.Title
+                            className={clsx(
+                              styles.cardTitle,
+                              "text-white fw-semibold",
+                            )}
+                          >
                             {course.title}
                           </Card.Title>
                           <Card.Text className={clsx(styles.cardText)}>
@@ -81,6 +89,15 @@ export const CourseCategories = ({ categories = [] }) => {
           ))}
         </Tab.Content>
       </Tab.Container>
+
+      <Button
+        variant="dark"
+        className="w-100 mt-3 border border-white"
+        as={Link}
+        to="/cursos"
+      >
+        Ver Todos los Cursos
+      </Button>
     </section>
   );
 };

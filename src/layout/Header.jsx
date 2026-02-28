@@ -24,7 +24,7 @@ function Header() {
       expand="lg"
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
-      className={clsx("bg-tactical fixed-top", styles.smartNavbar, {
+      className={clsx("fixed-top", styles.headerWrapper, {
         [styles.navbarVisible]: isVisible,
         [styles.navbarHidden]: !isVisible
       })}

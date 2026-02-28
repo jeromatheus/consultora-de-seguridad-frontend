@@ -65,7 +65,7 @@ body {
   background-position: center center;  
 }
 
-h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
+h1, h2, h3, h4, h5, h6, .btn {
   font-family: 'Saira Extra Condensed', sans-serif;
   letter-spacing: 1.5px; 
 }
@@ -233,15 +233,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   display: flex;
   flex-direction: column;
 }
-
-.bg-tactical {
-  background: linear-gradient(to bottom, var(--bg-black) 0%, var(--bg-main) 100%) !important;
-}
-
-.bg-tactical-reverse {
-  background: linear-gradient(to bottom, var(--bg-main) 0%, var(--bg-black) 50%) !important;
-}
-
 
 .hover-item:hover {
   color: var(--text-muted) !important;

@@ -30,7 +30,7 @@ function Footer() {
   };
 
   return (
-    <footer className="mt-5 pt-5 pb-4 bg-tactical-reverse">
+    <footer className={clsx("mt-5 pt-5 pb-4", styles.footerWrapper)}>
       <Container fluid className="px-3 px-lg-5">
         <Row className="align-items-start justify-content-between">
           <Col

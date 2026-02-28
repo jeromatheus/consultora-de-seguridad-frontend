@@ -1,3 +1,11 @@
+.headerWrapper {
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  transition: transform 0.35s ease-in-out, opacity 0.3s ease-in-out;
+  background: linear-gradient(to bottom, var(--bg-black) 0%, var(--bg-main) 100%) !important;
+}
+
 .headerLogo {
   max-height: 50px;
   max-width: 100%;
@@ -12,13 +20,6 @@
 .headerLogo:hover {
   filter: brightness(1.15);
   transform: scale(1.015);
-}
-
-.smartNavbar {
-  top: 0;
-  width: 100%;
-  z-index: 1050;
-  transition: transform 0.35s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .navbarVisible {

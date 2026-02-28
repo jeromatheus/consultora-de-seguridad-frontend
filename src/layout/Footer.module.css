@@ -1,3 +1,8 @@
+
+.footerWrapper {
+  background: linear-gradient(to bottom, var(--bg-main) 0%, var(--bg-black) 50%) !important;
+}
+
 .footerLogo,
 .arcaLogo {
     cursor: pointer;
