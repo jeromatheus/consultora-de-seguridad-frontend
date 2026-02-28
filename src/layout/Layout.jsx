@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Header from './Header';
 import Footer from './Footer';
-import './Layout.css';
 
 const Layout = ({ children }) => {
   return (

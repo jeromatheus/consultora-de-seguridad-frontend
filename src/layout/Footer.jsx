@@ -12,6 +12,8 @@ import {
   schedule,
 } from "../constants/companyInfo";
 import { footerConfig } from "../constants/footer";
+import { clsx } from "clsx";
+import styles from "./Footer.module.css";
 
 function Footer() {
   const scrollTo = useScrollTo(80);
@@ -28,7 +30,7 @@ function Footer() {
   };
 
   return (
-    <footer className="mt-5 pt-5 pb-4 footer-border bg-tactical-reverse">
+    <footer className="mt-5 pt-5 pb-4 bg-tactical-reverse">
       <Container fluid className="px-3 px-lg-5">
         <Row className="align-items-start justify-content-between">
           <Col
@@ -39,13 +41,13 @@ function Footer() {
             <img
               src={footerConfig.logos.desktop}
               alt="Logo Footer"
-              className="footer-img d-none d-md-block"
+              className={clsx("d-none d-md-block", styles.footerLogo)}
               onClick={() => (window.location.href = "/")}
             />
             <img
               src={footerConfig.logos.mobile}
               alt="Logo Footer"
-              className="footer-img d-block d-md-none"
+              className={clsx("d-block d-md-none", styles.footerLogo)}
               onClick={() => (window.location.href = "/")}
             />
           </Col>
@@ -57,7 +59,10 @@ function Footer() {
                 <li key={route.id}>
                   <a
                     href={`#${route.id}`}
-                    className="nav-link p-0"
+                    className={clsx(
+                      "hover-item p-0 text-white text-decoration-none",
+                      styles.footerListItem,
+                    )}
                     onClick={(e) => handleNavClick(e, route.id)}
                   >
                     {route.label}
@@ -80,7 +85,10 @@ function Footer() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
+                  className={clsx(
+                    "text-decoration-none hover-item",
+                    styles.footerListItem,
+                  )}
                 >
                   {styledWhatsappNumber}
                 </a>
@@ -88,7 +96,10 @@ function Footer() {
               <li>
                 <a
                   href={`mailto:${emailAddress}`}
-                  className="text-decoration-none text-break"
+                  className={clsx(
+                    "text-decoration-none text-break hover-item",
+                    styles.footerListItem,
+                  )}
                 >
                   {emailAddress}
                 </a>
@@ -97,13 +108,13 @@ function Footer() {
               {openedDays.map((item, index) => (
                 <li
                   key={index}
-                  className="text-secondary"
+                  className={clsx("text-secondary", styles.footerListItem)}
                 >
                   {item.days}: <span>{item.hours}</span>
                 </li>
               ))}
 
-              <li className="text-secondary">
+              <li className={clsx("text-secondary", styles.footerListItem)}>
                 {location}
               </li>
             </ul>
@@ -124,8 +135,7 @@ function Footer() {
               <img
                 src={footerConfig.arcaQr}
                 alt="Data Fiscal ARCA"
-                className="footer-img"
-                style={{ maxWidth: "80px" }}
+                className={styles.arcaLogo}
               />
             </a>
           </Col>
@@ -135,11 +145,8 @@ function Footer() {
 
         <Row className="align-items-center">
           <Col md={6} className="text-center text-md-start mb-3 mb-md-0">
-            <p
-              className="text-secondary mb-0"
-              style={{ fontSize: "var(--fs-body-xs)", lineHeight: "1.5" }}
-            >
-              &copy; {new Date().getFullYear()}{" "}
+            <p className={clsx("text-secondary mb-0", styles.extraSmall)}>
+              &copy; {new Date().getFullYear()}
               {footerConfig.businessInfo.companyName}. Todos los derechos
               reservados.
             </p>
@@ -148,7 +155,6 @@ function Footer() {
           <Col
             md={6}
             className="d-flex flex-wrap justify-content-center justify-content-md-end gap-3 gap-md-4 text-secondary"
-            style={{ fontSize: "var(--fs-body-xs)" }}
           >
             {footerConfig.legalLinks.map((link) => (
               <a
@@ -156,7 +162,7 @@ function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="nav-link p-0 text-secondary opacity-75"
+                className={clsx("nav-link p-0 text-secondary opacity-75", styles.extraSmall)}
                 title={link.title}
               >
                 {link.label}

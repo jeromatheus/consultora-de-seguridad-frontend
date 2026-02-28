@@ -1,0 +1,42 @@
+.footerLogo,
+.arcaLogo {
+    cursor: pointer;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.footerLogo {
+    max-height: 120px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.footerLogo:hover,
+.arcaLogo:hover {
+    filter: brightness(1.15);
+    transform: scale(1.015);
+}
+
+.arcaLogo {
+    max-width: 100px;
+}
+
+.footerListItem {
+    font-size: 0.85rem !important;
+    opacity: 0.8;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footerListItem:hover {
+    opacity: 1;
+}
+
+.extraSmall {
+    line-height: 1.5;
+    font-size: var(--fs-body-xs);
+}

@@ -6,7 +6,8 @@ import Button from "react-bootstrap/Button";
 import { routes } from "../constants/routes";
 import { useScrollTo } from "../hooks/useScrollTo";
 import { useSmartHeader } from "../hooks/useSmartHeader";
-import "./Layout.css";
+import { clsx } from "clsx";
+import styles from "./Header.module.css"
 
 function Header() {
   const scrollTo = useScrollTo(80);
@@ -23,9 +24,10 @@ function Header() {
       expand="lg"
       expanded={expanded}
       onToggle={() => setExpanded(!expanded)}
-      className={`bg-tactical header-border fixed-top smart-navbar ${
-        isVisible ? "nav-visible" : "nav-hidden"
-      }`}
+      className={clsx("bg-tactical fixed-top", styles.smartNavbar, {
+        [styles.navbarVisible]: isVisible,
+        [styles.navbarHidden]: !isVisible
+      })}
     >
       <Container fluid className="px-3 px-lg-5">
         
@@ -34,7 +36,7 @@ function Header() {
             alt="Logo"
             src="../logo_named.png"
             height="50"
-            className="d-inline-block align-top me-2"
+            className={clsx("d-inline-block align-top me-2", styles.headerLogo)}
           />
         </Navbar.Brand>
 
@@ -48,7 +50,7 @@ function Header() {
             {routes.map((route) => (
               <Nav.Link
                 key={route.id}
-                className="nav-link text-uppercase fw-semibold"
+                className="hover-item text-uppercase fw-semibold text-white text-uppecase"
                 onClick={() => handleClick(route.id)}
               >
                 {route.label}

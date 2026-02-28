@@ -1,0 +1,41 @@
+.headerLogo {
+  max-height: 50px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.headerLogo:hover {
+  filter: brightness(1.15);
+  transform: scale(1.015);
+}
+
+.smartNavbar {
+  top: 0;
+  width: 100%;
+  z-index: 1050;
+  transition: transform 0.35s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbarVisible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbarHidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbarLink {
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.navbarLink:hover {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
