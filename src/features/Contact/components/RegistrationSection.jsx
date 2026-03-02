@@ -1,10 +1,13 @@
 import { Container, Row, Col } from "react-bootstrap";
-import PreRegistrationForm from "./PreRegistrationForm";
+import PreRegistrationForm from "./RegistrationForm";
 
 const RegistrationSection = () => {
   return (
-    <section id="inscripcion" className="py-5 mt-3">
-      <Container>
+    <section className="px-4 px-lg-5">
+      <div className="section-header">
+        <h2 className="section-title">Formulario de Inscripción</h2>
+      </div>      
+      <Container fluid className="px-0 px-lg-5">
         <Row className="justify-content-center">
           <Col lg={8} md={10}>
             <PreRegistrationForm />
