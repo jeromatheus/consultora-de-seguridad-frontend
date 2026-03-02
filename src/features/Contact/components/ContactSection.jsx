@@ -7,11 +7,11 @@ import {
   defaultWhatsappMessage,
   location,
   schedule, 
-} from "../constants/companyInfo";
+} from "../../../shared/data/companyInfo";
 import styles from "./ContactSection.module.css";
 import clsx from "clsx";
 import ContactForm from "./ContactForm";
-import { SECTION_IDS } from "../constants/routes";
+import { SECTION_IDS } from "../../../shared/data/routes";
 import { useMemo } from "react";
 
 const ContactSection = () => {

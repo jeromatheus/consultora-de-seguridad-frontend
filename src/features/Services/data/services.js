@@ -1,7 +1,7 @@
-import service_personal_protection from "../assets/services/service_personal_protection.png";
-import service_asset_custody from "../assets/services/service_asset_custody.png";
-import service_capacitation from "../assets/services/service_capacitation.png";
-import service_information from "../assets/services/service_information.png";
+import service_personal_protection from "../assets/service_personal_protection.png";
+import service_asset_custody from "../assets/service_asset_custody.png";
+import service_capacitation from "../assets/service_capacitation.png";
+import service_information from "../assets/service_information.png";
 
 // 1. Extraemos los cursos como una variable independiente y exportable
 export const courseCategories = [

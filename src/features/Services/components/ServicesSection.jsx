@@ -1,11 +1,11 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { FaShieldAlt } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link"; 
-import { scrollWithOffset } from "../utils/scrollUtils"; 
+import { scrollWithOffset } from "../../../shared/utils/scrollUtils";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { services } from "../constants/services";
+import { services } from "../data/services";
 import { CourseCategories } from "./CourseCategories";
-import { SECTION_IDS } from "../constants/routes";
+import { SECTION_IDS } from "../../../shared/data/routes";
 import clsx from "clsx";
 import styles from "./ServicesSection.module.css";
 

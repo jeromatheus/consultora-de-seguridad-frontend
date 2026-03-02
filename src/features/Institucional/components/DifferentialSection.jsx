@@ -1,7 +1,7 @@
 import { Row, Col, Carousel } from "react-bootstrap";
-import { differentials } from "../constants/differentials";
+import { differentials } from "../data/differentials";
 import styles from "./DifferentialSection.module.css";
-import { SECTION_IDS } from "../constants/routes";
+import { SECTION_IDS } from "../../../shared/data/routes";
 import clsx from "clsx";
 
 const DifferentialSection = () => {

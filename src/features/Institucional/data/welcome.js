@@ -1,6 +1,6 @@
-import hero_1 from "../assets/heros/hero_1.png";
-import hero_2 from "../assets/heros/hero_2.png";
-import hero_3 from "../assets/heros/hero_3.png";
+import hero_1 from "../assets/hero_1.png";
+import hero_2 from "../assets/hero_2.png";
+import hero_3 from "../assets/hero_3.png";
 
 export const welcome_slides = [
   {

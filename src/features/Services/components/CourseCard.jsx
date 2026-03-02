@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link";
-import { scrollWithOffset } from "../utils/scrollUtils";
+import { scrollWithOffset } from "../../../shared/utils/scrollUtils";
 import { Card, Button } from "react-bootstrap";
 
 const CourseCard = ({ course }) => {

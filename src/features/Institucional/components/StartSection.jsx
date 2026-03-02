@@ -1,9 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
 import { HashLink } from "react-router-hash-link";
-import { scrollWithOffset } from "../utils/scrollUtils";
-import { welcome_slides } from "../constants/welcome";
-import { SECTION_IDS } from "../constants/routes";
+import { scrollWithOffset } from "../../../shared/utils/scrollUtils";
+import { welcome_slides } from "../data/welcome";
+import { SECTION_IDS } from "../../../shared/data/routes";
 import clsx from "clsx";
 import styles from "./StartSection.module.css";
 

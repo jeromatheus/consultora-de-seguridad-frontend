@@ -1,9 +1,9 @@
-import data_protection_logo from "../assets/differentials/data_protection_logo.png";
-import veterans_logo from "../assets/differentials/veterans_logo.png";
-import region_logo from "../assets/differentials/region_logo.png";
-import anmac_logo from "../assets/differentials/anmac_logo.png";
-import intelligence_logo from "../assets/differentials/intelligence_logo.png";
-import euseca_logo from "../assets/differentials/euseca_logo.png";
+import data_protection_logo from "../assets/data_protection_logo.png";
+import veterans_logo from "../assets/veterans_logo.png";
+import region_logo from "../assets/region_logo.png";
+import anmac_logo from "../assets/anmac_logo.png";
+import intelligence_logo from "../assets/intelligence_logo.png";
+import euseca_logo from "../assets/euseca_logo.png";
 
 export const differentials = [
   { 

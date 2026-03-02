@@ -1,5 +1,5 @@
 import CourseCard from "../sections/CourseCard";
-import { courseCategories } from "../constants/services";
+import { courseCategories } from "../../../constants/services";
 import { Row, Col } from "react-bootstrap";
 
 const CoursesSection = () => {

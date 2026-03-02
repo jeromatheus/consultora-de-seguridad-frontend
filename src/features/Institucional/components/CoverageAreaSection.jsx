@@ -1,6 +1,6 @@
 import { Container, Row, Col, Badge } from "react-bootstrap";
 import { FaMapLocationDot, FaLocationCrosshairs } from "react-icons/fa6";
-import { coverageAreas, coverageMessage } from "../constants/companyInfo";
+import { coverageAreas, coverageMessage } from "../../../shared/data/companyInfo";
 import { useCoverageMap } from "../hooks/useCoverageMap";
 import clsx from "clsx";
 import styles from "./CoverageAreaSection.module.css";

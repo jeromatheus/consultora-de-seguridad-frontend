@@ -2,8 +2,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { HashLink } from "react-router-hash-link";
-import { scrollWithOffset } from "../utils/scrollUtils";
-import { routes } from "../constants/routes";
+import { scrollWithOffset } from "../../shared/utils/scrollUtils";
+import { routes } from "../../shared/data/routes";
 import {
   emailAddress,
   rawWhatsappNumber,
@@ -11,8 +11,8 @@ import {
   defaultWhatsappMessage,
   location,
   schedule,
-} from "../constants/companyInfo";
-import { footerConfig } from "../constants/footer";
+} from "../../shared/data/companyInfo";
+import { footerConfig } from "../data/footer";
 import { clsx } from "clsx";
 import styles from "./Footer.module.css";
 

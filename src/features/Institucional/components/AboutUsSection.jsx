@@ -1,8 +1,8 @@
 import { useState, useCallback } from "react";
 import { Row, Col } from "react-bootstrap";
 import { FaShieldAlt } from "react-icons/fa";
-import { aboutUs } from "../constants/aboutUs";
-import { SECTION_IDS } from "../constants/routes";
+import { aboutUs } from "../data/aboutUs";
+import { SECTION_IDS } from "../../../shared/data/routes";
 import clsx from "clsx";
 import styles from "./AboutUsSection.module.css";
 

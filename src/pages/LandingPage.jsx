@@ -1,9 +1,9 @@
-import StartSection from '../sections/StartSection';
-import AboutUsSection from '../sections/AboutUsSection';
-import CoverageAreaSection from '../sections/CoverageAreaSection';
-import ServicesSection from '../sections/ServicesSection';
-import ContactSection from '../sections/ContactSection';
-import DifferentialSection from '../sections/DifferentialSection';
+import StartSection from '../features/Institucional/components/StartSection';
+import AboutUsSection from '../features/Institucional/components/AboutUsSection';
+import CoverageAreaSection from '../features/Institucional/components/CoverageAreaSection';
+import DifferentialSection from '../features/Institucional/components/DifferentialSection';
+import ServicesSection from '../features/Services/components/ServicesSection';
+import ContactSection from '../features/Contact/components/ContactSection';
 import { Container } from 'react-bootstrap';
 
 const LandingPage = () => {
