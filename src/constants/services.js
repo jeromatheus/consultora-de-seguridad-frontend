@@ -3,6 +3,73 @@ import service_asset_custody from "../assets/services/service_asset_custody.png"
 import service_capacitation from "../assets/services/service_capacitation.png";
 import service_information from "../assets/services/service_information.png";
 
+// 1. Extraemos los cursos como una variable independiente y exportable
+export const courseCategories = [
+  {
+    name: "Seguridad Profesional",
+    id: 0,
+    items: [
+      {
+        title: "Tactical Shooting",
+        description: "Técnicas avanzadas de tiro defensivo y operativo orientadas a escenarios reales de confrontación."
+      },
+      {
+        title: "VIP Protection",
+        description: "Protección ejecutiva y aplicación de protocolos de seguridad para dignatarios y personal de alto perfil."
+      },
+      {
+        title: "High Risk Protection",
+        description: "Operaciones en entornos de amenaza elevada con planificación estratégica y respuesta táctica."
+      },
+      {
+        title: "Law Enforcement Training",
+        description: "Entrenamiento especializado para fuerzas del orden enfocado en desempeño operativo y control de situaciones críticas."
+      },
+      {
+        title: "Knife Fight Training",
+        description: "Técnicas de defensa y combate con arma blanca en contexto profesional."
+      }
+    ]
+  },
+  {
+    name: "Supervivencia y Rescate",
+    id: 1,
+    items: [
+      {
+        title: "Paramedic Response",
+        description: "Atención médica táctica y respuesta inmediata en situaciones críticas y de alto riesgo."
+      },
+      {
+        title: "Mo.S.T.O.",
+        description: "Mountain Survival Tactical Operations: Supervivencia y operaciones tácticas en terreno montañoso y agreste."
+      },
+      {
+        title: "Jungle Operations",
+        description: "Supervivencia y tácticas operativas en entorno selvático."
+      },
+      {
+        title: "Basic IED Awareness",
+        description: "Conciencia situacional y protocolos de actuación ante amenazas explosivas."
+      }
+    ]
+  },
+  {
+    name: "Preparación y Autodefensa",
+    id: 2,
+    items: [
+      {
+        title: "ESA Boot Camp",
+        description: "Programa intensivo de preparación física y mental para entornos exigentes de alto rendimiento."
+      },
+      {
+        title: "Woman in the Face of Danger",
+        description: "Entrenamiento de autoprotección y gestión de riesgo orientado específicamente a mujeres."
+      }
+    ]
+  }
+];
+
+// 2. Mantenemos el array de servicios limpio
 export const services = [
   {
     title: "Protección Personal de Alto Perfil",
@@ -55,69 +122,6 @@ export const services = [
     billingType: "Arancel por jornada / cursante",
     minPrice: "$25.000,00",
     img: service_capacitation,
-    categories: [
-      {
-        name: "Seguridad Profesional",
-        id: 0,
-        items: [
-          {
-            title: "Tactical Shooting",
-            description: "Técnicas avanzadas de tiro defensivo y operativo orientadas a escenarios reales de confrontación."
-          },
-          {
-            title: "VIP Protection",
-            description: "Protección ejecutiva y aplicación de protocolos de seguridad para dignatarios y personal de alto perfil."
-          },
-          {
-            title: "High Risk Protection",
-            description: "Operaciones en entornos de amenaza elevada con planificación estratégica y respuesta táctica."
-          },
-          {
-            title: "Law Enforcement Training",
-            description: "Entrenamiento especializado para fuerzas del orden enfocado en desempeño operativo y control de situaciones críticas."
-          },
-          {
-            title: "Knife Fight Training",
-            description: "Técnicas de defensa y combate con arma blanca en contexto profesional."
-          }
-        ]
-      },
-      {
-        name: "Supervivencia y Rescate",
-        id: 1,
-        items: [
-          {
-            title: "Paramedic Response",
-            description: "Atención médica táctica y respuesta inmediata en situaciones críticas y de alto riesgo."
-          },
-          {
-            title: "Mo.S.T.O.",
-            description: "Mountain Survival Tactical Operations: Supervivencia y operaciones tácticas en terreno montañoso y agreste."
-          },
-          {
-            title: "Jungle Operations",
-            description: "Supervivencia y tácticas operativas en entorno selvático."
-          },
-          {
-            title: "Basic IED Awareness",
-            description: "Conciencia situacional y protocolos de actuación ante amenazas explosivas."
-          }
-        ]
-      },
-      {
-        name: "Preparación y Autodefensa",
-        id: 2,
-        items: [
-          {
-            title: "ESA Boot Camp",
-            description: "Programa intensivo de preparación física y mental para entornos exigentes de alto rendimiento."
-          },
-          {
-            title: "Woman in the Face of Danger",
-            description: "Entrenamiento de autoprotección y gestión de riesgo orientado específicamente a mujeres."
-          }
-        ]
-      }
-    ]
+    categories: courseCategories, 
   }
 ];
