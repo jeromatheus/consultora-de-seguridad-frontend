@@ -9,6 +9,9 @@ const RegistrationSection = () => {
       </div>      
       <Container fluid className="px-0 px-lg-5">
         <Row className="justify-content-center">
+          <Col lg={4} md={2}>
+            <div className="border border-danger w-100 h-100"></div>
+          </Col>          
           <Col lg={8} md={10}>
             <PreRegistrationForm />
           </Col>

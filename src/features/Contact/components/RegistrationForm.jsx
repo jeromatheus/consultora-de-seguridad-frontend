@@ -13,16 +13,23 @@ const RegistrationForm = () => {
   const { sendData, status } = useContactForm("tu_id_aqui"); // TODO: Poner ID real de Formspree
 
   // 1. Extraemos los hooks y watch
-  const { watch, register, handleSubmit, reset, formState: { errors } } = useForm();
-  
+  const {
+    watch,
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
   // 2. Traemos las categorías simulando API
   const { availableCourses, loadingAvailableCoursess } = useAvailableCourses();
-  
+
   // 3. Observamos el curso seleccionado
   const selectedCursoTitle = watch("curso");
-  
+
   // 4. Traemos las fechas dinámicas según el curso
-  const { availableDates, loadingDates } = useAvailableDates(selectedCursoTitle);
+  const { availableDates, loadingDates } =
+    useAvailableDates(selectedCursoTitle);
 
   const onSubmit = async (data) => {
     const isSuccess = await sendData(data, token);
@@ -34,7 +41,10 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="p-4 bg-black border rounded shadow">
+    <div
+      className="p-3 p-lg-5 bg-black border rounded shadow d-flex flex-column justify-content-center"
+      style={{ minHeight: "550px" }}
+    >
       {/* Alertas de Feedback */}
       {status === "success" && (
         <Alert variant="success" className="text-uppercase small fw-bold">
@@ -50,14 +60,14 @@ const RegistrationForm = () => {
       <Form onSubmit={handleSubmit(onSubmit)}>        
         {/* FILA 1: NOMBRE Y APELLIDO */}
         <Row className="mb-3">
-          <Col xs={6} className="mb-3 mb-md-0">
+          <Col xs={12} sm={6} className="mb-3 mb-md-0">
             <Form.Group controlId="formNombre">
               <Form.Label className="text-white">Nombre</Form.Label>
-              <Form.Control 
-                type="text" 
+              <Form.Control
+                type="text"
                 placeholder="Ingrese su nombre"
-                {...register("nombre", { 
-                  required: "El nombre es obligatorio" 
+                {...register("nombre", {
+                  required: "El nombre es obligatorio",
                 })}
                 isInvalid={!!errors.nombre}
               />
@@ -67,14 +77,14 @@ const RegistrationForm = () => {
             </Form.Group>
           </Col>
 
-          <Col xs={6}>
+          <Col xs={12} sm={6}>
             <Form.Group controlId="formApellido">
               <Form.Label className="text-white">Apellido</Form.Label>
-              <Form.Control 
-                type="text" 
+              <Form.Control
+                type="text"
                 placeholder="Ingrese su apellido"
-                {...register("apellido", { 
-                  required: "El apellido es obligatorio" 
+                {...register("apellido", {
+                  required: "El apellido es obligatorio",
                 })}
                 isInvalid={!!errors.apellido}
               />
@@ -87,14 +97,16 @@ const RegistrationForm = () => {
 
         {/* FILA 2: FECHA DE NACIMIENTO Y SEXO */}
         <Row className="mb-3">
-          <Col xs={6} className="mb-3 mb-md-0">
+          <Col xs={12} sm={6} className="mb-3 mb-md-0">
             <Form.Group controlId="formNacimiento">
-              <Form.Label className="text-white">Fecha de Nacimiento</Form.Label>
-              <Form.Control 
-                type="date" 
-                {...register("fechaNacimiento", { 
+              <Form.Label className="text-white">
+                Fecha de Nacimiento
+              </Form.Label>
+              <Form.Control
+                type="date"
+                {...register("fechaNacimiento", {
                   required: "La fecha de nacimiento es obligatoria",
-                  validate: validateAge
+                  validate: validateAge,
                 })}
                 isInvalid={!!errors.fechaNacimiento}
               />
@@ -104,21 +116,21 @@ const RegistrationForm = () => {
             </Form.Group>
           </Col>
 
-          <Col xs={6}>
+          <Col xs={12} sm={6}>
             <Form.Group controlId="formSexo">
-              <Form.Label className="text-white">Sexo / Género</Form.Label>
-              <Form.Select 
-                {...register("sexo", { 
-                  required: "Debe seleccionar una opción" 
+              <Form.Label className="text-white">Sexo</Form.Label>
+              <Form.Select
+                {...register("sexo", {
+                  required: "Debe seleccionar una opción",
                 })}
                 isInvalid={!!errors.sexo}
                 defaultValue=""
               >
-                <option value="" disabled>Seleccione una opción...</option>
+                <option value="" disabled>
+                  Seleccione una opción...
+                </option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
-                <option value="Otro">Otro</option>
-                <option value="Prefiero no decirlo">Prefiero no decirlo</option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 {errors.sexo?.message}
@@ -129,16 +141,22 @@ const RegistrationForm = () => {
 
         {/* FILA 3: TELÉFONO Y EMAIL */}
         <Row className="mb-3">
-          <Col xs={6} className="mb-3 mb-md-0">
+          <Col xs={12} sm={6} className="mb-3 mb-md-0">
             <Form.Group controlId="formTelefono">
               <Form.Label className="text-white">Teléfono</Form.Label>
-              <Form.Control 
-                type="tel" 
+              <Form.Control
+                type="tel"
                 placeholder="Ej: 3811234567"
-                {...register("telefono", { 
+                {...register("telefono", {
                   required: "El número de contacto es obligatorio",
-                  minLength: { value: 8, message: "El teléfono debe tener al menos 8 dígitos" },
-                  pattern: { value: /^[0-9]+$/, message: "Solo se permiten números" }
+                  minLength: {
+                    value: 8,
+                    message: "El teléfono debe tener al menos 8 dígitos",
+                  },
+                  pattern: {
+                    value: /^[0-9]+$/,
+                    message: "Solo se permiten números",
+                  },
                 })}
                 isInvalid={!!errors.telefono}
               />
@@ -148,18 +166,19 @@ const RegistrationForm = () => {
             </Form.Group>
           </Col>
 
-          <Col xs={6}>
+          <Col xs={12} sm={6}>
             <Form.Group controlId="formEmail">
               <Form.Label className="text-white">Email</Form.Label>
-              <Form.Control 
-                type="email" 
+              <Form.Control
+                type="email"
                 placeholder="ejemplo@correo.com"
-                {...register("email", { 
+                {...register("email", {
                   required: "El correo electrónico es obligatorio",
-                  pattern: { 
-                    value: /^\S+@\S+\.\S+$/i, 
-                    message: "Formato de email no válido (ej: usuario@dominio.com)" 
-                  }
+                  pattern: {
+                    value: /^\S+@\S+\.\S+$/i,
+                    message:
+                      "Formato de email no válido (ej: usuario@dominio.com)",
+                  },
                 })}
                 isInvalid={!!errors.email}
               />
@@ -172,21 +191,26 @@ const RegistrationForm = () => {
 
         {/* FILA 4: CURSO Y FECHA (DEPENDIENTE) */}
         <Row className="mb-4">
-          <Col xs={6} className="mb-3 mb-md-0">
+          <Col xs={12} sm={6} className="mb-3 mb-md-0">
             <Form.Group controlId="formCurso">
               <Form.Label className="text-white">Curso de Interés</Form.Label>
-              <Form.Select 
-                {...register("curso", { 
-                  required: "Debe seleccionar un curso" 
+              <Form.Select
+                {...register("curso", {
+                  required: "Debe seleccionar un curso",
                 })}
                 isInvalid={!!errors.curso}
                 defaultValue=""
               >
-                <option value="" disabled>Seleccione un programa...</option>
+                <option value="" disabled>
+                  Seleccione un programa...
+                </option>
                 {availableCourses.map((course) => (
                   <optgroup key={course.id} label={course.name}>
                     {course.items.map((course, index) => (
-                      <option key={`${course.id}-${index}`} value={course.title}>
+                      <option
+                        key={`${course.id}-${index}`}
+                        value={course.title}
+                      >
                         {course.title}
                       </option>
                     ))}
@@ -199,64 +223,67 @@ const RegistrationForm = () => {
             </Form.Group>
           </Col>
 
-          <Col xs={6}>
+          <Col xs={12} sm={6}>
             <Form.Group controlId="formFecha">
-              <Form.Label className="text-white">Fecha de Interés</Form.Label>
-              <Form.Select 
-                {...register("fecha", { 
-                  required: "Debe seleccionar una fecha disponible" 
+              <Form.Label className="text-white">Fecha de Dictado</Form.Label>
+              <Form.Select
+                {...register("fecha", {
+                  required: "Debe seleccionar una fecha disponible",
                 })}
                 isInvalid={!!errors.fecha}
                 defaultValue=""
                 disabled={!selectedCursoTitle || availableDates.length === 0}
               >
                 <option value="" disabled>
-                  {selectedCursoTitle 
-                    ? (availableDates.length > 0 ? "Seleccione una fecha..." : "Sin fechas disponibles")
+                  {selectedCursoTitle
+                    ? availableDates.length > 0
+                      ? "Seleccione una fecha..."
+                      : "Sin fechas disponibles"
                     : "Seleccione un curso primero..."}
                 </option>
-                
+
                 {/* Mapeo dinámico de las fechas encontradas */}
                 {availableDates.map((date, index) => (
                   <option key={index} value={date}>
                     {date}
                   </option>
                 ))}
-                
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 {errors.fecha?.message}
               </Form.Control.Feedback>
             </Form.Group>
-          </Col>          
+          </Col>
         </Row>
 
         {/* PROTECCIÓN ANTI-BOT: TURNSTILE */}
         <Turnstile
           ref={turnstileRef}
-          siteKey="1x00000000000000000000AA" 
-          options={{ 
-            appearance: "interaction-only" 
+          siteKey="1x00000000000000000000AA"
+          options={{
+            appearance: "interaction-only",
           }}
           onSuccess={(t) => setToken(t)}
           onExpire={() => setToken(null)}
         />
 
         {/* BOTÓN DE ACCIÓN */}
-        <div className="d-grid">
-          <Button 
-            variant="warning" 
-            size="lg" 
-            type="submit" 
-            disabled={status === "sending"}
-          >
-            {status === "sending" ? (
-              <><Spinner animation="border" size="sm" className="me-2" /> PROCESANDO...</>
-            ) : (
-              "SOLICITAR INSCRIPCIÓN"
-            )}
-          </Button>
-        </div>
+        <Button
+          variant="warning"
+          size="lg"
+          type="submit"
+          disabled={status === "sending"}
+          className="w-100 mt-5"
+        >
+          {status === "sending" ? (
+            <>
+              <Spinner animation="border" size="sm" className="me-2" />{" "}
+              PROCESANDO...
+            </>
+          ) : (
+            "SOLICITAR INSCRIPCIÓN"
+          )}
+        </Button>
       </Form>
     </div>
   );
