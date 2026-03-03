@@ -9,6 +9,7 @@ export const SECTION_IDS = {
   SERVICES: "servicios",
   DIFFERENTIAL: "diferencial",
   CONTACT: "contacto",
+  COURSES: "cursos",
 };
 
 export const routes = [

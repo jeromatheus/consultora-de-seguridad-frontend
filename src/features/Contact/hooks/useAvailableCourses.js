@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { availableCourses as localCourseCategories } from "../../Services/data/services"; 
+import { availableCourses as localCourseCategories } from "../../Services/data/courses"; 
 
 export const useAvailableCourses = () => {
   const [availableCourses, setAvailableCourses] = useState([]);
