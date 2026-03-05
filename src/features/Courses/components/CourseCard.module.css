@@ -1,6 +1,7 @@
 .courseCard {
   overflow: hidden;
   transition: transform 0.3s ease;
+  min-height: 600px;
 }
 
 .courseCard:hover {
@@ -8,8 +9,7 @@
 }
 
 .imageContainer {
-  position: relative;
-  height: 220px;
+  height: 300px;
 }
 
 .cardImage {
@@ -18,20 +18,12 @@
 }
 
 .pdfIconOverlay {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background-color: #dc3545; /* Rojo PDF */
+  bottom: 10px;
+  right: 10px;
+  background-color: #dc3545; 
   color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  width: 30px;
+  height: 30px;  
   transition: all 0.2s ease;
   z-index: 10;
 }
@@ -42,9 +34,10 @@
   color: white;
 }
 
+
 .infoGrid {
   border-top: 1px solid #eee;
   padding-top: 15px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #444;
 }

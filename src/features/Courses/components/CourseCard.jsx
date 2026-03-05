@@ -1,10 +1,11 @@
 import { Card, Button, Badge, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { FaFilePdf, FaClock, FaSignal } from "react-icons/fa";
 import styles from "./CourseCard.module.css";
 
 const CourseCard = ({ course, categoryName, image }) => {
   return (
     <Card className={`h-100 shadow-sm border-0 ${styles.courseCard}`}>
-      <div className={styles.imageContainer}>
+      <div className={`position-relative ${styles.imageContainer}`}>
         {image && (
           <Card.Img
             variant="top"
@@ -13,8 +14,6 @@ const CourseCard = ({ course, categoryName, image }) => {
             className={styles.cardImage}
           />
         )}
-        
-        {/* Ícono para Ver Plan de Estudio (PDF) */}
         <OverlayTrigger
           placement="left"
           overlay={<Tooltip>Ver Plan de Estudio</Tooltip>}
@@ -23,9 +22,9 @@ const CourseCard = ({ course, categoryName, image }) => {
             href="/path-to-your-file.pdf" 
             target="_blank" 
             rel="noopener noreferrer"
-            className={styles.pdfIconOverlay}
+            className={`position-absolute rounded-1 d-flex justify-content-center align-items-center fs-5 shadow-md ${styles.pdfIconOverlay}`}
           >
-            <i className="bi bi-file-earmark-pdf-fill"></i>
+            <FaFilePdf /> 
           </a>
         </OverlayTrigger>
       </div>
@@ -36,32 +35,28 @@ const CourseCard = ({ course, categoryName, image }) => {
             <Badge bg="dark" className="text-uppercase">
               {categoryName}
             </Badge>
-          )}
-          {course.difficulty && (
-            <small className="text-warning fw-bold">{course.difficulty}</small>
-          )}
+          )}         
         </div>
 
         <Card.Title className="fw-bold mb-3">{course.title}</Card.Title>
         
-        <Card.Text className="text-muted mb-4" style={{ fontSize: "0.9rem" }}>
+        <Card.Text className="text-muted mb-4">
           {course.description}
         </Card.Text>
 
-        {/* Información Adicional */}
         <div className={styles.infoGrid}>
-          <div className="d-flex align-items-center mb-2">
-            <i className="bi bi-person-badge me-2 text-secondary"></i>
-            <small>
-              <strong>Experiencia recomendada:</strong> {course.recommendedExperience || "No requiere"}
-            </small>
+          <div className="d-flex align-items-center mb-3">
+            <FaClock className="me-2 text-secondary" />
+            <Card.Text>
+              <strong>Duración aproximada:</strong> {course.duration || "A definir"}
+            </Card.Text>
           </div>
           <div className="d-flex align-items-center mb-3">
-            <i className="bi bi-hourglass-split me-2 text-secondary"></i>
-            <small>
-              <strong>Duración aproximada:</strong> {course.duration || "A definir"}
-            </small>
-          </div>
+            <FaSignal className="me-2 text-secondary" />
+            <Card.Text>
+              <strong>Nivel de dificultad:</strong> {course.difficulty || "A definir"}
+            </Card.Text>
+          </div>        
         </div>
 
         <div className="mt-auto">

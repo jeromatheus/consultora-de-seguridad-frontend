@@ -12,8 +12,7 @@ const CoursesSection = () => {
 
   const getItemClass = (categoryId) => {
     const isActive = selectedCategory === categoryId;
-    return "";
-    // return `${styles.categoryItem} ${isActive ? styles.categoryItemActive : ""}`;
+    return `${isActive ? "text-warning" : ""}`;
   };
 
   return (
@@ -21,7 +20,6 @@ const CoursesSection = () => {
       <h2 className="section-title">Programas Disponibles</h2>
       <Row className="mt-5">
         <Col xs={12} md={4} className="mb-4 mb-md-0">
-          <h3 className="mb-4">Categorías</h3>
           <div>
             {loadingAvailableCourses && (
               <Spinner animation="border" variant="light" />
