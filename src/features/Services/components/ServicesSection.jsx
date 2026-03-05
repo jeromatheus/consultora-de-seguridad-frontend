@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { scrollWithOffset } from "../../../shared/utils/scrollUtils";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { services } from "../data/services";
-import { CourseCategories } from "./CourseCategories";
+import { CourseCategories } from "../../Courses/components/CourseCategories";
 import { SECTION_IDS } from "../../../shared/data/routes";
 import clsx from "clsx";
 import styles from "./ServicesSection.module.css";

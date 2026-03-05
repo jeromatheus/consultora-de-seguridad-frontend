@@ -1,9 +1,9 @@
 // TODO: niveles de dificultad, pdf, duración, modalidad, formulario de pre-inscripción
 import { Container } from "react-bootstrap";
 import StartSection from "../shared/components/StartSection";
-import CoursesSection from "../features/Services/components/CoursesSection";
-import RegistrationSection from "../features/Contact/components/RegistrationSection";
-import { courses_slides } from "../features/Services/data/courses";
+import CoursesSection from "../features/Courses/components/CoursesSection";
+import RegistrationSection from "../features/Courses/components/RegistrationSection";
+import { courses_slides } from "../features/Courses/data/courses";
 import { SECTION_IDS } from "../shared/data/routes";
 
 const CoursesPage = () => {

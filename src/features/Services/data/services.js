@@ -2,7 +2,7 @@ import service_personal_protection from "../assets/service_personal_protection.p
 import service_asset_custody from "../assets/service_asset_custody.png";
 import service_capacitation from "../assets/service_capacitation.png";
 import service_information from "../assets/service_information.png";
-import { availableCourses } from "./courses";
+import { availableCourses } from "../../Courses/data/courses";
 
 export const services = [
   {

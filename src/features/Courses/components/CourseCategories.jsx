@@ -92,11 +92,11 @@ export const CourseCategories = ({ categories = [] }) => {
 
       <Button
         variant="dark"
-        className="w-100 mt-3 border border-white"
+        className="w-100 mt-3 border border-black text-uppercase shadow-sm"
         as={Link}
         to="/cursos"
       >
-        Ver Todos los Cursos
+        Ver Todos los Cursos Disponibles
       </Button>
     </section>
   );

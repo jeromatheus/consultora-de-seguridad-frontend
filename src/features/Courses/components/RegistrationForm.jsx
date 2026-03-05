@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import { Row, Col, Form, Button, Spinner, Alert } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { useContactForm } from "../hooks/useContactForm";
-import { validateAge } from "../utils/validation";
+import { useContactForm } from "../../Contact/hooks/useContactForm";
+import { validateAge } from "../../Contact/utils/validation";
 import { useAvailableCourses } from "../hooks/useAvailableCourses";
 import { useAvailableDates } from "../hooks/useAvailableDates";
 

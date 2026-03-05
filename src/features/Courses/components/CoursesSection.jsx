@@ -1,8 +1,7 @@
 import { Row, Col, ListGroup, Spinner } from "react-bootstrap";
-import { useAvailableCourses } from "../../Contact/hooks/useAvailableCourses";
+import { useAvailableCourses } from "../hooks/useAvailableCourses";
 import { useCourseFilter } from "../hooks/useCourseFilter";
 import CourseCard from "./CourseCard";
-import styles from "./CoursesSection.module.css";
 
 const CoursesSection = () => {
   const { availableCourses, loadingAvailableCourses, errorAvailableCourses } =
@@ -13,7 +12,8 @@ const CoursesSection = () => {
 
   const getItemClass = (categoryId) => {
     const isActive = selectedCategory === categoryId;
-    return `${styles.categoryItem} ${isActive ? styles.categoryItemActive : ""}`;
+    return "";
+    // return `${styles.categoryItem} ${isActive ? styles.categoryItemActive : ""}`;
   };
 
   return (
@@ -44,8 +44,8 @@ const CoursesSection = () => {
                   <ListGroup.Item
                     key={category.id}
                     action
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={getItemClass(category.id)}
+                    onClick={() => setSelectedCategory(category.name)} 
+                    className={getItemClass(category.name)} 
                   >
                     {category.name}
                   </ListGroup.Item>
@@ -56,23 +56,25 @@ const CoursesSection = () => {
         </Col>
 
         <Col xs={12} md={8}>
-          {availableCourses.map((category) => (
-            <div key={category.id} className="mb-5">
-              <h2 className="mb-4">{category.name}</h2>
+          <Row>
+            {displayedCourses.map((course) => (
+              <Col key={course.id} md={6} lg={4} className="mb-4">
+                <CourseCard
+                  course={course}
+                  categoryName={course.categoryId}
+                  image={course.image || "https://placehold.co/600x400"}
+                />
+              </Col>
+            ))}
 
-              <Row>
-                {category.items.map((course) => (
-                  <Col key={course.id} md={6} lg={4} className="mb-4">
-                    <CourseCard
-                      course={course}
-                      categoryName={category.name}
-                      image="https://placehold.co/600x400"
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          ))}
+            {displayedCourses.length === 0 && !loadingAvailableCourses && (
+              <div className="text-center py-5">
+                <p className="text-muted">
+                  No se encontraron cursos en esta categoría.
+                </p>
+              </div>
+            )}
+          </Row>
         </Col>
       </Row>
     </section>
